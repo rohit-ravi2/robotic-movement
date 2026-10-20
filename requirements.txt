@@ -1,0 +1,11 @@
+mujoco==3.2.7
+numpy
+scipy
+cma
+PyYAML
+matplotlib
+pillow
+imageio
+imageio-ffmpeg
+pytest
+# optional: pydrake, only for the cross-simulator check in src/xsim_drake.py

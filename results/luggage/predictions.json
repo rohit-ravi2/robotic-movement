@@ -1,0 +1,298 @@
+{
+ "dex3_ratings_Nm": {
+  "right_hand_thumb_0_joint": 2.45,
+  "right_hand_thumb_1_joint": 1.4,
+  "right_hand_thumb_2_joint": 1.4,
+  "right_hand_index_0_joint": 1.4,
+  "right_hand_index_1_joint": 1.4,
+  "right_hand_middle_0_joint": 1.4,
+  "right_hand_middle_1_joint": 1.4
+ },
+ "grip_capacity_per_hand_N": {
+  "hook_bound": 61.135371179039204,
+  "proximal_len_m": 0.04580000000000007,
+  "wrap_measured_normal_N": [
+   100,
+   109
+  ],
+  "note": "hook = 2 fingers x 1.4 N m / proximal length; wrap = J27 grasp lab normal force sum at the 1.4 N m limits (x mu 1 -> ~100 N friction-limited). Range used: 60-100 N per hand."
+ },
+ "S1": {
+  "F_grip_per_hand_N": 222.610955,
+  "lp_at_start_pose": {
+   "status": "INFEASIBLE",
+   "max_util": null,
+   "worst": null,
+   "ik_err": 0.0005982134425748113,
+   "top": null
+  },
+  "capacity_json": {
+   "suitcase_kg": 26.2,
+   "chest_kg": 7.9
+  },
+  "util_scaled_from_capacity": {
+   "suitcase": 1.732824427480916,
+   "chest": 5.746835443037974
+  }
+ },
+ "S2": {
+  "F_drag_N": 178.088764,
+  "bar_height_m": 1.0,
+  "tip_vs_slide": {
+   "pull (towards the bar side)": {
+    "F_slide_N_at_Fz0": 178.088764,
+    "F_tip_N_at_Fz0": 62.3310674,
+    "feasible": false,
+    "tip_ratio_needed": 0.4,
+    "available": 0.14,
+    "down_press_gain": 0.020000000000000018
+   },
+   "push": {
+    "F_slide_N_at_Fz0": 178.088764,
+    "F_tip_N_at_Fz0": 62.3310674,
+    "feasible": false,
+    "tip_ratio_needed": 0.4,
+    "available": 0.14,
+    "down_press_gain": 0.26
+   }
+  },
+  "lp_at_start_pose_with_drag_force": {
+   "status": "INFEASIBLE",
+   "max_util": null,
+   "worst": null,
+   "ik_err": 0.0006570097001750614,
+   "top": null
+  },
+  "verdict": "the bag TIPS before it slides at any push/pull with any downward press (mu 0.4 > half-depth / bar height 0.14) -> a drag on the base is statically infeasible from the pull bar"
+ },
+ "S3": {
+  "F_tip_start_horizontal_N": 73.83076899497486,
+  "balance_tilt_deg": 28.412661443072587,
+  "table": [
+   {
+    "tilt_deg": 0.0,
+    "bar_height_m": 0.9950000000000001,
+    "F_vertical_hold_N": null,
+    "F_roll_N": 22.2610955
+   },
+   {
+    "tilt_deg": 5.0,
+    "bar_height_m": 0.9952879451012617,
+    "F_vertical_hold_N": null,
+    "F_roll_N": 22.2610955
+   },
+   {
+    "tilt_deg": 10.0,
+    "bar_height_m": 0.9883055721216707,
+    "F_vertical_hold_N": -401.30311896752494,
+    "F_roll_N": 42.32625144837625
+   },
+   {
+    "tilt_deg": 14.999999999999998,
+    "bar_height_m": 0.9741060211356738,
+    "F_vertical_hold_N": -175.80641825175115,
+    "F_roll_N": 31.05141641258756
+   },
+   {
+    "tilt_deg": 20.0,
+    "bar_height_m": 0.9527973593001978,
+    "F_vertical_hold_N": -79.4375083707634,
+    "F_roll_N": 26.23297091853817
+   },
+   {
+    "tilt_deg": 25.0,
+    "bar_height_m": 0.9245417583983322,
+    "F_vertical_hold_N": -25.3306124007564,
+    "F_roll_N": 23.527626120037823
+   },
+   {
+    "tilt_deg": 29.999999999999996,
+    "bar_height_m": 0.889554260614139,
+    "F_vertical_hold_N": 9.752417168124982,
+    "F_roll_N": 21.77347464159375
+   },
+   {
+    "tilt_deg": 35.0,
+    "bar_height_m": 0.8481011419317843,
+    "F_vertical_hold_N": 34.66651794126044,
+    "F_roll_N": 20.527769602936978
+   },
+   {
+    "tilt_deg": 40.0,
+    "bar_height_m": 0.8004978856145183,
+    "F_vertical_hold_N": 53.523503695269355,
+    "F_roll_N": 19.58492031523653
+   },
+   {
+    "tilt_deg": 45.0,
+    "bar_height_m": 0.7471067811865477,
+    "F_vertical_hold_N": 68.49567846153845,
+    "F_roll_N": 18.836311576923077
+   },
+   {
+    "tilt_deg": 50.0,
+    "bar_height_m": 0.6883341671909992,
+    "F_vertical_hold_N": 80.84146636593137,
+    "F_roll_N": 18.219022181703433
+   },
+   {
+    "tilt_deg": 55.0,
+    "bar_height_m": 0.6246273387082538,
+    "F_vertical_hold_N": 91.34289000996554,
+    "F_roll_N": 17.69395099950172
+   },
+   {
+    "tilt_deg": 59.99999999999999,
+    "bar_height_m": 0.5564711431702999,
+    "F_vertical_hold_N": 100.51417178451851,
+    "F_roll_N": 17.235386910774075
+   }
+  ],
+  "rolling_resistance_coeff": 0.05,
+  "per_tilt": {
+   "15.0": {
+    "F_vertical_N": -175.80641825175115,
+    "F_roll_plus_accel_N": 33.88891641258756,
+    "lp_pull": {
+     "status": "OK",
+     "max_util": 1.721612644790452,
+     "worst": "right_wrist_pitch_joint",
+     "ik_err": 0.0007987641735882396,
+     "top": [
+      [
+       "right_wrist_pitch_joint",
+       1.721612644790452
+      ],
+      [
+       "left_wrist_pitch_joint",
+       1.7215885348361613
+      ],
+      [
+       "right_shoulder_pitch_joint",
+       0.910357393851247
+      ],
+      [
+       "left_shoulder_pitch_joint",
+       0.9103347722799195
+      ]
+     ]
+    },
+    "lp_push": {
+     "status": "INFEASIBLE",
+     "max_util": null,
+     "worst": null,
+     "ik_err": 0.0007987641735882396,
+     "top": null
+    }
+   },
+   "32.5": {
+    "F_vertical_N": 23.159062700314337,
+    "F_roll_plus_accel_N": 23.94064236498428,
+    "lp_pull": {
+     "status": "INFEASIBLE",
+     "max_util": null,
+     "worst": null,
+     "ik_err": 0.0006424109380621936,
+     "top": null
+    },
+    "lp_push": {
+     "status": "OK",
+     "max_util": 0.494102086176791,
+     "worst": "right_wrist_pitch_joint",
+     "ik_err": 0.0006424109380621936,
+     "top": [
+      [
+       "right_wrist_pitch_joint",
+       0.494102086176791
+      ],
+      [
+       "left_wrist_pitch_joint",
+       0.4940906273978445
+      ],
+      [
+       "right_shoulder_pitch_joint",
+       0.41068080743688057
+      ],
+      [
+       "left_shoulder_pitch_joint",
+       0.4106649428235894
+      ]
+     ]
+    }
+   },
+   "50.0": {
+    "F_vertical_N": 80.84146636593137,
+    "F_roll_plus_accel_N": 21.056522181703432,
+    "lp_pull": {
+     "status": "INFEASIBLE",
+     "max_util": null,
+     "worst": null,
+     "ik_err": 0.03343431080712258,
+     "top": null
+    },
+    "lp_push": {
+     "status": "OK",
+     "max_util": 0.8642029855241551,
+     "worst": "waist_pitch_joint",
+     "ik_err": 0.03343431080712258,
+     "top": [
+      [
+       "waist_pitch_joint",
+       0.8642029855241551
+      ],
+      [
+       "right_shoulder_pitch_joint",
+       0.83279229956856
+      ],
+      [
+       "left_shoulder_pitch_joint",
+       0.8327818278489251
+      ],
+      [
+       "right_wrist_yaw_joint",
+       0.5661894302472549
+      ]
+     ]
+    }
+   }
+  },
+  "note": "task brief said ~half the weight at the start: that is a bag lying flat lifted at one end; this upright bag needs a horizontal pull of W*0.165/1.0 at the bar to start the tip, ~0 at the balance tilt, then a vertical hold rising with tilt"
+ },
+ "reach_cap": {
+  "per_tilt": {
+   "15.0": {
+    "bar_z": 0.9741060211356737,
+    "x_min": -0.1,
+    "x_max": 0.5400000000000001,
+    "span": 0.6400000000000001
+   },
+   "32.5": {
+    "bar_z": 0.8696173131269129,
+    "x_min": -0.1,
+    "x_max": 0.5200000000000001,
+    "span": 0.6200000000000001
+   },
+   "50.0": {
+    "bar_z": 0.688334167190999,
+    "x_min": -0.1,
+    "x_max": 0.4600000000000001,
+    "span": 0.56
+   }
+  },
+  "note": "bar x span reachable by both palms with the feet planted (arms IK, waist pitch -0.3..0.5); the bag can move at most this far (minus the body: the tipped bag's top cannot pass through the torso)"
+ },
+ "ranking": [
+  [
+   "S3",
+   "feasible: hold <= ~80 N + roll ~20 N, within joint and Dex3 ratings; displacement capped by reach"
+  ],
+  [
+   "S1",
+   "torque-infeasible: 45.4 kg vs 26.2 kg suitcase / 7.9 kg chest capacity; grip 223 N per hand vs 60-100 N Dex3"
+  ],
+  [
+   "S2",
+   "statically infeasible: tips before it slides (becomes S3); grip 89 N/hand at the Dex3 limit"
+  ]
+ ]
+}

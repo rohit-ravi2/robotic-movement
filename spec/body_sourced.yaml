@@ -1,0 +1,153 @@
+# Canonical body specification — planar sagittal jumper, bilaterally lumped.
+# EVERY parameter carries provenance. Tags:
+#   CITED    — value taken from the named published source
+#   DERIVED  — computed from CITED values by the stated rule
+#   INVENTED — no source; chosen by the author. MUST be listed in FINDINGS.
+#
+# Model convention: planar (sagittal). Both legs lumped into one leg chain and both
+# arms into one arm chain, so all masses and torque limits are BILATERAL TOTALS.
+# Bilateral symmetry makes this physically honest for a two-footed vertical jump.
+
+meta:
+  name: human_sourced_anderson2007_75kg
+  units:
+    angle: radian          # ASSERTED in tests/test_units.py — MuJoCo defaults to DEGREES
+    mass: kg
+    length: m
+    torque: N*m
+    ang_vel: rad/s
+    time: s
+  subject:
+    body_mass: {value: 75.0, tag: INVENTED, note: "reference adult male; scales all segment masses"}
+    height:    {value: 1.75, tag: INVENTED, note: "reference adult male; scales all segment lengths"}
+
+sources:
+  anderson2007: "Anderson DE, Madigan ML, Nussbaum MA. Maximum voluntary joint torque as a function of joint angle and angular velocity: model development and application to the lower limb. J Biomech 40(14):3105-3113, 2007, PMID 17485097, PMC6820133. Table 3, 18-25 y MALES (n=7, right leg, Biodex). C1 normalised by body weight x height. Title and every value below verified against PubMed + the PMC full text on 2026-10-04."
+  harbo2012: "Harbo T, Brincks J, Andersen H. Maximal isokinetic and isometric muscle strength of major muscle groups related to age, body mass, height, and sex in 178 healthy subjects. Eur J Appl Physiol 112:267-275, 2012, PMID 21537927. Table 5, <30 y men, isometric elbow flexion 50 +- 18 N m (dominant arm). Title verified 2026-10-04; value read in full text (spec/strength_sources.md)."
+  winter2009: "Winter DA, Biomechanics and Motor Control of Human Movement, 4th ed., Wiley 2009, Table 4.1 (segment mass fractions, COM locations, radii of gyration as fractions of segment length)"
+  deleva1996: "de Leva P, Adjustments to Zatsiorsky-Seluyanov's segment inertia parameters, J Biomech 29(9):1223-1230, 1996, PMID 8872282"
+
+# ---------------------------------------------------------------- segments
+# mass_fraction: of total body mass. BILATERAL where the segment is paired.
+# length_fraction: of standing height.
+# com_from_proximal / rog_about_com: fractions of that segment's own length.
+segments:
+  trunk_head:
+    mass_fraction:   {value: 0.578, tag: CITED, src: winter2009, note: "head+neck 0.081 + trunk 0.497"}
+    length_fraction: {value: 0.288, tag: CITED, src: winter2009, note: "hip to shoulder"}
+    com_from_proximal: {value: 0.50, tag: INVENTED, note: "lumped head+trunk; Winter gives separate values"}
+    rog_about_com:   {value: 0.50, tag: INVENTED, note: "lumped segment; not a Winter row"}
+  thigh:
+    mass_fraction:   {value: 0.200, tag: DERIVED, src: winter2009, note: "2 x 0.100 (bilateral)"}
+    length_fraction: {value: 0.245, tag: CITED, src: winter2009}
+    com_from_proximal: {value: 0.433, tag: CITED, src: winter2009}
+    rog_about_com:   {value: 0.323, tag: CITED, src: winter2009}
+  shank:
+    mass_fraction:   {value: 0.093, tag: DERIVED, src: winter2009, note: "2 x 0.0465 (bilateral)"}
+    length_fraction: {value: 0.246, tag: CITED, src: winter2009}
+    com_from_proximal: {value: 0.433, tag: CITED, src: winter2009}
+    rog_about_com:   {value: 0.302, tag: CITED, src: winter2009}
+  foot:
+    mass_fraction:   {value: 0.029, tag: DERIVED, src: winter2009, note: "2 x 0.0145 (bilateral)"}
+    length_fraction: {value: 0.152, tag: CITED, src: winter2009, note: "foot length"}
+    com_from_proximal: {value: 0.50, tag: CITED, src: winter2009}
+    rog_about_com:   {value: 0.475, tag: CITED, src: winter2009}
+    ankle_from_heel_fraction: {value: 0.25, tag: INVENTED, note: "ankle placed 25% along foot from heel"}
+  upper_arm:
+    mass_fraction:   {value: 0.056, tag: DERIVED, src: winter2009, note: "2 x 0.028 (bilateral)"}
+    length_fraction: {value: 0.186, tag: CITED, src: winter2009}
+    com_from_proximal: {value: 0.436, tag: CITED, src: winter2009}
+    rog_about_com:   {value: 0.322, tag: CITED, src: winter2009}
+  forearm_hand:
+    mass_fraction:   {value: 0.044, tag: DERIVED, src: winter2009, note: "2 x (forearm 0.016 + hand 0.006)"}
+    length_fraction: {value: 0.254, tag: DERIVED, src: winter2009, note: "forearm 0.146 + hand 0.108"}
+    com_from_proximal: {value: 0.468, tag: CITED, src: winter2009, note: "forearm+hand combined"}
+    rog_about_com:   {value: 0.468, tag: CITED, src: winter2009, note: "forearm+hand combined"}
+
+# ---------------------------------------------------------------- actuators
+# Phase 10 SOURCED specification. Built from spec/strength_sources.md BEFORE any Gate A run on it
+# (parameter-legitimacy protocol): values are fixed from the literature, committed, and the result is
+# accepted as it lands. Unsourced items keep tag INVENTED and are swept separately (labelled sweeps).
+#
+# Hip, knee, ankle use the full Anderson 2007 surface (Eq. 9): T = 2*C1*BW*H * cos(C2*(thA - C3)) * g(w),
+#   g(w>=0) = [2C4C5 + w(C5-3C4)] / [2C4C5 + w(2C5-4C4)]  (clipped to [0,1]);  g(w<0) = 1 - C6*w,
+#   thA = anatomical angle, flexion (incl. dorsiflexion) positive; thA = angle_sign * spec angle.
+#   'extensor' = HE / KE / PF columns; 'flexor' = HF / KF / DF columns (the opposite torque direction).
+#   x2 = bilateral lumping of a unilateral measurement (no bilateral-deficit correction: known omission).
+#   Passive torques (Anderson Eq. 1) are omitted (known omission).
+# tau_max / omega_max for these joints are NOT used by the dynamics (kept DERIVED for the analytic bound
+# and as the command normalisation): tau_max = 2*C1*BW*H with the spec's 75 kg / 1.75 m body.
+joints:
+  hip:
+    tau_max:   {value: 414.5, tag: DERIVED, src: anderson2007, note: "2 x 0.161 x 75 x 9.80665 x 1.75 (HE, males)"}
+    omega_max: {value: 6.5,  tag: DERIVED, src: anderson2007, note: "zero-torque velocity implied by C4,C5 (HE); test-limited, see strength_sources.md"}
+    range:     {value: [-0.35, 2.40], tag: INVENTED, note: "POSITIVE = flexion; Anderson's dynamometer ROM was -0.5..1.3 rad (test range, not anatomical)"}
+    torque_angle: {peak_at: 0.932, width: 1.64, floor: 0.0, tag: DERIVED, src: anderson2007,
+                   note: "cos^2-form placeholder for the analytic bound only; dynamics use the anderson block"}
+    anderson:
+      angle_sign: {value: 1.0, note: "spec hip flexion+ = Anderson flexion+"}
+      extensor: {C1: {value: 0.161, tag: CITED, src: anderson2007}, C2: {value: 0.958, tag: CITED, src: anderson2007},
+                 C3: {value: 0.932, tag: CITED, src: anderson2007}, C4: {value: 1.578, tag: CITED, src: anderson2007},
+                 C5: {value: 3.190, tag: CITED, src: anderson2007}, C6: {value: 0.242, tag: CITED, src: anderson2007}}
+      flexor:   {C1: {value: 0.113, tag: CITED, src: anderson2007}, C2: {value: 0.738, tag: CITED, src: anderson2007},
+                 C3: {value: -0.214, tag: CITED, src: anderson2007}, C4: {value: 2.095, tag: CITED, src: anderson2007},
+                 C5: {value: 4.267, tag: CITED, src: anderson2007}, C6: {value: 0.218, tag: CITED, src: anderson2007}}
+  knee:
+    tau_max:   {value: 419.6, tag: DERIVED, src: anderson2007, note: "2 x 0.163 x 75 x 9.80665 x 1.75 (KE, males)"}
+    omega_max: {value: 20.0, tag: DERIVED, src: anderson2007, note: "zero-torque velocity implied by C4,C5 (KE), extrapolated"}
+    range:     {value: [0.0, 2.50], tag: INVENTED, note: "0 = full extension"}
+    torque_angle: {peak_at: 1.133, width: 1.25, floor: 0.0, tag: DERIVED, src: anderson2007, note: "bound placeholder"}
+    anderson:
+      angle_sign: {value: 1.0, note: "spec knee flexion+ = Anderson flexion+"}
+      extensor: {C1: {value: 0.163, tag: CITED, src: anderson2007}, C2: {value: 1.258, tag: CITED, src: anderson2007},
+                 C3: {value: 1.133, tag: CITED, src: anderson2007}, C4: {value: 1.517, tag: CITED, src: anderson2007},
+                 C5: {value: 3.952, tag: CITED, src: anderson2007}, C6: {value: 0.095, tag: CITED, src: anderson2007}}
+      flexor:   {C1: {value: 0.087, tag: CITED, src: anderson2007}, C2: {value: 0.869, tag: CITED, src: anderson2007},
+                 C3: {value: 0.522, tag: CITED, src: anderson2007}, C4: {value: 2.008, tag: CITED, src: anderson2007},
+                 C5: {value: 5.233, tag: CITED, src: anderson2007}, C6: {value: 0.304, tag: CITED, src: anderson2007}}
+  ankle:
+    tau_max:   {value: 244.5, tag: DERIVED, src: anderson2007, note: "2 x 0.095 x 75 x 9.80665 x 1.75 (PF, males; measured knee flexed 50 deg -> likely underestimate)"}
+    omega_max: {value: 30.0, tag: INVENTED, note: "Anderson PF curve has no zero crossing (C5/C4 > 3); unused by dynamics; bound placeholder"}
+    range:     {value: [-0.70, 0.55], tag: INVENTED, note: "negative = dorsiflexion"}
+    torque_angle: {peak_at: -0.408, width: 1.13, floor: 0.0, tag: DERIVED, src: anderson2007, note: "bound placeholder (spec convention)"}
+    anderson:
+      angle_sign: {value: -1.0, note: "spec ankle: negative = dorsiflexion; Anderson: dorsiflexion positive"}
+      extensor: {C1: {value: 0.095, tag: CITED, src: anderson2007}, C2: {value: 1.391, tag: CITED, src: anderson2007},
+                 C3: {value: 0.408, tag: CITED, src: anderson2007}, C4: {value: 0.987, tag: CITED, src: anderson2007},
+                 C5: {value: 3.558, tag: CITED, src: anderson2007}, C6: {value: 0.295, tag: CITED, src: anderson2007}}
+      flexor:   {C1: {value: 0.033, tag: CITED, src: anderson2007}, C2: {value: 1.510, tag: CITED, src: anderson2007},
+                 C3: {value: -0.187, tag: CITED, src: anderson2007}, C4: {value: 0.699, tag: CITED, src: anderson2007},
+                 C5: {value: 1.940, tag: CITED, src: anderson2007}, C6: {value: 0.828, tag: CITED, src: anderson2007}}
+  shoulder:
+    tau_max:   {value: 120.0, tag: INVENTED, note: "no normative young-adult shoulder-flexion source found (strength_sources.md d.2); unchanged"}
+    omega_max: {value: 20.0,  tag: INVENTED}
+    range:     {value: [-3.00, 1.20], tag: INVENTED}
+    torque_angle: {peak_at: -0.40, width: 1.60, floor: 0.45, tag: INVENTED}
+  elbow:
+    tau_max:   {value: 100.0, tag: CITED, src: harbo2012, note: "2 x 50 N m isometric elbow flexion, <30 y men"}
+    omega_max: {value: 24.0,  tag: INVENTED}
+    range:     {value: [-0.10, 2.60], tag: INVENTED, note: "flexion positive (anterior since the P16 fix)"}
+    torque_angle: {peak_at: 1.40, width: 1.40, floor: 0.40, tag: INVENTED}
+
+actuation:
+  torque_model: {value: anderson2007, tag: CITED, src: anderson2007, note: "hip/knee/ankle; shoulder/elbow keep the cos^2 + linear form"}
+  activation_tau: {value: 0.040, tag: INVENTED, note: "first-order force-development lag, 30-50 ms range"}
+  torque_speed_model: {value: linear, tag: INVENTED, note: "shoulder/elbow only"}
+
+contact:
+  friction: {value: 0.9, tag: INVENTED}
+  points:   {value: [heel, toe], tag: INVENTED}
+
+# ---------------------------------------------------------------- omissions
+# Present here so they are never silently carried.
+known_omissions:
+  - "bi-articular coupling (rectus femoris, gastrocnemius): knee and ankle torques treated as independent. Load-bearing in the jumping literature."
+  - "series elasticity: no tendon spring, so eccentric energy storage is absent. See docs/SJ_vs_CMJ.md."
+  - "three-dimensional trunk rotation: planar only."
+  - "muscle activation-deactivation asymmetry: single first-order lag both directions."
+  - "joint passive stiffness at range limits: hard limits only."
+
+# ---------------------------------------------------------------- protocol
+protocol:
+  gate_a_crouch: {value: [-1.155, 1.865, -0.700, -0.652, -0.745], tag: DERIVED,
+                  note: "Phase 8 rule applied to this spec (src/crouch_select.py, seed 0): nearest statically certified crouch to the Phase 8 crouch, directional capacity, torque margin 0.177 >= 0.10, support margin 0.047 m >= 0.030. Fixed 2026-10-04 before any jump on this spec."}

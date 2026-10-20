@@ -1,0 +1,1129 @@
+{
+ "job": "M2_throw_target/r2",
+ "target": "d10_left20",
+ "spec": {
+  "dist": 10.0,
+  "az": 0.3490658503988659
+ },
+ "target_xy": [
+  9.395494778190356,
+  3.420200552065943
+ ],
+ "stance_centre": [
+  -0.0014314296687286058,
+  -8.811907437622502e-07
+ ],
+ "seed": 22,
+ "sched": "0.03x40,0.01x30",
+ "mode": "soft",
+ "objective": "error",
+ "cone": null,
+ "loop_perts": [
+  201,
+  202,
+  203,
+  204
+ ],
+ "warm_from": "results/movements/M2_throw_target/polish/d10_left20_s16.json",
+ "inversion": {
+  "speed": 9.028228811376337,
+  "elev": 0.7195097255686446,
+  "az": 0.3494709357861624,
+  "R": 9.485948579357549,
+  "h": 1.2573149243931445
+ },
+ "secs": 782,
+ "stages": [
+  {
+   "stage": "warm",
+   "f_both": 0.5006453063697589
+  },
+  {
+   "stage": 0,
+   "sigma": 0.03,
+   "iters": 40,
+   "seed": 22,
+   "loop_best": 0.1650483512555642,
+   "f_both": 0.1642044759098813,
+   "kept": true,
+   "reason_tally": {
+    "VALID": 2853,
+    "SLIP": 342,
+    "STANCE_LOST": 142
+   },
+   "max_valid_speed_seen": 9.893817531578136,
+   "secs": 410
+  },
+  {
+   "stage": 1,
+   "sigma": 0.01,
+   "iters": 30,
+   "seed": 23,
+   "loop_best": 0.1333454614664156,
+   "f_both": 0.14898727841221834,
+   "kept": true,
+   "reason_tally": {
+    "VALID": 2372,
+    "SLIP": 59,
+    "STANCE_LOST": 10
+   },
+   "max_valid_speed_seen": 9.657061654536507,
+   "secs": 318
+  }
+ ],
+ "f_both": 0.14898727841221834,
+ "hist": [
+  0.304,
+  0.2153,
+  0.2153,
+  0.2153,
+  0.2153,
+  0.2153,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1824,
+  0.1803,
+  0.1803,
+  0.1803,
+  0.1803,
+  0.1803,
+  0.1803,
+  0.1803,
+  0.1803,
+  0.1803,
+  0.1803,
+  0.165,
+  0.165,
+  0.165,
+  0.165,
+  0.165,
+  0.165,
+  0.165,
+  0.1493,
+  0.1493,
+  0.1493,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333,
+  0.1333
+ ],
+ "meas": [
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.1493151394438807,
+   "speed": 9.497128370497213,
+   "elev": 33.36557519118602,
+   "az": 21.201247149693994,
+   "slip": 0.015888037838857044,
+   "overspeed": 1.0365577213725619,
+   "self_peak": 0.0
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.09419995587256638,
+   "speed": 9.492963952472056,
+   "elev": 33.19823501998898,
+   "az": 21.500028062632172,
+   "slip": 0.01616827541483234,
+   "overspeed": 1.0389388210812753,
+   "self_peak": 0.0
+  }
+ ],
+ "valid_both": true,
+ "speed_min": 9.492963952472056,
+ "found": {
+  "err": 0.14898543010013038,
+  "speed": 9.49712834860734,
+  "elev": 33.36557441391456,
+  "az": 21.2032014936134,
+  "t_rel": 0.16227587560551754,
+  "release": {
+   "t": 0.162,
+   "palm_v": [
+    7.351457597836106,
+    2.8278320879793144,
+    5.257166063740244
+   ],
+   "ball_p": [
+    0.17786537716789283,
+    -0.3110973327348913,
+    1.2256616923569428
+   ],
+   "ball_v": [
+    7.394842901177548,
+    2.868745904977746,
+    5.223221445573471
+   ],
+   "palm_p": [
+    0.170504258860991,
+    -0.3135573082236698,
+    1.220120096579713
+   ]
+  },
+  "land": [
+   9.48023098525585,
+   3.2976589934244993,
+   0.029142125268593198
+  ],
+  "amp": 0.6691423843547339,
+  "tscale": 0.7989943668182514,
+  "work": {
+   "wrist": 0.7805910080372074,
+   "shoulder": 57.822109355426726,
+   "trunk": 46.163831357233065,
+   "legs": 97.26880041983075,
+   "elbow": 17.14799474498794,
+   "counter_arm": 8.488959760549598
+  },
+  "slip": 0.015888041379834197,
+  "overspeed": 1.0365577213807748,
+  "overspeed_by_joint": {
+   "right_wrist_pitch_joint": 1.04
+  },
+  "reasons": [],
+  "valid": true,
+  "self_contact_peak": 0.0
+ },
+ "check_r1": {
+  "nominal": [
+   {
+    "dt": 0.001,
+    "valid_v1": true,
+    "reasons_v1": [],
+    "valid": true,
+    "reasons": [],
+    "err": 0.149,
+    "hit_v1": true,
+    "hit": true,
+    "speed": 9.497,
+    "elev": 33.37,
+    "az": 21.2,
+    "slip": 0.0159,
+    "self_peak": 0.0,
+    "draw": null
+   },
+   {
+    "dt": 0.0005,
+    "valid_v1": true,
+    "reasons_v1": [],
+    "valid": true,
+    "reasons": [],
+    "err": 0.094,
+    "hit_v1": true,
+    "hit": true,
+    "speed": 9.493,
+    "elev": 33.2,
+    "az": 21.5,
+    "slip": 0.0162,
+    "self_peak": 0.0,
+    "draw": null
+   }
+  ],
+  "nominal_valid_both": true,
+  "nominal_hit_both": true,
+  "perturbations": [
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.52,
+     "hit_v1": false,
+     "hit": false,
+     "speed": 9.408,
+     "elev": 33.77,
+     "az": 19.08,
+     "slip": 0.0166,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0135094178774406,
+      "lag": 0.011823804989068187
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.447,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.407,
+     "elev": 33.33,
+     "az": 19.58,
+     "slip": 0.0159,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0135094178774406,
+      "lag": 0.011823804989068187
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.34,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.585,
+     "elev": 34.06,
+     "az": 20.67,
+     "slip": 0.018,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0954169085702539,
+      "lag": 0.011914551151258407
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.243,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.57,
+     "elev": 33.58,
+     "az": 21.09,
+     "slip": 0.0174,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0954169085702539,
+      "lag": 0.011914551151258407
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.486,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.386,
+     "elev": 33.88,
+     "az": 19.37,
+     "slip": 0.0133,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9513332971983448,
+      "lag": 0.00983735480424738
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.439,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.381,
+     "elev": 33.59,
+     "az": 19.73,
+     "slip": 0.013,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9513332971983448,
+      "lag": 0.00983735480424738
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": false,
+     "reasons_v1": [
+      "SLIP"
+     ],
+     "valid": false,
+     "reasons": [
+      "SLIP"
+     ],
+     "err": 0.177,
+     "hit_v1": false,
+     "hit": false,
+     "speed": 9.488,
+     "elev": 33.69,
+     "az": 21.05,
+     "slip": 0.0208,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0530187010539913,
+      "lag": 0.009513742626619965
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.103,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.491,
+     "elev": 33.46,
+     "az": 21.47,
+     "slip": 0.0188,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0530187010539913,
+      "lag": 0.009513742626619965
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.104,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.486,
+     "elev": 33.3,
+     "az": 21.43,
+     "slip": 0.0176,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0355440214747718,
+      "lag": 0.010449331531673125
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.084,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.462,
+     "elev": 33.06,
+     "az": 21.65,
+     "slip": 0.0126,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0355440214747718,
+      "lag": 0.010449331531673125
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.621,
+     "hit_v1": false,
+     "hit": false,
+     "speed": 9.499,
+     "elev": 34.45,
+     "az": 18.52,
+     "slip": 0.0182,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9647387915895482,
+      "lag": 0.011974638258856767
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.549,
+     "hit_v1": false,
+     "hit": false,
+     "speed": 9.5,
+     "elev": 34.23,
+     "az": 18.92,
+     "slip": 0.018,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9647387915895482,
+      "lag": 0.011974638258856767
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.09,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.56,
+     "elev": 32.47,
+     "az": 22.22,
+     "slip": 0.0159,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.990222525994983,
+      "lag": 0.008583272344279188
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.105,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.55,
+     "elev": 32.27,
+     "az": 22.57,
+     "slip": 0.015,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.990222525994983,
+      "lag": 0.008583272344279188
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.124,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.446,
+     "elev": 32.81,
+     "az": 21.67,
+     "slip": 0.013,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9732766009259026,
+      "lag": 0.008586448536253349
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.118,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.452,
+     "elev": 32.52,
+     "az": 22.17,
+     "slip": 0.0125,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9732766009259026,
+      "lag": 0.008586448536253349
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.114,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.488,
+     "elev": 33.83,
+     "az": 21.46,
+     "slip": 0.0153,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9796904430267089,
+      "lag": 0.009059830134843894
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.045,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.472,
+     "elev": 33.57,
+     "az": 21.78,
+     "slip": 0.0156,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9796904430267089,
+      "lag": 0.009059830134843894
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.227,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.384,
+     "elev": 33.41,
+     "az": 21.15,
+     "slip": 0.0121,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0659229242611516,
+      "lag": 0.009313289803481483
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.185,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.393,
+     "elev": 33.36,
+     "az": 21.51,
+     "slip": 0.0107,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0659229242611516,
+      "lag": 0.009313289803481483
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.542,
+     "hit_v1": false,
+     "hit": false,
+     "speed": 9.416,
+     "elev": 34.05,
+     "az": 18.95,
+     "slip": 0.0142,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9359438532264388,
+      "lag": 0.011058912109705069
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.489,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.402,
+     "elev": 34.0,
+     "az": 19.29,
+     "slip": 0.0176,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9359438532264388,
+      "lag": 0.011058912109705069
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.203,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.528,
+     "elev": 32.42,
+     "az": 20.89,
+     "slip": 0.0138,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0131071604259416,
+      "lag": 0.009564166467712569
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.147,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.517,
+     "elev": 32.17,
+     "az": 21.22,
+     "slip": 0.0146,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0131071604259416,
+      "lag": 0.009564166467712569
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.161,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.476,
+     "elev": 33.28,
+     "az": 21.1,
+     "slip": 0.0115,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9320369701305286,
+      "lag": 0.011241877802678475
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.095,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.473,
+     "elev": 33.11,
+     "az": 21.5,
+     "slip": 0.0109,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9320369701305286,
+      "lag": 0.011241877802678475
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.154,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.527,
+     "elev": 33.56,
+     "az": 21.44,
+     "slip": 0.014,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9223656359282131,
+      "lag": 0.0108918248556385
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.079,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.512,
+     "elev": 33.33,
+     "az": 21.8,
+     "slip": 0.0139,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9223656359282131,
+      "lag": 0.0108918248556385
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.149,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.471,
+     "elev": 33.51,
+     "az": 21.19,
+     "slip": 0.0161,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.004106058232272,
+      "lag": 0.008634469862575633
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.087,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.469,
+     "elev": 33.26,
+     "az": 21.56,
+     "slip": 0.0159,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.004106058232272,
+      "lag": 0.008634469862575633
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.181,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.574,
+     "elev": 33.0,
+     "az": 22.47,
+     "slip": 0.0161,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0385221401239328,
+      "lag": 0.01108644522590299
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.208,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.577,
+     "elev": 32.78,
+     "az": 22.87,
+     "slip": 0.0162,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0385221401239328,
+      "lag": 0.01108644522590299
+     }
+    }
+   ]
+  ],
+  "n_pert": 16,
+  "n_pass_v2": 12,
+  "n_pass_v1": 12,
+  "robust_v2": true,
+  "robust_v1": true,
+  "need": 12,
+  "seeds": [
+   101,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108,
+   109,
+   110,
+   111,
+   112,
+   113,
+   114,
+   115,
+   116
+  ],
+  "slip_fail_v2": 1,
+  "miss_v2": 3
+ },
+ "supplied": {
+  "body": "stock Menagerie G1 MJX (scene_mjx.xml) + a free 0.145 kg r 36.5 mm ball body; masses, geometry, joint ranges, rated speeds untouched",
+  "ratings": "min(MJCF peak, Unitree URDF effort, vendor published max 120 N m): knee 120, hip pitch/yaw/roll 88, ankle pitch/roll 35, waist yaw 88, waist roll/pitch 35, shoulders/elbow/wrist roll 25, wrist pitch/yaw 5 N m; held (undriven) joints capped the same",
+  "actuator": "first-order lag 10 ms, torque-speed droop to 0 at rated speed, back-EMF brake above rated, OVERSPEED gate 1.1x rated",
+  "contact": "stock MJX scene contact (foot-floor pairs solref 0.008, friction 1); ball geom solref 0.002 rigid; robot geoms contype 0 (released ball cannot touch the robot); solver iterations 50",
+  "attachment": "ball held by an ACTIVE WELD equality to right_wrist_yaw_link at the palm site (solref 0.002): labelled attachment, no grip-force limit; release = weld switched off at the searched release step",
+  "flight": "free-body flight in the full model during the 0.30 s follow-through, then the exact ball state continued in a ball+floor twin MuJoCo model (same dt); VACUUM (no drag) unless stated; landing = first floor contact of the ball",
+  "structure": "construct wind-up -> release reference (throw.windup_reference: capacity-weighted constrained Jacobian, t_w 0.40, t_ref 0.55, leg cap 0.30, 95% joint range) for the inverted direction; tracker omega 20 rad/s; knots 17x10 + release time + amplitude [0.2,1] + time scale [0.57,1.17] (EffectTask)",
+  "direction_rule": "ballistic inversion (vacuum) of the MINIMUM-SPEED trajectory from the reference's own release point to the target; two passes (bearing reference at 22.5 deg elev -> release point -> inverted direction -> reference -> release point -> inversion reported)",
+  "objective": "landing error (refine) or release speed in the target's own +-5 deg inversion cone (directed refine); soft robust refine: nominal hard + mean over 4 in-loop draws 201-204 soft (see _soft_agg); final selection on both dt",
+  "search": "R2: sigma SCHEDULE refine (general, same for every target): a sequence of CMA-ES stages with decreasing sigma (e.g. 0.03 then 0.01), each warm from the previous stage's best; a stage's result is kept only if its worse-of-both-dt score improves on the incumbent's. pycma seeds 21-39. Warm starts: stored ledgers (named in each ledger's warm_from), chosen by the operator from the R1 results before this round's prediction.",
+  "gates": "stance (both feet, cumulative unload < 20 ms), no fall, no non-foot contact, energy closure, overspeed 1.1x, foot slip <= 0.02 m, no robot self-contact > 1.0 N (R1), all through release + 0.3 s follow-through; fresh plants at 1 ms and 0.5 ms",
+  "robustness": "R1: 16 fresh draws (seeds 101-116) of the round-0 perturbation distribution at both dt; robust = nominal hit at both dt AND >= 12/16 draws pass at both dt; counted under v2 (START_NOT_AT_REST not applied to perturbed starts; it depends only on the draw) and v1",
+  "hit": "landing error <= 0.5 m (target circle 1.0 m diameter)"
+ },
+ "lag": 0.01,
+ "z": [
+  -0.5286656016447987,
+  -0.6955947742610319,
+  -0.42778706768494296,
+  0.24025536971055514,
+  -0.446881047182002,
+  0.15037140728241205,
+  0.06912442229320258,
+  -0.33701185810069706,
+  0.1320160990808686,
+  -0.5104031952526077,
+  -0.934983783541669,
+  -0.16835998402720057,
+  -0.12952886659994595,
+  0.04185245425188698,
+  0.3539236660874101,
+  -0.16282681203489696,
+  0.6177327071625183,
+  -0.33048143873256697,
+  0.5535530442867735,
+  0.03027754294398716,
+  -0.4526183235252938,
+  -0.3308202601196182,
+  -0.10384776776234403,
+  0.2010639573859339,
+  -0.4002463239251778,
+  0.06765400900212122,
+  -0.03358471394070063,
+  0.946728457582144,
+  -0.5133806379611996,
+  0.1407086712243309,
+  -0.7510403108183487,
+  -0.5433725357586845,
+  -0.15516698191669176,
+  0.08650914399455609,
+  -0.356207769281887,
+  0.4001877792579414,
+  0.13010326144401907,
+  0.9449580927011207,
+  0.9255714655809014,
+  0.04462004236411005,
+  0.905551389698304,
+  0.8889755642114004,
+  -0.14521559615649918,
+  -0.0046938616210426744,
+  0.005490343500750771,
+  -0.1923160812751818,
+  0.231047691481113,
+  -0.5390438063448766,
+  -0.5092626345761018,
+  -0.12449166369958319,
+  -0.05154635727714792,
+  0.06914286434543987,
+  -0.01670232420410897,
+  0.026046681570864948,
+  0.07142811257748372,
+  0.5133461337910838,
+  -0.04349778182863131,
+  0.4770512668108987,
+  0.15494712901723223,
+  -0.5254535027559752,
+  0.18136088339222853,
+  0.20442721922093446,
+  0.139329263453175,
+  0.20586930274061616,
+  -0.1914823411564783,
+  -0.1789308857823575,
+  -0.9929021756242046,
+  -0.6491825566147225,
+  -0.532483792999179,
+  0.707400624706575,
+  0.28708187204776553,
+  0.4636265339230653,
+  -0.05652831887493506,
+  0.04216250883573218,
+  -0.5058384961988776,
+  0.182768295847157,
+  -0.9544297492129794,
+  -0.28675494493101167,
+  0.5302913856364022,
+  0.1673642710596475,
+  0.3275246966838109,
+  0.9984343274992589,
+  0.8357493644833737,
+  0.8398614753595012,
+  0.721094954078967,
+  0.6719281350522892,
+  0.1630277972671459,
+  0.2752452796800386,
+  -0.5585764550930077,
+  0.3906102457906871,
+  0.545199644192819,
+  -0.2756758711509567,
+  0.0621104247117485,
+  0.5063017458931794,
+  0.051351843074124506,
+  0.3330434891140929,
+  -0.11753092137828133,
+  -0.9984284807170813,
+  0.37738727695275603,
+  -0.62803130973008,
+  -0.2071528226173562,
+  0.7407740967421392,
+  0.9460780538104127,
+  -0.19712842766210467,
+  -0.05175201946875392,
+  0.18508108161630607,
+  -0.9999713062097674,
+  -0.7720579363564332,
+  0.2896276230510243,
+  0.4546255250981616,
+  0.2208260145051663,
+  -0.9887603125053528,
+  -0.8859297556403855,
+  0.28229829626815395,
+  0.05205672663256543,
+  0.42647501479770633,
+  -0.14592934654542758,
+  0.2699530575583938,
+  -0.40990693096978376,
+  -0.027368604290507227,
+  -0.9921440736223256,
+  0.2516514573164196,
+  0.546293658158892,
+  -0.18230334821501795,
+  -0.14002885096992324,
+  -0.9992840847720317,
+  -0.5342863291972917,
+  0.42357154222033594,
+  0.3009579738618231,
+  0.5700708088350871,
+  0.4209465887478546,
+  0.8002827209731793,
+  0.3583977663295677,
+  0.03510329716422796,
+  -0.07007009061072438,
+  -0.5881186045632154,
+  0.5241607498070446,
+  -0.9567291518323748,
+  0.4243357745929945,
+  0.4402709588816873,
+  -0.7457842080017194,
+  0.19027693806928042,
+  0.9236882940772508,
+  0.7006277000020208,
+  0.7760370632475876,
+  0.04699307939819736,
+  0.7062311580649029,
+  0.6851549922710986,
+  -0.9920970242628693,
+  -0.45776033629452134,
+  0.42757137352256225,
+  -0.2520241012406995,
+  0.5870659326635504,
+  -0.17851370596664673,
+  0.09144225582491859,
+  0.028120618481050266,
+  -0.8269674345490683,
+  0.28698190960709624,
+  0.004581618443665515,
+  -0.4415593019001762,
+  0.5510682306778918,
+  -0.6775118196336753,
+  0.998653948086446,
+  0.17742208097315415,
+  0.9027404294757456,
+  -0.02196011780754181,
+  -0.40654887633175035,
+  -0.9716803830180396,
+  -0.1279122322989053,
+  0.15304025625469272,
+  -0.962228075059946,
+  0.172855960886835,
+  -0.23668544393916174
+ ]
+}

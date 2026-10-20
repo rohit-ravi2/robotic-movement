@@ -1,0 +1,1395 @@
+{
+ "ceiling": {
+  "Apollo": {
+   "any": 5.0,
+   "<=6Hz": 3.25,
+   "<=4.5Hz": 2.75
+  },
+  "T1": {
+   "any": 1.5,
+   "<=6Hz": 1.25,
+   "<=4.5Hz": 1.0
+  },
+  "G1": {
+   "any": 4.75,
+   "<=6Hz": 2.5,
+   "<=4.5Hz": 2.0
+  },
+  "H1": {
+   "any": 6.0,
+   "<=6Hz": 3.5,
+   "<=4.5Hz": 2.75
+  }
+ },
+ "documented": {
+  "searched": "2026-10-16 (web search)",
+  "Apollo": {
+   "running_speed": "none found",
+   "walking_speed_official": "none found (Apptronik publishes no speed; per robozaps review, as of 2026-07)",
+   "walking_speed_unofficial_mps": {
+    "chipsilicon (marked not verified)": 0.94,
+    "humanoidapplications": 1.0,
+    "botsales": 1.1,
+    "therobotshq": 1.11,
+    "humanoidspecs": 1.2,
+    "merarobotics": 1.5
+   },
+   "joint_velocity_limits": "none published (no URDF; bespoke linear/rotary SEAs) -> omega ASSUMED by the G1/H1 power-per-kg rule",
+   "urls": [
+    "https://blog.robozaps.com/b/apptronik-apollo-review",
+    "https://humanoidspecs.com/robots/apptronik-apollo",
+    "https://humanoidapplications.com/robot/apptronik-apollo/",
+    "https://botsales.com/models/apptronik-apollo",
+    "https://therobotshq.com/products/apptronik-apollo/",
+    "https://www.chipsilicon.com/humanoid/apptronik-apollo-humanoid-robot",
+    "https://merarobotics.com/shop/apptronik-apollo",
+    "https://qviro.com/product/apptronik/apollo/specifications"
+   ]
+  },
+  "T1": {
+   "running_speed": "none found (botmarket24 claims 18 km/h with no source: treated as unreliable)",
+   "walking_speed_official_mps": 0.5,
+   "walking_speed_unofficial_mps": {
+    "UT Austin Villa RoboCup 2025 team spec": 0.8,
+    "originofbots": 1.0,
+    "humanoid-robots.io": 0.97
+   },
+   "published_knee_peak_torque_Nm": 130,
+   "note_torque": "MJCF and Booster URDF give knee 60 / hip pitch 45 N m; the vendor's 130 N m knee peak is a published figure with no hip value; the MJCF is used (task rule)",
+   "urls": [
+    "https://manuals.plus/m/52c5789b57898fd41545329023cb92c9a183d188e8b7a6fec4f693cc7d5d4de5",
+    "https://robozaps.com/products/t1-basic",
+    "https://www.cs.utexas.edu/~AustinVilla/humanoid/assets/qualification_materials/2025/UT%20Austin%20Villa%20AdultSize%20Team%20Specification.pdf",
+    "https://www.originofbots.com/news/booster-robotics-unveils-t1-basic-humanoid-for-research-and-development",
+    "https://www.humanoid-robots.io/robot/booster-t1-by-booster-robotics",
+    "https://botmarket24.com/en/robot-database/booster-t1/",
+    "https://www.generationrobots.com/en/404278-booster-t1-humanoid-robot.html",
+    "https://www.robotshop.com/products/booster-t1-humanoid-robot-standard",
+    "https://github.com/BoosterRobotics/booster_gym/blob/main/resources/T1/T1_serial.urdf"
+   ]
+  }
+ },
+ "onboarding": {
+  "Apollo": {
+   "accept": true,
+   "stand": {
+    "0.001": {
+     "settle_qdot_max": 1.4916900664305293e-13,
+     "settle_certificate": null,
+     "com_drift": 4.835799859823189e-05,
+     "z_drift": -1.649892247068685e-05,
+     "qvel_max_after_0p2s": 0.0004686924524604552,
+     "upright_cos": 0.9999999968330486,
+     "max_torque_util": 0.21704371199683964,
+     "nonfoot_contact": false,
+     "z": 1.019253307034046,
+     "ok": true
+    },
+    "0.0005": {
+     "settle_qdot_max": 8.334202429806786e-14,
+     "settle_certificate": null,
+     "com_drift": 1.2054727464498852e-05,
+     "z_drift": -4.125288002754246e-06,
+     "qvel_max_after_0p2s": 6.16071925227098e-05,
+     "upright_cos": 0.9999999985035294,
+     "max_torque_util": 0.2114708753520279,
+     "nonfoot_contact": false,
+     "z": 1.019278054403653,
+     "ok": true
+    }
+   }
+  },
+  "T1": {
+   "accept": true,
+   "stand": {
+    "0.001": {
+     "settle_qdot_max": 2.81537740538794e-12,
+     "settle_certificate": null,
+     "com_drift": 0.0002615979198083505,
+     "z_drift": 1.1599174946752555e-05,
+     "qvel_max_after_0p2s": 0.002837620392239468,
+     "upright_cos": 0.9999992805968326,
+     "max_torque_util": 0.273508671977163,
+     "nonfoot_contact": false,
+     "z": 0.665394283432514,
+     "ok": true
+    },
+    "0.0005": {
+     "settle_qdot_max": 1.0474642919594957e-13,
+     "settle_certificate": null,
+     "com_drift": 6.419860868422089e-05,
+     "z_drift": 2.8357042026749824e-06,
+     "qvel_max_after_0p2s": 0.00056766171150179,
+     "upright_cos": 0.9999998484780445,
+     "max_torque_util": 0.30396202649935733,
+     "nonfoot_contact": false,
+     "z": 0.665376883528077,
+     "ok": true
+    }
+   }
+  }
+ },
+ "ladders": {
+  "Apollo_lag2ms": {
+   "scale": 1.0,
+   "act_tau": 0.002,
+   "rungs": [
+    {
+     "v": 1.0,
+     "ok": true,
+     "v_meas": [
+      1.4374,
+      1.4381
+     ],
+     "reasons": [
+      [],
+      []
+     ],
+     "evals": 648,
+     "evals_to_first_valid_gen_res": 13,
+     "stride": {
+      "tc": 0.18,
+      "tf": 0.1,
+      "h0": 0.8372,
+      "step_hz": 3.5714
+     },
+     "params": {
+      "amp": 1.0370021338005517,
+      "tscale": 1.005877614322604,
+      "lean": 0.04640718239343781
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "right_hip_yaw_joint",
+       1.0
+      ],
+      [
+       "left_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "left_hip_yaw_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "right_ankle_pitch_joint",
+       0.643
+      ],
+      [
+       "left_ankle_pitch_joint",
+       0.499
+      ],
+      [
+       "left_knee_joint",
+       0.491
+      ]
+     ],
+     "technique": {
+      "cadence_hz": 3.9761431411530808,
+      "stride_len": 0.723036328198757,
+      "flight_fraction": 0.2794326241134752,
+      "flight_mean": 0.021462500000000013,
+      "duty": [
+       0.35602836879432626,
+       0.36524822695035464
+      ],
+      "pelvis_pitch_mean": 0.103,
+      "trunk_mean": {
+       "waist_yaw_joint": -0.0,
+       "waist_roll_joint": -0.001,
+       "waist_pitch_joint": -0.034
+      },
+      "arm_ptp": {
+       "right_shoulder_pitch_joint": 0.477,
+       "right_elbow_joint": 0.46,
+       "left_shoulder_pitch_joint": 0.477,
+       "left_elbow_joint": 0.464
+      },
+      "cot": 0.9888653284893429,
+      "speed": 1.4374479685859975
+     }
+    },
+    {
+     "v": 1.5,
+     "ok": true,
+     "v_meas": [
+      2.4438,
+      2.4449
+     ],
+     "reasons": [
+      [],
+      []
+     ],
+     "evals": 1152,
+     "evals_to_first_valid_gen_res": 13,
+     "stride": {
+      "tc": 0.14,
+      "tf": 0.1,
+      "h0": 0.8372,
+      "step_hz": 4.1667
+     },
+     "params": {
+      "amp": 1.0653144386836024,
+      "tscale": 1.1254751114259391,
+      "lean": 0.1341794621458765
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "right_hip_yaw_joint",
+       1.0
+      ],
+      [
+       "right_knee_joint",
+       1.0
+      ],
+      [
+       "left_hip_pitch_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "right_elbow_joint",
+       0.682
+      ],
+      [
+       "left_elbow_joint",
+       0.682
+      ],
+      [
+       "left_knee_joint",
+       0.657
+      ]
+     ],
+     "technique": {
+      "cadence_hz": 4.0899795501022504,
+      "stride_len": 1.195022547014302,
+      "flight_fraction": 0.4074610648315828,
+      "flight_mean": 0.024712871287128724,
+      "duty": [
+       0.28395508873596526,
+       0.3082216588192684
+      ],
+      "pelvis_pitch_mean": 0.201,
+      "trunk_mean": {
+       "waist_yaw_joint": 0.0,
+       "waist_roll_joint": -0.001,
+       "waist_pitch_joint": -0.029
+      },
+      "arm_ptp": {
+       "right_shoulder_pitch_joint": 0.687,
+       "right_elbow_joint": 0.811,
+       "left_shoulder_pitch_joint": 0.688,
+       "left_elbow_joint": 0.811
+      },
+      "cot": 1.0332140139550572,
+      "speed": 2.4438088895998002
+     }
+    },
+    {
+     "v": 2.0,
+     "ok": false,
+     "note": "no feasible stride at 2.0 m/s (scale 1.0)"
+    }
+   ],
+   "top_valid": {
+    "v": 1.5,
+    "ok": true,
+    "v_meas": [
+     2.4438,
+     2.4449
+    ],
+    "reasons": [
+     [],
+     []
+    ],
+    "evals": 1152,
+    "evals_to_first_valid_gen_res": 13,
+    "stride": {
+     "tc": 0.14,
+     "tf": 0.1,
+     "h0": 0.8372,
+     "step_hz": 4.1667
+    },
+    "params": {
+     "amp": 1.0653144386836024,
+     "tscale": 1.1254751114259391,
+     "lean": 0.1341794621458765
+    },
+    "binding_torque_p95": [
+     [
+      "right_hip_pitch_joint",
+      1.0
+     ],
+     [
+      "right_hip_yaw_joint",
+      1.0
+     ],
+     [
+      "right_knee_joint",
+      1.0
+     ],
+     [
+      "left_hip_pitch_joint",
+      1.0
+     ]
+    ],
+    "max_speed_ratio": [
+     [
+      "right_elbow_joint",
+      0.682
+     ],
+     [
+      "left_elbow_joint",
+      0.682
+     ],
+     [
+      "left_knee_joint",
+      0.657
+     ]
+    ],
+    "technique": {
+     "cadence_hz": 4.0899795501022504,
+     "stride_len": 1.195022547014302,
+     "flight_fraction": 0.4074610648315828,
+     "flight_mean": 0.024712871287128724,
+     "duty": [
+      0.28395508873596526,
+      0.3082216588192684
+     ],
+     "pelvis_pitch_mean": 0.201,
+     "trunk_mean": {
+      "waist_yaw_joint": 0.0,
+      "waist_roll_joint": -0.001,
+      "waist_pitch_joint": -0.029
+     },
+     "arm_ptp": {
+      "right_shoulder_pitch_joint": 0.687,
+      "right_elbow_joint": 0.811,
+      "left_shoulder_pitch_joint": 0.688,
+      "left_elbow_joint": 0.811
+     },
+     "cot": 1.0332140139550572,
+     "speed": 2.4438088895998002
+    }
+   }
+  },
+  "Apollo_lag10ms": {
+   "scale": 1.0,
+   "act_tau": 0.01,
+   "rungs": [
+    {
+     "v": 1.0,
+     "ok": true,
+     "v_meas": [
+      1.876,
+      1.8744
+     ],
+     "reasons": [
+      [],
+      []
+     ],
+     "evals": 1440,
+     "evals_to_first_valid_gen_res": 1,
+     "stride": {
+      "tc": 0.18,
+      "tf": 0.1,
+      "h0": 0.8372,
+      "step_hz": 3.5714
+     },
+     "params": {
+      "amp": 1.0197937960883297,
+      "tscale": 1.148831562714084,
+      "lean": 0.048171282388475505
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "right_hip_yaw_joint",
+       1.0
+      ],
+      [
+       "left_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "left_hip_yaw_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "left_knee_joint",
+       0.749
+      ],
+      [
+       "left_elbow_joint",
+       0.661
+      ],
+      [
+       "right_elbow_joint",
+       0.657
+      ]
+     ],
+     "technique": {
+      "cadence_hz": 3.8240917782026775,
+      "stride_len": 0.981132527058893,
+      "flight_fraction": 0.22090909090909092,
+      "flight_mean": 0.01294262295081968,
+      "duty": [
+       0.39,
+       0.3890909090909091
+      ],
+      "pelvis_pitch_mean": 0.132,
+      "trunk_mean": {
+       "waist_yaw_joint": -0.002,
+       "waist_roll_joint": -0.001,
+       "waist_pitch_joint": -0.011
+      },
+      "arm_ptp": {
+       "right_shoulder_pitch_joint": 0.513,
+       "right_elbow_joint": 0.671,
+       "left_shoulder_pitch_joint": 0.512,
+       "left_elbow_joint": 0.671
+      },
+      "cot": 1.0643414489168246,
+      "speed": 1.8759704150265644
+     }
+    }
+   ],
+   "top_valid": {
+    "v": 1.0,
+    "ok": true,
+    "v_meas": [
+     1.876,
+     1.8744
+    ],
+    "reasons": [
+     [],
+     []
+    ],
+    "evals": 1440,
+    "evals_to_first_valid_gen_res": 1,
+    "stride": {
+     "tc": 0.18,
+     "tf": 0.1,
+     "h0": 0.8372,
+     "step_hz": 3.5714
+    },
+    "params": {
+     "amp": 1.0197937960883297,
+     "tscale": 1.148831562714084,
+     "lean": 0.048171282388475505
+    },
+    "binding_torque_p95": [
+     [
+      "right_hip_pitch_joint",
+      1.0
+     ],
+     [
+      "right_hip_yaw_joint",
+      1.0
+     ],
+     [
+      "left_hip_pitch_joint",
+      1.0
+     ],
+     [
+      "left_hip_yaw_joint",
+      1.0
+     ]
+    ],
+    "max_speed_ratio": [
+     [
+      "left_knee_joint",
+      0.749
+     ],
+     [
+      "left_elbow_joint",
+      0.661
+     ],
+     [
+      "right_elbow_joint",
+      0.657
+     ]
+    ],
+    "technique": {
+     "cadence_hz": 3.8240917782026775,
+     "stride_len": 0.981132527058893,
+     "flight_fraction": 0.22090909090909092,
+     "flight_mean": 0.01294262295081968,
+     "duty": [
+      0.39,
+      0.3890909090909091
+     ],
+     "pelvis_pitch_mean": 0.132,
+     "trunk_mean": {
+      "waist_yaw_joint": -0.002,
+      "waist_roll_joint": -0.001,
+      "waist_pitch_joint": -0.011
+     },
+     "arm_ptp": {
+      "right_shoulder_pitch_joint": 0.513,
+      "right_elbow_joint": 0.671,
+      "left_shoulder_pitch_joint": 0.512,
+      "left_elbow_joint": 0.671
+     },
+     "cot": 1.0643414489168246,
+     "speed": 1.8759704150265644
+    }
+   }
+  },
+  "Apollo_lag2ms_extrap": {
+   "scale": 1.0,
+   "act_tau": 0.002,
+   "rungs": [
+    {
+     "v": 2.0,
+     "ok": false,
+     "v_meas": [
+      1.9785,
+      1.9785
+     ],
+     "reasons": [
+      [
+       "FELL"
+      ],
+      [
+       "FELL"
+      ]
+     ],
+     "evals": 1440,
+     "evals_to_first_valid_gen_res": null,
+     "stride": {
+      "tc": 0.14,
+      "tf": 0.1,
+      "h0": 0.8372,
+      "step_hz": 4.1667
+     },
+     "params": {
+      "amp": 0.9967492244372337,
+      "tscale": 1.0439805205708141,
+      "lean": -0.0017184457004585998
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "right_hip_yaw_joint",
+       1.0
+      ],
+      [
+       "right_knee_joint",
+       1.0
+      ],
+      [
+       "right_ankle_pitch_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "left_elbow_joint",
+       0.864
+      ],
+      [
+       "right_elbow_joint",
+       0.851
+      ],
+      [
+       "left_ankle_pitch_joint",
+       0.834
+      ]
+     ],
+     "technique": {
+      "speed": 1.9784709116483814,
+      "note": "fell before the transient cycles ended"
+     }
+    }
+   ],
+   "top_valid": null
+  },
+  "T1_lag2ms": {
+   "scale": 1.0,
+   "act_tau": 0.002,
+   "rungs": [
+    {
+     "v": 1.0,
+     "ok": false,
+     "note": "no feasible stride at 1.0 m/s (scale 1.0)"
+    }
+   ],
+   "top_valid": null
+  },
+  "T1_cf_x1p5_lag2ms": {
+   "scale": 1.5,
+   "act_tau": 0.002,
+   "rungs": [
+    {
+     "v": 1.0,
+     "ok": false,
+     "v_meas": [
+      1.0103,
+      1.0053
+     ],
+     "reasons": [
+      [
+       "OVERSPEED",
+       "SLIP"
+      ],
+      [
+       "OVERSPEED",
+       "SLIP"
+      ]
+     ],
+     "evals": 1440,
+     "evals_to_first_valid_gen_res": null,
+     "stride": {
+      "tc": 0.14,
+      "tf": 0.075,
+      "h0": 0.4963,
+      "step_hz": 4.6512
+     },
+     "params": {
+      "amp": 0.9456336202593518,
+      "tscale": 0.9745503432489141,
+      "lean": 0.03667065753793394
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "right_hip_roll_joint",
+       1.0
+      ],
+      [
+       "right_hip_yaw_joint",
+       1.0
+      ],
+      [
+       "right_ankle_roll_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "right_ankle_roll_joint",
+       1.9
+      ],
+      [
+       "left_ankle_roll_joint",
+       1.678
+      ],
+      [
+       "right_ankle_pitch_joint",
+       0.774
+      ]
+     ],
+     "technique": {
+      "cadence_hz": 8.658008658008654,
+      "stride_len": 0.23337872040423388,
+      "flight_fraction": 0.13867562380038387,
+      "flight_mean": 0.007825000000000004,
+      "duty": [
+       0.4534548944337812,
+       0.43809980806142035
+      ],
+      "pelvis_pitch_mean": 0.098,
+      "trunk_mean": {
+       "waist_yaw_joint": -0.001
+      },
+      "arm_ptp": {
+       "right_shoulder_pitch_joint": 0.725,
+       "right_elbow_joint": 0.354,
+       "left_shoulder_pitch_joint": 0.734,
+       "left_elbow_joint": 0.335
+      },
+      "cot": 1.3902027840024824,
+      "speed": 1.010297490927419
+     }
+    }
+   ],
+   "top_valid": null
+  },
+  "T1_cf_x1p5_lag10ms": {
+   "scale": 1.5,
+   "act_tau": 0.01,
+   "rungs": [
+    {
+     "v": 1.0,
+     "ok": false,
+     "v_meas": [
+      0.0,
+      0.0
+     ],
+     "reasons": [
+      [
+       "FELL"
+      ],
+      [
+       "FELL"
+      ]
+     ],
+     "evals": 1440,
+     "evals_to_first_valid_gen_res": null,
+     "stride": {
+      "tc": 0.14,
+      "tf": 0.075,
+      "h0": 0.4963,
+      "step_hz": 4.6512
+     },
+     "params": {
+      "amp": 1.134539104326652,
+      "tscale": 0.9426449824533177,
+      "lean": -0.18704057874790775
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_roll_joint",
+       1.0
+      ],
+      [
+       "left_hip_roll_joint",
+       1.0
+      ],
+      [
+       "right_elbow_joint",
+       1.0
+      ],
+      [
+       "left_elbow_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "left_ankle_roll_joint",
+       1.061
+      ],
+      [
+       "left_elbow_joint",
+       1.0
+      ],
+      [
+       "right_elbow_joint",
+       0.998
+      ]
+     ],
+     "technique": {
+      "cadence_hz": null,
+      "stride_len": null,
+      "flight_fraction": 0.0,
+      "flight_mean": 0.022000000000000013,
+      "duty": [
+       1.0,
+       0.0
+      ],
+      "pelvis_pitch_mean": -0.184,
+      "trunk_mean": {
+       "waist_yaw_joint": 0.17
+      },
+      "arm_ptp": {
+       "right_shoulder_pitch_joint": 0.18,
+       "right_elbow_joint": 0.003,
+       "left_shoulder_pitch_joint": 0.032,
+       "left_elbow_joint": 0.015
+      },
+      "cot": null,
+      "speed": 0.0
+     }
+    }
+   ],
+   "top_valid": null
+  },
+  "T1_cf_x1p5ank_lag2ms": {
+   "scale": 1.5,
+   "act_tau": 0.002,
+   "rungs": [
+    {
+     "v": 1.0,
+     "ok": true,
+     "v_meas": [
+      1.1497,
+      1.1426
+     ],
+     "reasons": [
+      [],
+      []
+     ],
+     "evals": 552,
+     "evals_to_first_valid_gen_res": 241,
+     "stride": {
+      "tc": 0.14,
+      "tf": 0.075,
+      "h0": 0.4963,
+      "step_hz": 4.6512
+     },
+     "params": {
+      "amp": 0.9881205391889047,
+      "tscale": 1.0439571535591088,
+      "lean": 0.028449084447112187
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "right_hip_roll_joint",
+       1.0
+      ],
+      [
+       "right_hip_yaw_joint",
+       1.0
+      ],
+      [
+       "left_hip_pitch_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "right_ankle_roll_joint",
+       1.057
+      ],
+      [
+       "left_ankle_roll_joint",
+       1.045
+      ],
+      [
+       "left_elbow_joint",
+       1.006
+      ]
+     ],
+     "technique": {
+      "cadence_hz": 7.194244604316558,
+      "stride_len": 0.319607296659048,
+      "flight_fraction": 0.30092797171895713,
+      "flight_mean": 0.03563157894736844,
+      "duty": [
+       0.3424657534246575,
+       0.35660627485638535
+      ],
+      "pelvis_pitch_mean": 0.071,
+      "trunk_mean": {
+       "waist_yaw_joint": 0.001
+      },
+      "arm_ptp": {
+       "right_shoulder_pitch_joint": 0.71,
+       "right_elbow_joint": 1.419,
+       "left_shoulder_pitch_joint": 0.715,
+       "left_elbow_joint": 1.425
+      },
+      "cot": 1.0114447793277728,
+      "speed": 1.1496665347447788
+     }
+    },
+    {
+     "v": 1.5,
+     "ok": true,
+     "v_meas": [
+      1.6417,
+      1.6318
+     ],
+     "reasons": [
+      [],
+      []
+     ],
+     "evals": 480,
+     "evals_to_first_valid_gen_res": 169,
+     "stride": {
+      "tc": 0.14,
+      "tf": 0.075,
+      "h0": 0.4752,
+      "step_hz": 4.6512
+     },
+     "params": {
+      "amp": 1.0079483095337634,
+      "tscale": 1.0794255976514653,
+      "lean": 0.02889000277199145
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "right_hip_roll_joint",
+       1.0
+      ],
+      [
+       "right_hip_yaw_joint",
+       1.0
+      ],
+      [
+       "right_ankle_roll_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "left_ankle_roll_joint",
+       1.063
+      ],
+      [
+       "right_ankle_roll_joint",
+       1.051
+      ],
+      [
+       "left_elbow_joint",
+       1.001
+      ]
+     ],
+     "technique": {
+      "cadence_hz": 6.734006734006733,
+      "stride_len": 0.4875775976655721,
+      "flight_fraction": 0.29524214103653357,
+      "flight_mean": 0.04208571428571432,
+      "duty": [
+       0.3491928632115548,
+       0.35938827527612577
+      ],
+      "pelvis_pitch_mean": 0.059,
+      "trunk_mean": {
+       "waist_yaw_joint": 0.002
+      },
+      "arm_ptp": {
+       "right_shoulder_pitch_joint": 1.135,
+       "right_elbow_joint": 1.376,
+       "left_shoulder_pitch_joint": 1.135,
+       "left_elbow_joint": 1.374
+      },
+      "cot": 1.0686884103705994,
+      "speed": 1.641675413015394
+     }
+    },
+    {
+     "v": 2.0,
+     "ok": false,
+     "note": "no feasible stride at 2.0 m/s (scale 1.5)"
+    }
+   ],
+   "top_valid": {
+    "v": 1.5,
+    "ok": true,
+    "v_meas": [
+     1.6417,
+     1.6318
+    ],
+    "reasons": [
+     [],
+     []
+    ],
+    "evals": 480,
+    "evals_to_first_valid_gen_res": 169,
+    "stride": {
+     "tc": 0.14,
+     "tf": 0.075,
+     "h0": 0.4752,
+     "step_hz": 4.6512
+    },
+    "params": {
+     "amp": 1.0079483095337634,
+     "tscale": 1.0794255976514653,
+     "lean": 0.02889000277199145
+    },
+    "binding_torque_p95": [
+     [
+      "right_hip_pitch_joint",
+      1.0
+     ],
+     [
+      "right_hip_roll_joint",
+      1.0
+     ],
+     [
+      "right_hip_yaw_joint",
+      1.0
+     ],
+     [
+      "right_ankle_roll_joint",
+      1.0
+     ]
+    ],
+    "max_speed_ratio": [
+     [
+      "left_ankle_roll_joint",
+      1.063
+     ],
+     [
+      "right_ankle_roll_joint",
+      1.051
+     ],
+     [
+      "left_elbow_joint",
+      1.001
+     ]
+    ],
+    "technique": {
+     "cadence_hz": 6.734006734006733,
+     "stride_len": 0.4875775976655721,
+     "flight_fraction": 0.29524214103653357,
+     "flight_mean": 0.04208571428571432,
+     "duty": [
+      0.3491928632115548,
+      0.35938827527612577
+     ],
+     "pelvis_pitch_mean": 0.059,
+     "trunk_mean": {
+      "waist_yaw_joint": 0.002
+     },
+     "arm_ptp": {
+      "right_shoulder_pitch_joint": 1.135,
+      "right_elbow_joint": 1.376,
+      "left_shoulder_pitch_joint": 1.135,
+      "left_elbow_joint": 1.374
+     },
+     "cot": 1.0686884103705994,
+     "speed": 1.641675413015394
+    }
+   }
+  },
+  "T1_cf_x1p5ank_lag10ms": {
+   "scale": 1.5,
+   "act_tau": 0.01,
+   "rungs": [
+    {
+     "v": 1.0,
+     "ok": false,
+     "v_meas": [
+      0.9577,
+      0.9571
+     ],
+     "reasons": [
+      [],
+      []
+     ],
+     "evals": 1440,
+     "evals_to_first_valid_gen_res": null,
+     "stride": {
+      "tc": 0.14,
+      "tf": 0.075,
+      "h0": 0.4963,
+      "step_hz": 4.6512
+     },
+     "params": {
+      "amp": 1.0386982635783297,
+      "tscale": 0.9682291303583606,
+      "lean": -0.01956051537876817
+     },
+     "binding_torque_p95": [
+      [
+       "right_hip_pitch_joint",
+       1.0
+      ],
+      [
+       "right_hip_roll_joint",
+       1.0
+      ],
+      [
+       "right_hip_yaw_joint",
+       1.0
+      ],
+      [
+       "right_knee_joint",
+       1.0
+      ]
+     ],
+     "max_speed_ratio": [
+      [
+       "right_ankle_roll_joint",
+       1.015
+      ],
+      [
+       "left_ankle_roll_joint",
+       0.964
+      ],
+      [
+       "left_elbow_joint",
+       0.962
+      ]
+     ],
+     "technique": {
+      "cadence_hz": 8.771929824561395,
+      "stride_len": 0.21835753734837096,
+      "flight_fraction": 0.22689888727624577,
+      "flight_mean": 0.02560000000000002,
+      "duty": [
+       0.3996129656507015,
+       0.393807450411224
+      ],
+      "pelvis_pitch_mean": -0.003,
+      "trunk_mean": {
+       "waist_yaw_joint": -0.001
+      },
+      "arm_ptp": {
+       "right_shoulder_pitch_joint": 0.752,
+       "right_elbow_joint": 0.887,
+       "left_shoulder_pitch_joint": 0.749,
+       "left_elbow_joint": 0.875
+      },
+      "cot": 1.7434242200191814,
+      "speed": 0.957708497141977
+     }
+    }
+   ],
+   "top_valid": null
+  }
+ },
+ "ablation": {
+  "Apollo_lag2ms_v1.0_A_s0": {
+   "arm": "A",
+   "seed": 0,
+   "scale": 1.0,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    2.343,
+    2.456
+   ],
+   "reasons": [
+    [
+     "FELL"
+    ],
+    [
+     "FELL"
+    ]
+   ]
+  },
+  "Apollo_lag2ms_v1.0_A_s1": {
+   "arm": "A",
+   "seed": 1,
+   "scale": 1.0,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    2.181,
+    2.493
+   ],
+   "reasons": [
+    [
+     "FELL"
+    ],
+    [
+     "FELL"
+    ]
+   ]
+  },
+  "Apollo_lag2ms_v1.0_B_s0": {
+   "arm": "B",
+   "seed": 0,
+   "scale": 1.0,
+   "evals": 613,
+   "evals_to_first_valid": 2,
+   "best_speed": 1.3187199843015749,
+   "t_run": [
+    6.922,
+    6.922
+   ],
+   "reasons": [
+    [],
+    []
+   ]
+  },
+  "Apollo_lag2ms_v1.0_B_s1": {
+   "arm": "B",
+   "seed": 1,
+   "scale": 1.0,
+   "evals": 1441,
+   "evals_to_first_valid": 36,
+   "best_speed": 1.8940343620742428,
+   "t_run": [
+    7.251,
+    7.2505
+   ],
+   "reasons": [
+    [],
+    []
+   ]
+  },
+  "T1_cf_x1.5_lag2ms_v1.0_A_s0": {
+   "arm": "A",
+   "seed": 0,
+   "scale": 1.5,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    0.851,
+    0.864
+   ],
+   "reasons": [
+    [
+     "FELL"
+    ],
+    [
+     "FELL"
+    ]
+   ]
+  },
+  "T1_cf_x1.5_lag2ms_v1.0_A_s1": {
+   "arm": "A",
+   "seed": 1,
+   "scale": 1.5,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    1.058,
+    1.0645
+   ],
+   "reasons": [
+    [
+     "FELL"
+    ],
+    [
+     "FELL"
+    ]
+   ]
+  },
+  "T1_cf_x1.5_lag2ms_v1.0_B_s0": {
+   "arm": "B",
+   "seed": 0,
+   "scale": 1.5,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    1.045,
+    1.04
+   ],
+   "reasons": [
+    [
+     "FELL"
+    ],
+    [
+     "FELL"
+    ]
+   ]
+  },
+  "T1_cf_x1.5_lag2ms_v1.0_B_s1": {
+   "arm": "B",
+   "seed": 1,
+   "scale": 1.5,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    5.082,
+    5.0825
+   ],
+   "reasons": [
+    [],
+    []
+   ]
+  },
+  "T1_cf_x1.5ank_lag2ms_v1.0_A_s0": {
+   "arm": "A",
+   "seed": 0,
+   "scale": 1.5,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    1.3,
+    1.2965
+   ],
+   "reasons": [
+    [
+     "FELL"
+    ],
+    [
+     "FELL"
+    ]
+   ]
+  },
+  "T1_cf_x1.5ank_lag2ms_v1.0_A_s1": {
+   "arm": "A",
+   "seed": 1,
+   "scale": 1.5,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    0.769,
+    0.7675
+   ],
+   "reasons": [
+    [
+     "FELL"
+    ],
+    [
+     "FELL"
+    ]
+   ]
+  },
+  "T1_cf_x1.5ank_lag2ms_v1.0_B_s0": {
+   "arm": "B",
+   "seed": 0,
+   "scale": 1.5,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    4.24,
+    4.2545
+   ],
+   "reasons": [
+    [
+     "FELL",
+     "SLIP"
+    ],
+    [
+     "FELL",
+     "SLIP"
+    ]
+   ]
+  },
+  "T1_cf_x1.5ank_lag2ms_v1.0_B_s1": {
+   "arm": "B",
+   "seed": 1,
+   "scale": 1.5,
+   "evals": 1441,
+   "evals_to_first_valid": null,
+   "best_speed": null,
+   "t_run": [
+    5.218,
+    5.2185
+   ],
+   "reasons": [
+    [
+     "OVERSPEED",
+     "SLIP"
+    ],
+    [
+     "OVERSPEED",
+     "SLIP"
+    ]
+   ]
+  }
+ },
+ "movement_code_changes": "NONE. Registration only (names, ratings, feet, keyframe, contact pairs): src/heldout_onboard.py, additive entries in branch_i.ROBOTS, throw.CFG, sprint_ceiling.CHAINS, sprint.LEG/CENTRE/ARM. No _adapted variant was made: T1's failure is a body verdict (no scaffold stride at its MJCF ratings), probed with counterfactual bodies through the existing SCALE / SPRINT_SCALE_ANKLE switches.",
+ "notes": [
+  "pycma seed=0 means a time-based random seed: seed-0 runs (these and the G1/H1 ladders) are not bit-reproducible; the z vectors are stored and replay deterministically",
+  "Apollo omega is ASSUMED (G1/H1 power-per-kg rule); its result is conditional on that rule"
+ ]
+}

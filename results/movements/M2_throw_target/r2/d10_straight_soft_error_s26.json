@@ -1,0 +1,1115 @@
+{
+ "job": "M2_throw_target/r2",
+ "target": "d10_straight",
+ "spec": {
+  "dist": 10.0,
+  "az": 0.0
+ },
+ "target_xy": [
+  9.99856857033127,
+  -8.811907437622502e-07
+ ],
+ "stance_centre": [
+  -0.0014314296687286058,
+  -8.811907437622502e-07
+ ],
+ "seed": 26,
+ "sched": "0.02x40,0.01x20",
+ "mode": "soft",
+ "objective": "error",
+ "cone": null,
+ "loop_perts": [
+  201,
+  202,
+  203,
+  204
+ ],
+ "warm_from": "results/movements/M2_throw_target/r2/d10_straight_plain_error_s24.json",
+ "inversion": {
+  "speed": 9.031544505806426,
+  "elev": 0.7194598643517783,
+  "az": 0.0005479168250422171,
+  "R": 9.493872441177238,
+  "h": 1.2593285900563165
+ },
+ "secs": 659,
+ "stages": [
+  {
+   "stage": "warm",
+   "f_both": 1.683435956113756
+  },
+  {
+   "stage": 0,
+   "sigma": 0.02,
+   "iters": 40,
+   "seed": 26,
+   "loop_best": 0.1702337443109094,
+   "f_both": 0.1805433281445476,
+   "kept": true,
+   "reason_tally": {
+    "VALID": 3029,
+    "STANCE_LOST": 101,
+    "SLIP": 160
+   },
+   "max_valid_speed_seen": 9.688521245982777,
+   "secs": 442
+  },
+  {
+   "stage": 1,
+   "sigma": 0.01,
+   "iters": 20,
+   "seed": 27,
+   "loop_best": 0.17656077832254574,
+   "f_both": 0.1805433281445476,
+   "kept": false,
+   "reason_tally": {
+    "VALID": 1620,
+    "STANCE_LOST": 13,
+    "SLIP": 4
+   },
+   "max_valid_speed_seen": 9.59865848582324,
+   "secs": 165
+  }
+ ],
+ "f_both": 0.1805433281445476,
+ "hist": [
+  0.5249,
+  0.2013,
+  0.2013,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1821,
+  0.1799,
+  0.1799,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1702,
+  0.1788,
+  0.1788,
+  0.1788,
+  0.1788,
+  0.1788,
+  0.1788,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766,
+  0.1766
+ ],
+ "meas": [
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.1209019600502054,
+   "speed": 9.387115184305095,
+   "elev": 40.21991613101297,
+   "az": 1.1200902630792693,
+   "slip": 0.008863678352510704,
+   "overspeed": 1.0113325800232884,
+   "self_peak": 0.0
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.14325653552817463,
+   "speed": 9.393001087381583,
+   "elev": 40.48449166327957,
+   "az": 0.994752416773645,
+   "slip": 0.008235748295571605,
+   "overspeed": 1.0111050577342773,
+   "self_peak": 0.0
+  }
+ ],
+ "valid_both": true,
+ "speed_min": 9.387115184305095,
+ "found": {
+  "err": 0.12056067765685562,
+  "speed": 9.387115177841634,
+  "elev": 40.219914701054286,
+  "az": 1.1220458100420185,
+  "t_rel": 0.15277107336966178,
+  "release": {
+   "t": 0.153,
+   "palm_v": [
+    7.093750000341052,
+    0.1289445043020141,
+    6.097070878500139
+   ],
+   "ball_p": [
+    0.05809676144540441,
+    -0.3148336932820777,
+    1.0536046816234088
+   ],
+   "ball_v": [
+    7.16636049283032,
+    0.14035960276879567,
+    6.061477363710612
+   ],
+   "palm_p": [
+    0.05128150778782559,
+    -0.314564326365532,
+    1.0472795375747026
+   ]
+  },
+  "land": [
+   9.990332198338335,
+   -0.12027988672984115,
+   0.026934805651029306
+  ],
+  "amp": 0.6608651317219336,
+  "tscale": 0.8740251637006071,
+  "work": {
+   "elbow": 14.712478341585966,
+   "wrist": 0.557413385374044,
+   "trunk": 58.23552193698407,
+   "counter_arm": 6.353833628067102,
+   "shoulder": 46.99846569240797,
+   "legs": 144.30763281982004
+  },
+  "slip": 0.008863678718450852,
+  "overspeed": 1.0113325796504888,
+  "overspeed_by_joint": {
+   "right_shoulder_yaw_joint": 1.01
+  },
+  "reasons": [],
+  "valid": true,
+  "self_contact_peak": 0.0
+ },
+ "check_r1": {
+  "nominal": [
+   {
+    "dt": 0.001,
+    "valid_v1": true,
+    "reasons_v1": [],
+    "valid": true,
+    "reasons": [],
+    "err": 0.121,
+    "hit_v1": true,
+    "hit": true,
+    "speed": 9.387,
+    "elev": 40.22,
+    "az": 1.12,
+    "slip": 0.0089,
+    "self_peak": 0.0,
+    "draw": null
+   },
+   {
+    "dt": 0.0005,
+    "valid_v1": true,
+    "reasons_v1": [],
+    "valid": true,
+    "reasons": [],
+    "err": 0.143,
+    "hit_v1": true,
+    "hit": true,
+    "speed": 9.393,
+    "elev": 40.48,
+    "az": 1.0,
+    "slip": 0.0082,
+    "self_peak": 0.0,
+    "draw": null
+   }
+  ],
+  "nominal_valid_both": true,
+  "nominal_hit_both": true,
+  "perturbations": [
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.386,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.339,
+     "elev": 41.04,
+     "az": -0.37,
+     "slip": 0.0087,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0135094178774406,
+      "lag": 0.011823804989068187
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.39,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.357,
+     "elev": 41.36,
+     "az": -0.43,
+     "slip": 0.0076,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0135094178774406,
+      "lag": 0.011823804989068187
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.353,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.461,
+     "elev": 41.25,
+     "az": -0.06,
+     "slip": 0.0099,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0954169085702539,
+      "lag": 0.011914551151258407
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.377,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.478,
+     "elev": 41.55,
+     "az": -0.13,
+     "slip": 0.0091,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0954169085702539,
+      "lag": 0.011914551151258407
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.348,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.328,
+     "elev": 40.76,
+     "az": -0.05,
+     "slip": 0.0067,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9513332971983448,
+      "lag": 0.00983735480424738
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.386,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.318,
+     "elev": 40.86,
+     "az": -0.24,
+     "slip": 0.0069,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9513332971983448,
+      "lag": 0.00983735480424738
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.048,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.4,
+     "elev": 40.53,
+     "az": 1.55,
+     "slip": 0.0123,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0530187010539913,
+      "lag": 0.009513742626619965
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.068,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.39,
+     "elev": 40.66,
+     "az": 1.41,
+     "slip": 0.0106,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0530187010539913,
+      "lag": 0.009513742626619965
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.069,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.381,
+     "elev": 40.49,
+     "az": 1.41,
+     "slip": 0.0086,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0355440214747718,
+      "lag": 0.010449331531673125
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.087,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.38,
+     "elev": 40.56,
+     "az": 1.32,
+     "slip": 0.0078,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0355440214747718,
+      "lag": 0.010449331531673125
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.597,
+     "hit_v1": false,
+     "hit": false,
+     "speed": 9.411,
+     "elev": 41.83,
+     "az": -1.63,
+     "slip": 0.0084,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9647387915895482,
+      "lag": 0.011974638258856767
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.61,
+     "hit_v1": false,
+     "hit": false,
+     "speed": 9.409,
+     "elev": 41.93,
+     "az": -1.7,
+     "slip": 0.0077,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9647387915895482,
+      "lag": 0.011974638258856767
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.13,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.453,
+     "elev": 40.04,
+     "az": 2.06,
+     "slip": 0.0071,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.990222525994983,
+      "lag": 0.008583272344279188
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.109,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.448,
+     "elev": 40.19,
+     "az": 1.9,
+     "slip": 0.0066,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.990222525994983,
+      "lag": 0.008583272344279188
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.141,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.329,
+     "elev": 39.67,
+     "az": 1.56,
+     "slip": 0.0099,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9732766009259026,
+      "lag": 0.008586448536253349
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.13,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.338,
+     "elev": 39.8,
+     "az": 1.52,
+     "slip": 0.0093,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9732766009259026,
+      "lag": 0.008586448536253349
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.074,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.363,
+     "elev": 40.12,
+     "az": 1.54,
+     "slip": 0.0093,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9796904430267089,
+      "lag": 0.009059830134843894
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.095,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.366,
+     "elev": 40.38,
+     "az": 1.38,
+     "slip": 0.0087,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9796904430267089,
+      "lag": 0.009059830134843894
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.151,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.314,
+     "elev": 40.32,
+     "az": 1.76,
+     "slip": 0.0087,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0659229242611516,
+      "lag": 0.009313289803481483
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.163,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.308,
+     "elev": 40.39,
+     "az": 1.65,
+     "slip": 0.0074,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0659229242611516,
+      "lag": 0.009313289803481483
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.43,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.329,
+     "elev": 41.11,
+     "az": -0.58,
+     "slip": 0.0081,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9359438532264388,
+      "lag": 0.011058912109705069
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.461,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.324,
+     "elev": 41.28,
+     "az": -0.73,
+     "slip": 0.0083,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9359438532264388,
+      "lag": 0.011058912109705069
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.108,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.453,
+     "elev": 39.1,
+     "az": 1.54,
+     "slip": 0.0108,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0131071604259416,
+      "lag": 0.009564166467712569
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.144,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.47,
+     "elev": 39.3,
+     "az": 1.45,
+     "slip": 0.0106,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0131071604259416,
+      "lag": 0.009564166467712569
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.128,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.403,
+     "elev": 41.23,
+     "az": 1.08,
+     "slip": 0.0075,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9320369701305286,
+      "lag": 0.011241877802678475
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.155,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.4,
+     "elev": 41.37,
+     "az": 0.91,
+     "slip": 0.0079,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9320369701305286,
+      "lag": 0.011241877802678475
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.077,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.416,
+     "elev": 40.11,
+     "az": 1.43,
+     "slip": 0.0083,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9223656359282131,
+      "lag": 0.0108918248556385
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.106,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.427,
+     "elev": 40.48,
+     "az": 1.33,
+     "slip": 0.007,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 0.9223656359282131,
+      "lag": 0.0108918248556385
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.162,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.371,
+     "elev": 40.32,
+     "az": 0.93,
+     "slip": 0.0149,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.004106058232272,
+      "lag": 0.008634469862575633
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.171,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.369,
+     "elev": 40.37,
+     "az": 0.89,
+     "slip": 0.014,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.004106058232272,
+      "lag": 0.008634469862575633
+     }
+    }
+   ],
+   [
+    {
+     "dt": 0.001,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.152,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.433,
+     "elev": 39.76,
+     "az": 2.56,
+     "slip": 0.0083,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0385221401239328,
+      "lag": 0.01108644522590299
+     }
+    },
+    {
+     "dt": 0.0005,
+     "valid_v1": true,
+     "reasons_v1": [],
+     "valid": true,
+     "reasons": [],
+     "err": 0.15,
+     "hit_v1": true,
+     "hit": true,
+     "speed": 9.441,
+     "elev": 39.81,
+     "az": 2.52,
+     "slip": 0.0077,
+     "self_peak": 0.0,
+     "draw": {
+      "friction_scale": 1.0385221401239328,
+      "lag": 0.01108644522590299
+     }
+    }
+   ]
+  ],
+  "n_pert": 16,
+  "n_pass_v2": 15,
+  "n_pass_v1": 15,
+  "robust_v2": true,
+  "robust_v1": true,
+  "need": 12,
+  "seeds": [
+   101,
+   102,
+   103,
+   104,
+   105,
+   106,
+   107,
+   108,
+   109,
+   110,
+   111,
+   112,
+   113,
+   114,
+   115,
+   116
+  ],
+  "slip_fail_v2": 0,
+  "miss_v2": 1
+ },
+ "supplied": {
+  "body": "stock Menagerie G1 MJX (scene_mjx.xml) + a free 0.145 kg r 36.5 mm ball body; masses, geometry, joint ranges, rated speeds untouched",
+  "ratings": "min(MJCF peak, Unitree URDF effort, vendor published max 120 N m): knee 120, hip pitch/yaw/roll 88, ankle pitch/roll 35, waist yaw 88, waist roll/pitch 35, shoulders/elbow/wrist roll 25, wrist pitch/yaw 5 N m; held (undriven) joints capped the same",
+  "actuator": "first-order lag 10 ms, torque-speed droop to 0 at rated speed, back-EMF brake above rated, OVERSPEED gate 1.1x rated",
+  "contact": "stock MJX scene contact (foot-floor pairs solref 0.008, friction 1); ball geom solref 0.002 rigid; robot geoms contype 0 (released ball cannot touch the robot); solver iterations 50",
+  "attachment": "ball held by an ACTIVE WELD equality to right_wrist_yaw_link at the palm site (solref 0.002): labelled attachment, no grip-force limit; release = weld switched off at the searched release step",
+  "flight": "free-body flight in the full model during the 0.30 s follow-through, then the exact ball state continued in a ball+floor twin MuJoCo model (same dt); VACUUM (no drag) unless stated; landing = first floor contact of the ball",
+  "structure": "construct wind-up -> release reference (throw.windup_reference: capacity-weighted constrained Jacobian, t_w 0.40, t_ref 0.55, leg cap 0.30, 95% joint range) for the inverted direction; tracker omega 20 rad/s; knots 17x10 + release time + amplitude [0.2,1] + time scale [0.57,1.17] (EffectTask)",
+  "direction_rule": "ballistic inversion (vacuum) of the MINIMUM-SPEED trajectory from the reference's own release point to the target; two passes (bearing reference at 22.5 deg elev -> release point -> inverted direction -> reference -> release point -> inversion reported)",
+  "objective": "landing error (refine) or release speed in the target's own +-5 deg inversion cone (directed refine); soft robust refine: nominal hard + mean over 4 in-loop draws 201-204 soft (see _soft_agg); final selection on both dt",
+  "search": "R2: sigma SCHEDULE refine (general, same for every target): a sequence of CMA-ES stages with decreasing sigma (e.g. 0.03 then 0.01), each warm from the previous stage's best; a stage's result is kept only if its worse-of-both-dt score improves on the incumbent's. pycma seeds 21-39. Warm starts: stored ledgers (named in each ledger's warm_from), chosen by the operator from the R1 results before this round's prediction.",
+  "gates": "stance (both feet, cumulative unload < 20 ms), no fall, no non-foot contact, energy closure, overspeed 1.1x, foot slip <= 0.02 m, no robot self-contact > 1.0 N (R1), all through release + 0.3 s follow-through; fresh plants at 1 ms and 0.5 ms",
+  "robustness": "R1: 16 fresh draws (seeds 101-116) of the round-0 perturbation distribution at both dt; robust = nominal hit at both dt AND >= 12/16 draws pass at both dt; counted under v2 (START_NOT_AT_REST not applied to perturbed starts; it depends only on the draw) and v1",
+  "hit": "landing error <= 0.5 m (target circle 1.0 m diameter)"
+ },
+ "lag": 0.01,
+ "z": [
+  0.05309325559512223,
+  -0.9100067283095525,
+  -0.2690529842990608,
+  0.8617875738477356,
+  -0.6365457228318228,
+  -0.3236213688170193,
+  -0.5314142279936429,
+  -0.5634889455456062,
+  0.18402142709735506,
+  -0.9155958196590247,
+  -0.8508196555071057,
+  -0.18722210264118036,
+  0.10049060276463426,
+  0.0689271823808152,
+  0.07231195853001601,
+  -0.2968887012225292,
+  -0.21783964919295207,
+  -0.1945470030015465,
+  0.6852468249933862,
+  0.5300817617637107,
+  -0.14477219092334545,
+  -0.47732339544813335,
+  0.27239165229700624,
+  0.28090746895117574,
+  -0.03686320576893208,
+  -0.12260537942963384,
+  -0.08327901481632932,
+  0.6150726042084402,
+  -0.16396764177308998,
+  -0.07008998399802455,
+  -0.4185275515047128,
+  -0.40362523008434187,
+  0.09880224839003679,
+  0.12228344099341312,
+  -0.17427586296742625,
+  0.6780727722280763,
+  0.1504616062977014,
+  0.8059414884985402,
+  0.9621994257547688,
+  -0.4650775103444516,
+  0.38066589236171633,
+  0.7831510289656318,
+  -0.39449027090196187,
+  0.10834728445757687,
+  -0.6674524079929577,
+  -0.34038055383761956,
+  -0.40405394152621277,
+  -0.46758255334799537,
+  -0.2891235396500197,
+  -0.11347957849777902,
+  -0.10029355150934682,
+  0.1988633310572412,
+  0.013103487787255104,
+  0.15872033421664974,
+  0.3990173171115397,
+  0.2042598285309276,
+  -0.01844584774905191,
+  0.10338525716669704,
+  0.11798200894241945,
+  -0.43538965417611264,
+  0.39285546243334696,
+  0.1449956575876749,
+  0.028923335519112216,
+  0.03100319522137265,
+  -0.15697372425639336,
+  -0.11202368489725914,
+  -0.9961160369960452,
+  0.01893509462523349,
+  -0.4341101238191112,
+  0.9981977403336699,
+  0.580460442828949,
+  0.08399859028510147,
+  0.14781392494305887,
+  -0.45630511700104287,
+  -0.6307205240484355,
+  0.6066531040388378,
+  -0.9999941742374155,
+  0.38313883894156325,
+  0.10360315835919102,
+  0.3170790104182096,
+  0.15317081021398657,
+  0.9982895663683401,
+  0.8039116981004799,
+  0.3508414853004452,
+  0.6070742501247356,
+  0.7554381470771003,
+  -0.5807191048366538,
+  -0.45687386643257094,
+  -0.5063990787704736,
+  0.7568848272472776,
+  0.9536344658963493,
+  -0.4082789205867349,
+  0.049006859394527785,
+  0.27596765453357264,
+  0.1384868225955831,
+  0.025249357070061502,
+  -0.6386691130683152,
+  -0.780677452676863,
+  0.7906487555576405,
+  -0.6587014024367954,
+  -0.12744627843589734,
+  0.20524191986225163,
+  0.8888342752751347,
+  -0.9845083236043652,
+  -0.5217340126182904,
+  0.7973257394638927,
+  -0.9858382158274873,
+  -0.5329163356517447,
+  0.9309229082695999,
+  0.06916598922533934,
+  0.5770813870981296,
+  -0.9407075690462523,
+  -0.4982767645435881,
+  -0.15532825782097112,
+  -0.17888862446469586,
+  0.955641426648101,
+  0.2580939664297987,
+  -0.5375899379235272,
+  -0.8216254083960622,
+  -0.3901441826986867,
+  -0.9489523621697639,
+  0.04806965735070719,
+  0.8667233647339391,
+  0.06890813749139703,
+  -0.631876010637729,
+  -0.7679193734110137,
+  -0.31059667700156607,
+  0.7127694639551317,
+  -0.22040811513414038,
+  0.43583010332552724,
+  0.45641304175042163,
+  0.9188971136000968,
+  0.5363076531518386,
+  -0.29576785434425085,
+  -0.22085477055641464,
+  -0.3499113249159172,
+  0.616125270243258,
+  -0.9142598576189651,
+  0.20480842026003795,
+  0.4514471594777607,
+  -0.33099950917791676,
+  -0.022580965079510955,
+  0.5559306006309144,
+  0.9791380824532553,
+  0.8043904718819731,
+  0.30969251993878105,
+  0.7797197101442853,
+  0.8223386458027568,
+  -0.4820853073810666,
+  -0.6856388311432763,
+  0.5752534560800299,
+  -0.9725534681782808,
+  0.2523914282221116,
+  -0.23638553887513877,
+  0.07170216632042412,
+  -0.43223774718561253,
+  -0.8183636424142656,
+  0.3786365214044409,
+  -0.46970730114186077,
+  0.11007799127831538,
+  0.20921800816946606,
+  -0.7658892851562541,
+  0.7598605025893255,
+  0.0478571710276052,
+  0.560121106198156,
+  4.1389480060494144e-05,
+  -0.21968531122782603,
+  -0.4709791290930632,
+  0.18877585865631333,
+  0.7447526911090521,
+  -0.9914736204010407,
+  0.1521628293048337,
+  0.013417212335357592
+ ]
+}

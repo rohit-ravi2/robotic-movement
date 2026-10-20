@@ -1,0 +1,1395 @@
+meta:
+  name: Apollo
+  mjcf: results/heldout/models/scene_apollo_heldout.xml
+  total_mass: 80.89781590000003
+  n_actuated: 32
+  timestep: 0.005
+  units:
+    angle: radian
+    torque: N*m
+    ang_vel: rad/s
+    mass: kg
+  capacity_sets:
+    primary: peak
+    rationale: single published torque set (MJCF actuatorfrcrange)
+  heldout: true
+sources:
+  menagerie_apollo: MuJoCo Menagerie apptronik_apollo MJCF (derived copy results/heldout/models/scene_apollo_heldout.xml; names mapped, see src/heldout_onboard.py)
+  rule_power_per_kg: 'ASSUMPTION (no Apollo velocity limits published, 2026-10-16 search): rated power per body kg of the joint type = mean of
+    G1 and H1 URDF ratings'
+joints:
+  waist_yaw_joint:
+    range:
+      value:
+      - -0.829031
+      - 0.829031
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.231424
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - -1.0
+      tag: CITED
+      src: menagerie_apollo
+    group: waist
+    side: center
+    source_name: torso_yaw
+    tau_max:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 58.61
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 86.9 W/kg = mean G1/H1 tau*omega/M for type waist_yaw ({''G1'': 84.5,
+        ''H1'': 89.4})'
+    tau_max_continuous:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  waist_roll_joint:
+    range:
+      value:
+      - -0.20944
+      - 0.20944
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 1.56493
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: waist
+    side: center
+    source_name: torso_roll
+    tau_max:
+      value: 414.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 8.79
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 45.0 W/kg = mean G1/H1 tau*omega/M for type waist_roll ({''G1'': 45.0})'
+    tau_max_continuous:
+      value: 414.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 414.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  waist_pitch_joint:
+    range:
+      value:
+      - -0.305433
+      - 1.35263
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.970692
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: waist
+    side: center
+    source_name: torso_pitch
+    tau_max:
+      value: 315.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 11.55
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 45.0 W/kg = mean G1/H1 tau*omega/M for type waist_pitch ({''G1'': 45.0})'
+    tau_max_continuous:
+      value: 315.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 315.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  neck_yaw:
+    range:
+      value:
+      - -1.65806
+      - 1.65806
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.0368
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_apollo
+    group: neck
+    side: center
+    source_name: neck_yaw
+    tau_max:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 132.58
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type head ({''G1'': 27.7, ''H1'':
+        7.0})'
+    tau_max_continuous:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  neck_roll:
+    range:
+      value:
+      - -0.785398
+      - 0.785398
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.00305531
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: neck
+    side: center
+    source_name: neck_roll
+    tau_max:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 41.09
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type head ({''G1'': 27.7, ''H1'':
+        7.0})'
+    tau_max_continuous:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  neck_pitch:
+    range:
+      value:
+      - -0.261799
+      - 0.523599
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.00256298
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: neck
+    side: center
+    source_name: neck_pitch
+    tau_max:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 41.09
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type head ({''G1'': 27.7, ''H1'':
+        7.0})'
+    tau_max_continuous:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_shoulder_roll_joint:
+    range:
+      value:
+      - -0.122173
+      - 1.6057
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.0982771
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: shoulders
+    side: left
+    source_name: l_shoulder_aa
+    tau_max:
+      value: 78.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.02
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type shoulder_roll ({''G1'': 27.7,
+        ''H1'': 7.0})'
+    tau_max_continuous:
+      value: 78.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 78.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_shoulder_yaw_joint:
+    range:
+      value:
+      - -0.471239
+      - 0.471239
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.0823104
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_apollo
+    group: shoulders
+    side: left
+    source_name: l_shoulder_ie
+    tau_max:
+      value: 67.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 20.97
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type shoulder_yaw ({''G1'': 27.7,
+        ''H1'': 7.0})'
+    tau_max_continuous:
+      value: 67.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 67.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_shoulder_pitch_joint:
+    range:
+      value:
+      - -2.18166
+      - 0.610865
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.112768
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: shoulders
+    side: left
+    source_name: l_shoulder_fe
+    tau_max:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.33
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type shoulder_pitch ({''G1'': 27.7,
+        ''H1'': 7.0})'
+    tau_max_continuous:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_elbow_joint:
+    range:
+      value:
+      - -2.61799
+      - 0.174533
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.102645
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: elbows
+    side: left
+    source_name: l_elbow_fe
+    tau_max:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.33
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type elbow ({''G1'': 27.7, ''H1'':
+        7.0})'
+    tau_max_continuous:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_wrist_roll_joint:
+    range:
+      value:
+      - -1.65806
+      - 1.65806
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.0368
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_apollo
+    group: wrists
+    side: left
+    source_name: l_wrist_roll
+    tau_max:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 211.74
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 27.7 W/kg = mean G1/H1 tau*omega/M for type wrist_roll ({''G1'': 27.7})'
+    tau_max_continuous:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_wrist_yaw_joint:
+    range:
+      value:
+      - -0.698
+      - 0.698
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.00329371
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: wrists
+    side: left
+    source_name: l_wrist_yaw
+    tau_max:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 7.8
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 3.3 W/kg = mean G1/H1 tau*omega/M for type wrist_yaw ({''G1'': 3.3})'
+    tau_max_continuous:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_wrist_pitch_joint:
+    range:
+      value:
+      - -0.75
+      - 1.588
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.00288074
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: wrists
+    side: left
+    source_name: l_wrist_pitch
+    tau_max:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 7.8
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 3.3 W/kg = mean G1/H1 tau*omega/M for type wrist_pitch ({''G1'': 3.3})'
+    tau_max_continuous:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_shoulder_roll_joint:
+    range:
+      value:
+      - -1.6057
+      - 0.122173
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.098338
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: shoulders
+    side: right
+    source_name: r_shoulder_aa
+    tau_max:
+      value: 78.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.02
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type shoulder_roll ({''G1'': 27.7,
+        ''H1'': 7.0})'
+    tau_max_continuous:
+      value: 78.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 78.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_shoulder_yaw_joint:
+    range:
+      value:
+      - -0.471239
+      - 0.471239
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.0823191
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_apollo
+    group: shoulders
+    side: right
+    source_name: r_shoulder_ie
+    tau_max:
+      value: 67.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 20.97
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type shoulder_yaw ({''G1'': 27.7,
+        ''H1'': 7.0})'
+    tau_max_continuous:
+      value: 67.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 67.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_shoulder_pitch_joint:
+    range:
+      value:
+      - -2.18166
+      - 0.610865
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.112768
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: shoulders
+    side: right
+    source_name: r_shoulder_fe
+    tau_max:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.33
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type shoulder_pitch ({''G1'': 27.7,
+        ''H1'': 7.0})'
+    tau_max_continuous:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_elbow_joint:
+    range:
+      value:
+      - -2.61799
+      - 0.174533
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.102645
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: elbows
+    side: right
+    source_name: r_elbow_fe
+    tau_max:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.33
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 17.4 W/kg = mean G1/H1 tau*omega/M for type elbow ({''G1'': 27.7, ''H1'':
+        7.0})'
+    tau_max_continuous:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 114.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_wrist_roll_joint:
+    range:
+      value:
+      - -1.65806
+      - 1.65806
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.0368
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_apollo
+    group: wrists
+    side: right
+    source_name: r_wrist_roll
+    tau_max:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 211.74
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 27.7 W/kg = mean G1/H1 tau*omega/M for type wrist_roll ({''G1'': 27.7})'
+    tau_max_continuous:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 10.6
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_wrist_yaw_joint:
+    range:
+      value:
+      - -0.698
+      - 0.698
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.0032937
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: wrists
+    side: right
+    source_name: r_wrist_yaw
+    tau_max:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 7.8
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 3.3 W/kg = mean G1/H1 tau*omega/M for type wrist_yaw ({''G1'': 3.3})'
+    tau_max_continuous:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_wrist_pitch_joint:
+    range:
+      value:
+      - -1.588
+      - 0.75
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.00288075
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: wrists
+    side: right
+    source_name: r_wrist_pitch
+    tau_max:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 7.8
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 3.3 W/kg = mean G1/H1 tau*omega/M for type wrist_pitch ({''G1'': 3.3})'
+    tau_max_continuous:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 34.2
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_hip_yaw_joint:
+    range:
+      value:
+      - -0.567232
+      - 1.09083
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.231424
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_apollo
+    group: hips
+    side: left
+    source_name: l_hip_ie
+    tau_max:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 58.61
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 86.9 W/kg = mean G1/H1 tau*omega/M for type hip_yaw ({''G1'': 84.5, ''H1'':
+        89.4})'
+    tau_max_continuous:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_hip_roll_joint:
+    range:
+      value:
+      - -0.218166
+      - 0.741765
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.399395
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: hips
+    side: left
+    source_name: l_hip_aa
+    tau_max:
+      value: 494.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.25
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 111.4 W/kg = mean G1/H1 tau*omega/M for type hip_roll ({''G1'': 133.4,
+        ''H1'': 89.4})'
+    tau_max_continuous:
+      value: 494.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 494.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_hip_pitch_joint:
+    range:
+      value:
+      - -1.85005
+      - 0.476475
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.187096
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: hips
+    side: left
+    source_name: l_hip_fe
+    tau_max:
+      value: 342.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 20.57
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 86.9 W/kg = mean G1/H1 tau*omega/M for type hip_pitch ({''G1'': 84.5,
+        ''H1'': 89.4})'
+    tau_max_continuous:
+      value: 342.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 342.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_knee_joint:
+    range:
+      value:
+      - 0.0
+      - 2.61799
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.292264
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: knees
+    side: left
+    source_name: l_knee_fe
+    tau_max:
+      value: 336.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 19.87
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 82.5 W/kg = mean G1/H1 tau*omega/M for type knee ({''G1'': 83.4, ''H1'':
+        81.7})'
+    tau_max_continuous:
+      value: 336.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 336.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_ankle_roll_joint:
+    range:
+      value:
+      - -0.654498
+      - 0.305433
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.121874
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: ankles
+    side: left
+    source_name: l_ankle_ie
+    tau_max:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 30.33
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 45.0 W/kg = mean G1/H1 tau*omega/M for type ankle_roll ({''G1'': 45.0})'
+    tau_max_continuous:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  left_ankle_pitch_joint:
+    range:
+      value:
+      - -1.5708
+      - 0.436332
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.205456
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: ankles
+    side: left
+    source_name: l_ankle_pd
+    tau_max:
+      value: 150.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 14.02
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 26.0 W/kg = mean G1/H1 tau*omega/M for type ankle_pitch ({''G1'': 45.0,
+        ''H1'': 7.0})'
+    tau_max_continuous:
+      value: 150.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 150.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_hip_yaw_joint:
+    range:
+      value:
+      - -1.09083
+      - 0.567232
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.231424
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_apollo
+    group: hips
+    side: right
+    source_name: r_hip_ie
+    tau_max:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 58.61
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 86.9 W/kg = mean G1/H1 tau*omega/M for type hip_yaw ({''G1'': 84.5, ''H1'':
+        89.4})'
+    tau_max_continuous:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_hip_roll_joint:
+    range:
+      value:
+      - -0.741765
+      - 0.218166
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.399396
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: hips
+    side: right
+    source_name: r_hip_aa
+    tau_max:
+      value: 494.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.25
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 111.4 W/kg = mean G1/H1 tau*omega/M for type hip_roll ({''G1'': 133.4,
+        ''H1'': 89.4})'
+    tau_max_continuous:
+      value: 494.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 494.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_hip_pitch_joint:
+    range:
+      value:
+      - -1.85005
+      - 0.476475
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.187096
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: hips
+    side: right
+    source_name: r_hip_fe
+    tau_max:
+      value: 342.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 20.57
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 86.9 W/kg = mean G1/H1 tau*omega/M for type hip_pitch ({''G1'': 84.5,
+        ''H1'': 89.4})'
+    tau_max_continuous:
+      value: 342.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 342.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_knee_joint:
+    range:
+      value:
+      - 0.0
+      - 2.61799
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.292264
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: knees
+    side: right
+    source_name: r_knee_fe
+    tau_max:
+      value: 336.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 19.87
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 82.5 W/kg = mean G1/H1 tau*omega/M for type knee ({''G1'': 83.4, ''H1'':
+        81.7})'
+    tau_max_continuous:
+      value: 336.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 336.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_ankle_roll_joint:
+    range:
+      value:
+      - -0.305433
+      - 0.654498
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.121874
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: ankles
+    side: right
+    source_name: r_ankle_ie
+    tau_max:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 30.33
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 45.0 W/kg = mean G1/H1 tau*omega/M for type ankle_roll ({''G1'': 45.0})'
+    tau_max_continuous:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 120.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+  right_ankle_pitch_joint:
+    range:
+      value:
+      - -1.5708
+      - 0.436332
+      tag: CITED
+      src: menagerie_apollo
+    armature:
+      value: 0.205456
+      tag: CITED
+      src: menagerie_apollo
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_apollo
+    group: ankles
+    side: right
+    source_name: r_ankle_pd
+    tau_max:
+      value: 150.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 14.02
+      tag: ASSUMED
+      src: rule_power_per_kg
+      note: 'no published Apollo velocity limit; omega = k M / tau, k = 26.0 W/kg = mean G1/H1 tau*omega/M for type ankle_pitch ({''G1'': 45.0,
+        ''H1'': 7.0})'
+    tau_max_continuous:
+      value: 150.0
+      tag: CITED
+      src: menagerie_apollo
+      note: no separate continuous rating published
+    tau_max_peak:
+      value: 150.0
+      tag: CITED
+      src: menagerie_apollo
+      note: MJCF actuatorfrcrange
+joint_groups:
+  waist:
+  - waist_yaw_joint
+  - waist_roll_joint
+  - waist_pitch_joint
+  neck:
+  - neck_yaw
+  - neck_roll
+  - neck_pitch
+  shoulders:
+  - left_shoulder_roll_joint
+  - left_shoulder_yaw_joint
+  - left_shoulder_pitch_joint
+  - right_shoulder_roll_joint
+  - right_shoulder_yaw_joint
+  - right_shoulder_pitch_joint
+  elbows:
+  - left_elbow_joint
+  - right_elbow_joint
+  wrists:
+  - left_wrist_roll_joint
+  - left_wrist_yaw_joint
+  - left_wrist_pitch_joint
+  - right_wrist_roll_joint
+  - right_wrist_yaw_joint
+  - right_wrist_pitch_joint
+  hips:
+  - left_hip_yaw_joint
+  - left_hip_roll_joint
+  - left_hip_pitch_joint
+  - right_hip_yaw_joint
+  - right_hip_roll_joint
+  - right_hip_pitch_joint
+  knees:
+  - left_knee_joint
+  - right_knee_joint
+  ankles:
+  - left_ankle_roll_joint
+  - left_ankle_pitch_joint
+  - right_ankle_roll_joint
+  - right_ankle_pitch_joint

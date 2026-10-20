@@ -1,0 +1,1 @@
+H1 palm model copies: h1_palm.xml = menagerie h1.xml + <site name=right_palm pos=0.28 0 -0.015> in right_elbow_link; scene_palm.xml includes it. Installed copies live in models/mujoco_menagerie/unitree_h1/.

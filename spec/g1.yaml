@@ -1,0 +1,1400 @@
+meta:
+  name: G1
+  mjcf: <menagerie>/unitree_g1/scene_mjx.xml
+  urdf: /tmp/g1_29dof.urdf
+  total_mass: 33.341
+  n_actuated: 29
+  n_contact_pairs: 49
+  timestep: 0.004
+  units:
+    angle: radian
+    torque: N*m
+    ang_vel: rad/s
+    mass: kg
+  capacity_sets:
+    primary: peak
+    rationale: Two capacity sets are carried. PEAK comes from the Menagerie MJX MJCF (actuatorfrcrange); CONTINUOUS comes
+      from Unitree's manufacturer URDF (effort). For a ~0.25-0.4 s push-off the peak rating is the physically appropriate
+      one, because continuous ratings are thermally limited and a single explosive movement is thermally free. PEAK is primary;
+      CONTINUOUS is the conservative sensitivity bound. Every frontier is computed under both and the difference reported.
+      Velocity limits exist only in the URDF and are shared by both sets.
+    n_joints_differing: 8
+  mass_deviation:
+    model_kg: 33.341
+    manufacturer_published_kg: 35.0
+    tag: KNOWN_DEVIATION
+    note: Menagerie model is ~1.7 kg lighter than Unitree's published figure, likely missing battery or covers. Affects the
+      potential-energy term. GRF in body weights stays self-consistent because the model's own mass is used throughout.
+  scope:
+    value: full
+    note: G1 carries analytic frontier and all dynamic solves.
+sources:
+  unitree_urdf_g1_29dof: Unitree Robotics unitree_ros, g1_29dof.urdf (manufacturer URDF; effort and velocity limits)
+  menagerie_g1_mjx: MuJoCo Menagerie g1 MJCF (DeepMind-curated, derived from Unitree's published MJCF; MJX variant transferred
+    to hardware in MuJoCo Playground)
+joints:
+  left_hip_pitch_joint:
+    range:
+      value:
+      - -2.5307
+      - 2.8798
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.01017752004
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: hips
+    side: left
+    tau_max:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 32.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 88.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_hip_roll_joint:
+    range:
+      value:
+      - -0.5236
+      - 2.9671
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.025101925
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: hips
+    side: left
+    tau_max:
+      value: 139.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 32.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 88.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 139.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_hip_yaw_joint:
+    range:
+      value:
+      - -2.7576
+      - 2.7576
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.01017752004
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: hips
+    side: left
+    tau_max:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 32.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 88.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_knee_joint:
+    range:
+      value:
+      - -0.087267
+      - 2.8798
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.025101925
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: knees
+    side: left
+    tau_max:
+      value: 139.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 20.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 139.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 139.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_ankle_pitch_joint:
+    range:
+      value:
+      - -0.87267
+      - 0.5236
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00721945
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: ankles
+    side: left
+    tau_max:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 30.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 35.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_ankle_roll_joint:
+    range:
+      value:
+      - -0.2618
+      - 0.2618
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00721945
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: ankles
+    side: left
+    tau_max:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 30.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 35.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_hip_pitch_joint:
+    range:
+      value:
+      - -2.5307
+      - 2.8798
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.01017752004
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: hips
+    side: right
+    tau_max:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 32.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 88.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_hip_roll_joint:
+    range:
+      value:
+      - -2.9671
+      - 0.5236
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.025101925
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: hips
+    side: right
+    tau_max:
+      value: 139.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 32.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 88.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 139.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_hip_yaw_joint:
+    range:
+      value:
+      - -2.7576
+      - 2.7576
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.01017752004
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: hips
+    side: right
+    tau_max:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 32.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 88.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_knee_joint:
+    range:
+      value:
+      - -0.087267
+      - 2.8798
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.025101925
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: knees
+    side: right
+    tau_max:
+      value: 139.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 20.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 139.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 139.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_ankle_pitch_joint:
+    range:
+      value:
+      - -0.87267
+      - 0.5236
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00721945
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: ankles
+    side: right
+    tau_max:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 30.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 35.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_ankle_roll_joint:
+    range:
+      value:
+      - -0.2618
+      - 0.2618
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00721945
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: ankles
+    side: right
+    tau_max:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 30.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 35.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  waist_yaw_joint:
+    range:
+      value:
+      - -2.618
+      - 2.618
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.01017752004
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: waist
+    side: center
+    tau_max:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 32.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 88.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 88.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  waist_roll_joint:
+    range:
+      value:
+      - -0.52
+      - 0.52
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00721945
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: waist
+    side: center
+    tau_max:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 30.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 35.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  waist_pitch_joint:
+    range:
+      value:
+      - -0.52
+      - 0.52
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00721945
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: waist
+    side: center
+    tau_max:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 30.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 35.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 50.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_shoulder_pitch_joint:
+    range:
+      value:
+      - -3.0892
+      - 2.6704
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: shoulders
+    side: left
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_shoulder_roll_joint:
+    range:
+      value:
+      - -1.5882
+      - 2.2515
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: shoulders
+    side: left
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_shoulder_yaw_joint:
+    range:
+      value:
+      - -2.618
+      - 2.618
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: shoulders
+    side: left
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_elbow_joint:
+    range:
+      value:
+      - -1.0472
+      - 2.0944
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: elbows
+    side: left
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_wrist_roll_joint:
+    range:
+      value:
+      - -1.97222
+      - 1.97222
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: wrists
+    side: left
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_wrist_pitch_joint:
+    range:
+      value:
+      - -1.61443
+      - 1.61443
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00425
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: wrists
+    side: left
+    tau_max:
+      value: 5.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 22.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 5.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 5.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  left_wrist_yaw_joint:
+    range:
+      value:
+      - -1.61443
+      - 1.61443
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00425
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: wrists
+    side: left
+    tau_max:
+      value: 5.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 22.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 5.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 5.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_shoulder_pitch_joint:
+    range:
+      value:
+      - -3.0892
+      - 2.6704
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: shoulders
+    side: right
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_shoulder_roll_joint:
+    range:
+      value:
+      - -2.2515
+      - 1.5882
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: shoulders
+    side: right
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_shoulder_yaw_joint:
+    range:
+      value:
+      - -2.618
+      - 2.618
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: shoulders
+    side: right
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_elbow_joint:
+    range:
+      value:
+      - -1.0472
+      - 2.0944
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: elbows
+    side: right
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_wrist_roll_joint:
+    range:
+      value:
+      - -1.97222
+      - 1.97222
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.003609725
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: wrists
+    side: right
+    tau_max:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 37.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 25.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 25.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_wrist_pitch_joint:
+    range:
+      value:
+      - -1.61443
+      - 1.61443
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00425
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: wrists
+    side: right
+    tau_max:
+      value: 5.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 22.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 5.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 5.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+  right_wrist_yaw_joint:
+    range:
+      value:
+      - -1.61443
+      - 1.61443
+      tag: CITED
+      src: menagerie_g1_mjx
+    armature:
+      value: 0.00425
+      tag: CITED
+      src: menagerie_g1_mjx
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_g1_mjx
+    group: wrists
+    side: right
+    tau_max:
+      value: 5.0
+      tag: CITED
+      src: menagerie_g1
+      note: PRIMARY = peak; see meta.capacity_sets
+    omega_max:
+      value: 22.0
+      tag: CITED
+      src: unitree_urdf_g1_29dof
+    tau_max_continuous:
+      value: 5.0
+      tag: CITED
+      src: unitree_urdf_g1
+      note: URDF effort; thermally-limited continuous rating
+    tau_max_peak:
+      value: 5.0
+      tag: CITED
+      src: menagerie_g1
+      note: MJCF actuatorfrcrange; short-duration peak
+joint_groups:
+  ankles:
+  - left_ankle_pitch_joint
+  - left_ankle_roll_joint
+  - right_ankle_pitch_joint
+  - right_ankle_roll_joint
+  knees:
+  - left_knee_joint
+  - right_knee_joint
+  hips:
+  - left_hip_pitch_joint
+  - left_hip_roll_joint
+  - left_hip_yaw_joint
+  - right_hip_pitch_joint
+  - right_hip_roll_joint
+  - right_hip_yaw_joint
+  waist:
+  - waist_pitch_joint
+  - waist_roll_joint
+  - waist_yaw_joint
+  shoulders:
+  - left_shoulder_pitch_joint
+  - left_shoulder_roll_joint
+  - left_shoulder_yaw_joint
+  - right_shoulder_pitch_joint
+  - right_shoulder_roll_joint
+  - right_shoulder_yaw_joint
+  elbows:
+  - left_elbow_joint
+  - right_elbow_joint
+  wrists:
+  - left_wrist_pitch_joint
+  - left_wrist_roll_joint
+  - left_wrist_yaw_joint
+  - right_wrist_pitch_joint
+  - right_wrist_roll_joint
+  - right_wrist_yaw_joint
+bodies:
+  pelvis:
+    mass: 3.813
+    inertia:
+    - 0.010549
+    - 0.0093089
+    - 0.0079184
+  left_hip_pitch_link:
+    mass: 1.35
+    inertia:
+    - 0.0018152
+    - 0.0015342
+    - 0.0011621
+  left_hip_roll_link:
+    mass: 1.52
+    inertia:
+    - 0.0025499
+    - 0.0024117
+    - 0.0014876
+  left_hip_yaw_link:
+    mass: 1.702
+    inertia:
+    - 0.0077617
+    - 0.0071757
+    - 0.0016014
+  left_knee_link:
+    mass: 1.932
+    inertia:
+    - 0.0113804
+    - 0.0112778
+    - 0.0014646
+  left_ankle_pitch_link:
+    mass: 0.074
+    inertia:
+    - 1.89e-05
+    - 1.41e-05
+    - 6.9e-06
+  left_ankle_roll_link:
+    mass: 0.608
+    inertia:
+    - 0.0016722
+    - 0.0016161
+    - 0.0002176
+  right_hip_pitch_link:
+    mass: 1.35
+    inertia:
+    - 0.0018152
+    - 0.0015342
+    - 0.0011621
+  right_hip_roll_link:
+    mass: 1.52
+    inertia:
+    - 0.0025499
+    - 0.0024117
+    - 0.0014876
+  right_hip_yaw_link:
+    mass: 1.702
+    inertia:
+    - 0.0077617
+    - 0.0071757
+    - 0.0016014
+  right_knee_link:
+    mass: 1.932
+    inertia:
+    - 0.011374
+    - 0.0112843
+    - 0.0014645
+  right_ankle_pitch_link:
+    mass: 0.074
+    inertia:
+    - 1.89e-05
+    - 1.41e-05
+    - 6.9e-06
+  right_ankle_roll_link:
+    mass: 0.608
+    inertia:
+    - 0.0016722
+    - 0.0016161
+    - 0.0002176
+  waist_yaw_link:
+    mass: 0.214
+    inertia:
+    - 0.0001635
+    - 0.0001077
+    - 0.0001022
+  waist_roll_link:
+    mass: 0.086
+    inertia:
+    - 8.2e-06
+    - 7.1e-06
+    - 6.3e-06
+  torso_link:
+    mass: 7.818
+    inertia:
+    - 0.121847
+    - 0.109825
+    - 0.0273735
+  left_shoulder_pitch_link:
+    mass: 0.718
+    inertia:
+    - 0.0004659
+    - 0.0004328
+    - 0.0004064
+  left_shoulder_roll_link:
+    mass: 0.643
+    inertia:
+    - 0.0006913
+    - 0.000618
+    - 0.000389
+  left_shoulder_yaw_link:
+    mass: 0.734
+    inertia:
+    - 0.0010619
+    - 0.0010322
+    - 0.0004007
+  left_elbow_link:
+    mass: 0.6
+    inertia:
+    - 0.000443
+    - 0.0004216
+    - 0.0002594
+  left_wrist_roll_link:
+    mass: 0.08544
+    inertia:
+    - 5.48e-05
+    - 4.97e-05
+    - 3.58e-05
+  left_wrist_pitch_link:
+    mass: 0.48405
+    inertia:
+    - 0.0004304
+    - 0.0004299
+    - 0.0001646
+  left_wrist_yaw_link:
+    mass: 0.25458
+    inertia:
+    - 0.0006461
+    - 0.00056
+    - 0.0001476
+  right_shoulder_pitch_link:
+    mass: 0.718
+    inertia:
+    - 0.0004659
+    - 0.0004328
+    - 0.0004064
+  right_shoulder_roll_link:
+    mass: 0.643
+    inertia:
+    - 0.0006913
+    - 0.000618
+    - 0.000389
+  right_shoulder_yaw_link:
+    mass: 0.734
+    inertia:
+    - 0.0010619
+    - 0.0010322
+    - 0.0004007
+  right_elbow_link:
+    mass: 0.6
+    inertia:
+    - 0.000443
+    - 0.0004216
+    - 0.0002594
+  right_wrist_roll_link:
+    mass: 0.08544
+    inertia:
+    - 5.48e-05
+    - 4.97e-05
+    - 3.58e-05
+  right_wrist_pitch_link:
+    mass: 0.48405
+    inertia:
+    - 0.0004304
+    - 0.0004299
+    - 0.0001646
+  right_wrist_yaw_link:
+    mass: 0.25458
+    inertia:
+    - 0.0006461
+    - 0.00056
+    - 0.0001476
+foot_contact: []
+run_config:
+  locked_for_jump:
+    value:
+    - wrist
+    tag: DECISION
+    note: wrists locked at neutral; not under study for a jump
+  bilateral_symmetry:
+    value: true
+    tag: DECISION
+    note: left/right mirrored for the jump task
+known_omissions:
+- series elasticity (electric actuators; this is subject matter, not a deficiency)
+- actuator thermal derating
+- gearbox backlash/friction beyond MJCF frictionloss
+- battery/electrical power ceiling across all joints simultaneously

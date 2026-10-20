@@ -1,0 +1,819 @@
+{
+ "ledger": "g5_0_s1.json",
+ "cfg": "g5_0",
+ "seed": 1,
+ "phys": 3,
+ "perturbations": {
+  "joint_mrad": 2.0,
+  "ball_xy_m": 0.005,
+  "ball_mass_rel": 0.03,
+  "roll_rel": 0.2,
+  "z_sigma": 0.02
+ },
+ "seed_base": 911000,
+ "draws": [
+  {
+   "draw": 0,
+   "perturbation": {
+    "ball_dxy": [
+     -0.006677921841823783,
+     0.002041963729164714
+    ],
+    "mass_x": 0.9960873593323961,
+    "roll_x": 1.0637173853529134,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.852,
+     "goal_u": 0.21642845912433042,
+     "goal_z": 0.10998930956807153,
+     "slip": 0.005,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7668286031751017,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.377608164583264,
+     "rec_fell": true,
+     "rec_t_fall": 0.619,
+     "rec_travel": 0.1247146738943721,
+     "rec_t_touchdown": 0.064
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.958,
+     "goal_u": 0.21050601251878925,
+     "goal_z": 0.11000404834375457,
+     "slip": 0.0048,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7977125711590543,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.3755526603073793,
+     "rec_fell": true,
+     "rec_t_fall": 0.6125,
+     "rec_travel": 0.12462243560097912,
+     "rec_t_touchdown": 0.0645
+    }
+   ]
+  },
+  {
+   "draw": 1,
+   "perturbation": {
+    "ball_dxy": [
+     0.0021640494559193634,
+     -0.00044914458801492647
+    ],
+    "mass_x": 1.004618914830341,
+    "roll_x": 0.8912201806947906,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.865,
+     "goal_u": -0.09287756549487224,
+     "goal_z": 0.11000773885318735,
+     "slip": 0.0055,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.805846093375513,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.3697599431445726,
+     "rec_fell": true,
+     "rec_t_fall": 0.618,
+     "rec_travel": 0.18856921058842868,
+     "rec_t_touchdown": 0.067
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.948,
+     "goal_u": -0.12808693199747587,
+     "goal_z": 0.10999639827251453,
+     "slip": 0.0053,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.8435366595236973,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.3840232538393895,
+     "rec_fell": true,
+     "rec_t_fall": 0.629,
+     "rec_travel": 0.1772143271331951,
+     "rec_t_touchdown": 0.068
+    }
+   ]
+  },
+  {
+   "draw": 2,
+   "perturbation": {
+    "ball_dxy": [
+     0.003810931877758472,
+     0.003449771248736968
+    ],
+    "mass_x": 0.9858824284956913,
+    "roll_x": 0.8224303826583061,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.815,
+     "goal_u": 0.29092914351632543,
+     "goal_z": 0.1099939142776896,
+     "slip": 0.0089,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.6153283936742617,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.2799975606359133,
+     "rec_fell": true,
+     "rec_t_fall": 0.589,
+     "rec_travel": 0.13802334762462348,
+     "rec_t_touchdown": 0.052000000000000005
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.887,
+     "goal_u": 0.26925973922565793,
+     "goal_z": 0.10999524073513064,
+     "slip": 0.0088,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.6382925472972169,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.3486598553557956,
+     "rec_fell": true,
+     "rec_t_fall": 0.583,
+     "rec_travel": 0.14114432358726525,
+     "rec_t_touchdown": 0.052000000000000005
+    }
+   ]
+  },
+  {
+   "draw": 3,
+   "perturbation": {
+    "ball_dxy": [
+     -0.010154943658428837,
+     0.00014805081769093923
+    ],
+    "mass_x": 0.9758427524487391,
+    "roll_x": 0.8913824109834876,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.899,
+     "goal_u": 0.08142756930965787,
+     "goal_z": 0.10998963383732797,
+     "slip": 0.0058,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.8368315313017487,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.2600838508196823,
+     "rec_fell": true,
+     "rec_t_fall": 0.588,
+     "rec_travel": 0.13491887991967408,
+     "rec_t_touchdown": 0.059000000000000004
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.933,
+     "goal_u": 0.1827608661616765,
+     "goal_z": 0.1100016019769358,
+     "slip": 0.0052,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.8793835221635693,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.3333296201445852,
+     "rec_fell": true,
+     "rec_t_fall": 0.587,
+     "rec_travel": 0.13424293956830305,
+     "rec_t_touchdown": 0.06
+    }
+   ]
+  },
+  {
+   "draw": 4,
+   "perturbation": {
+    "ball_dxy": [
+     0.005992921392084383,
+     -0.001208518095322337
+    ],
+    "mass_x": 1.029412487927942,
+    "roll_x": 1.0699067419414774,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.915,
+     "goal_u": 0.3548837694367986,
+     "goal_z": 0.11001345729641433,
+     "slip": 0.0052,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.8310529383040737,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4026996370537543,
+     "rec_fell": true,
+     "rec_t_fall": 0.5640000000000001,
+     "rec_travel": 0.17349212689196855,
+     "rec_t_touchdown": 0.06
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.962,
+     "goal_u": 0.44730572199337404,
+     "goal_z": 0.10999126782567568,
+     "slip": 0.0056,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.873687876141217,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4045272457305977,
+     "rec_fell": true,
+     "rec_t_fall": 0.5605,
+     "rec_travel": 0.18059934189483748,
+     "rec_t_touchdown": 0.0605
+    }
+   ]
+  },
+  {
+   "draw": 5,
+   "perturbation": {
+    "ball_dxy": [
+     0.0016704534926676605,
+     0.003879541095378568
+    ],
+    "mass_x": 0.9873145155434755,
+    "roll_x": 0.9219877928374741,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.91,
+     "goal_u": 0.13239844364761452,
+     "goal_z": 0.10996023456154469,
+     "slip": 0.0113,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.6343341791634429,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.3768726863309002,
+     "rec_fell": true,
+     "rec_t_fall": 0.5730000000000001,
+     "rec_travel": 0.13037449792561204,
+     "rec_t_touchdown": 0.057
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.959,
+     "goal_u": 0.20426616996720995,
+     "goal_z": 0.10999861918299664,
+     "slip": 0.0092,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.6619292557527249,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.5078813669946476,
+     "rec_fell": true,
+     "rec_t_fall": 0.5690000000000001,
+     "rec_travel": 0.13995463163857774,
+     "rec_t_touchdown": 0.0575
+    }
+   ]
+  },
+  {
+   "draw": 6,
+   "perturbation": {
+    "ball_dxy": [
+     -0.00234416213707183,
+     0.006063582063140378
+    ],
+    "mass_x": 1.02448402746662,
+    "roll_x": 1.1598832903781913,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.965,
+     "goal_u": 0.25000146961568115,
+     "goal_z": 0.11001608485210287,
+     "slip": 0.0065,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7099304548181652,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.424327715223791,
+     "rec_fell": true,
+     "rec_t_fall": 0.559,
+     "rec_travel": 0.14685651421212853,
+     "rec_t_touchdown": 0.068
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 5.029,
+     "goal_u": 0.27371986876478355,
+     "goal_z": 0.11000627955485376,
+     "slip": 0.0055,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7340029012099112,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4994328644717172,
+     "rec_fell": true,
+     "rec_t_fall": 0.556,
+     "rec_travel": 0.15476601262188897,
+     "rec_t_touchdown": 0.068
+    }
+   ]
+  },
+  {
+   "draw": 7,
+   "perturbation": {
+    "ball_dxy": [
+     0.00494959224731079,
+     0.003903834945048312
+    ],
+    "mass_x": 1.0079048421758707,
+    "roll_x": 1.1332729128239223,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.879,
+     "goal_u": 0.40325970604378203,
+     "goal_z": 0.1100176257044212,
+     "slip": 0.0053,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.6384689627943554,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.543882970397662,
+     "rec_fell": true,
+     "rec_t_fall": 0.594,
+     "rec_travel": 0.124173186250824,
+     "rec_t_touchdown": 0.052000000000000005
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.927,
+     "goal_u": 0.4662494489613325,
+     "goal_z": 0.10999205304466285,
+     "slip": 0.005,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.6671171140402983,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.5592047654875165,
+     "rec_fell": true,
+     "rec_t_fall": 0.5855,
+     "rec_travel": 0.12399035420939884,
+     "rec_t_touchdown": 0.053
+    }
+   ]
+  },
+  {
+   "draw": 8,
+   "perturbation": {
+    "ball_dxy": [
+     0.005937133748133372,
+     0.005825707702091457
+    ],
+    "mass_x": 1.0153084241486374,
+    "roll_x": 0.9094698847615661,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.834,
+     "goal_u": 0.4111202408152364,
+     "goal_z": 0.11002131285004317,
+     "slip": 0.0045,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.8130669905203853,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.378944151918559,
+     "rec_fell": true,
+     "rec_t_fall": 0.588,
+     "rec_travel": 0.17483251698654517,
+     "rec_t_touchdown": 0.064
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.851,
+     "goal_u": 0.48323102363720805,
+     "goal_z": 0.10999102432661675,
+     "slip": 0.0044,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.8451697239585041,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4639227387521088,
+     "rec_fell": true,
+     "rec_t_fall": 0.585,
+     "rec_travel": 0.16470074327231157,
+     "rec_t_touchdown": 0.0645
+    }
+   ]
+  },
+  {
+   "draw": 9,
+   "perturbation": {
+    "ball_dxy": [
+     0.002499370528655901,
+     0.004535843398037471
+    ],
+    "mass_x": 0.9701803688347985,
+    "roll_x": 0.9945291344533866,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.906,
+     "goal_u": 0.10489344952932575,
+     "goal_z": 0.10999501998223415,
+     "slip": 0.0055,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7547237629297684,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4009147554020347,
+     "rec_fell": true,
+     "rec_t_fall": 0.607,
+     "rec_travel": 0.12300355372112658,
+     "rec_t_touchdown": 0.061
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.975,
+     "goal_u": 0.1277240276321564,
+     "goal_z": 0.11000410622957492,
+     "slip": 0.0054,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7878487978725518,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4537069536051443,
+     "rec_fell": true,
+     "rec_t_fall": 0.603,
+     "rec_travel": 0.1256491333808608,
+     "rec_t_touchdown": 0.062
+    }
+   ]
+  },
+  {
+   "draw": 10,
+   "perturbation": {
+    "ball_dxy": [
+     -0.004829520886412297,
+     0.004961017273529785
+    ],
+    "mass_x": 0.9867982761630193,
+    "roll_x": 0.8160829861953336,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 5.014,
+     "goal_u": 0.11632548838567659,
+     "goal_z": 0.10997791219031186,
+     "slip": 0.0075,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7057430838278947,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.5767446978847486,
+     "rec_fell": true,
+     "rec_t_fall": 0.557,
+     "rec_travel": 0.15756919368308164,
+     "rec_t_touchdown": 0.06
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 5.083,
+     "goal_u": 0.09437807180289319,
+     "goal_z": 0.11000633226384592,
+     "slip": 0.0063,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7316470636363194,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4385483902229814,
+     "rec_fell": true,
+     "rec_t_fall": 0.541,
+     "rec_travel": 0.2120721751882447,
+     "rec_t_touchdown": 0.0605
+    }
+   ]
+  },
+  {
+   "draw": 11,
+   "perturbation": {
+    "ball_dxy": [
+     0.00654923197925061,
+     0.007388124516218769
+    ],
+    "mass_x": 0.9748316254634715,
+    "roll_x": 1.1640371126671305,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.821,
+     "goal_u": 0.5590297378828811,
+     "goal_z": 0.10999927175018022,
+     "slip": 0.005,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.47282327857423245,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 0.9144472976079099,
+     "rec_fell": true,
+     "rec_t_fall": 0.5710000000000001,
+     "rec_travel": 0.21368839572551807,
+     "rec_t_touchdown": 0.065
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.874,
+     "goal_u": 0.5901392571628419,
+     "goal_z": 0.11000391054607041,
+     "slip": 0.005,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.5117525718135365,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4794121872262458,
+     "rec_fell": true,
+     "rec_t_fall": 0.5795,
+     "rec_travel": 0.16819695414078895,
+     "rec_t_touchdown": 0.0655
+    }
+   ]
+  },
+  {
+   "draw": 12,
+   "perturbation": {
+    "ball_dxy": [
+     -0.006714588669323878,
+     -0.0005865227938940961
+    ],
+    "mass_x": 1.0125563169423226,
+    "roll_x": 0.8381262831152722,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 5.007,
+     "goal_u": -0.14685973284783546,
+     "goal_z": 0.11001623438100794,
+     "slip": 0.0052,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.8684694574936115,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.5683232906600386,
+     "rec_fell": true,
+     "rec_t_fall": 0.594,
+     "rec_travel": 0.12443560927633147,
+     "rec_t_touchdown": 0.063
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 5.119,
+     "goal_u": -0.1368098982389889,
+     "goal_z": 0.10999461670517664,
+     "slip": 0.0053,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.9051313110363566,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.639078739164342,
+     "rec_fell": true,
+     "rec_t_fall": 0.594,
+     "rec_travel": 0.13732773406860302,
+     "rec_t_touchdown": 0.0635
+    }
+   ]
+  },
+  {
+   "draw": 13,
+   "perturbation": {
+    "ball_dxy": [
+     -0.004969775404331075,
+     0.005860079987231654
+    ],
+    "mass_x": 1.0140407725762723,
+    "roll_x": 1.0465563511817986,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.918,
+     "goal_u": 0.24317102519116854,
+     "goal_z": 0.11000377691758198,
+     "slip": 0.0085,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7287100949181459,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.396973374481312,
+     "rec_fell": true,
+     "rec_t_fall": 0.578,
+     "rec_travel": 0.17590836716912472,
+     "rec_t_touchdown": 0.057
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 5.019,
+     "goal_u": 0.1569612265234629,
+     "goal_z": 0.11000598979452199,
+     "slip": 0.0076,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7563240955920646,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.41991080846274,
+     "rec_fell": true,
+     "rec_t_fall": 0.5765,
+     "rec_travel": 0.15672072585687444,
+     "rec_t_touchdown": 0.0575
+    }
+   ]
+  },
+  {
+   "draw": 14,
+   "perturbation": {
+    "ball_dxy": [
+     -0.007109917000238937,
+     0.00405821469907932
+    ],
+    "mass_x": 1.0043800100941709,
+    "roll_x": 1.1513828855468848,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.808,
+     "goal_u": 0.017368082653469286,
+     "goal_z": 0.1100190617734848,
+     "slip": 0.0085,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7233223087693927,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.3484700517877237,
+     "rec_fell": true,
+     "rec_t_fall": 0.59,
+     "rec_travel": 0.14721984280511646,
+     "rec_t_touchdown": 0.057
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.918,
+     "goal_u": 0.01094718694275964,
+     "goal_z": 0.11000636106074241,
+     "slip": 0.0089,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.7528677448585903,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4115216997981448,
+     "rec_fell": true,
+     "rec_t_fall": 0.5905,
+     "rec_travel": 0.13744739235337813,
+     "rec_t_touchdown": 0.057
+    }
+   ]
+  },
+  {
+   "draw": 15,
+   "perturbation": {
+    "ball_dxy": [
+     0.0010721217058240016,
+     -0.0029832286635448953
+    ],
+    "mass_x": 0.9934219846165184,
+    "roll_x": 1.1982081137788965,
+    "joint_mrad": 2.0,
+    "z_sigma": 0.02
+   },
+   "both_dt": true,
+   "runs": [
+    {
+     "dt": 0.001,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.803,
+     "goal_u": -0.22681756377706633,
+     "goal_z": 0.10998245266937133,
+     "slip": 0.0079,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.827108225153961,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.1629395308213295,
+     "rec_fell": true,
+     "rec_t_fall": 0.615,
+     "rec_travel": 0.11518536135487929,
+     "rec_t_touchdown": 0.053
+    },
+    {
+     "dt": 0.0005,
+     "valid": true,
+     "reasons": [],
+     "ball_speed": 4.933,
+     "goal_u": -0.31919489358907754,
+     "goal_z": 0.11000540982457511,
+     "slip": 0.0079,
+     "cont_contacts": 0,
+     "lim_kick_deg": 0.864594558386266,
+     "lim_kick_joint": "right_ankle_pitch_joint",
+     "lim_rec_deg": 1.4468331044873963,
+     "rec_fell": true,
+     "rec_t_fall": 0.6055,
+     "rec_travel": 0.11379494092517674,
+     "rec_t_touchdown": 0.0525
+    }
+   ]
+  }
+ ],
+ "n_pass": 16,
+ "n": 16,
+ "robust": true
+}

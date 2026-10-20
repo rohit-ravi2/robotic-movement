@@ -1,0 +1,4298 @@
+{
+ "path": "results/movements/M2_throw_target/r2/d15_straight_soft_error_s50.json",
+ "rows": [
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.41593438614323364,
+   "speed": 11.514569529167792,
+   "elev": 43.02029476728883,
+   "az": 0.3073323180143099,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.619782123124764,
+    -0.1718212553872317,
+    0.02556767218211914
+   ],
+   "palm_speed": 11.456146200947202,
+   "release_height": 1.1492267166817807,
+   "slip_rollout": 0.018144144145618952,
+   "slip_monitor": 0.018144144145618952,
+   "unload_s_monitor": [
+    0.006,
+    0.015
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6188262491769374,
+   "grip_peak_N": 51.930605462907266,
+   "grip_at_release_N": 47.13713056444974,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.027943821268847535,
+   "overspeed": 0.9877623638811069,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.711
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.659
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.98
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.25
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.895,
+     0.274
+    ],
+    [
+     "left_knee_joint",
+     0.823,
+     0.394
+    ]
+   ],
+   "ballistic_land": [
+    14.621004196578657,
+    -0.1718109192225486
+   ],
+   "ballistic_vs_sim_m": 0.0012221171641901654,
+   "ballistic_err_to_target": 0.41481748455880446,
+   "work": {
+    "trunk": 79.2214173199431,
+    "legs": 120.44007943781521,
+    "shoulder": 52.22963293542445,
+    "wrist": 0.8125326534036622,
+    "counter_arm": 7.818270546898107,
+    "elbow": 21.48310675345177
+   },
+   "closure": -3.2719714219555165,
+   "W_act": 50.70884578935534,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000000114,
+   "ball_mass": 0.145,
+   "self_peak_rollout": 0.0,
+   "pert": null,
+   "pert_draw": null,
+   "secs": 0.3,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.4460905908316849,
+   "speed": 11.507441876255003,
+   "elev": 43.541075577542365,
+   "az": 0.30175224100044,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.587971000704933,
+    -0.17437533759278126,
+    0.031464135021656015
+   ],
+   "palm_speed": 11.446493979090668,
+   "release_height": 1.1428347674062438,
+   "slip_rollout": 0.017862350909806524,
+   "slip_monitor": 0.017862350909806524,
+   "unload_s_monitor": [
+    0.006,
+    0.013000000000000001
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6190619440720638,
+   "grip_peak_N": 50.627947324163245,
+   "grip_at_release_N": 47.32190550288153,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.02675176978367233,
+   "overspeed": 0.986276884038063,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.714
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.662
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.983
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.251
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.899,
+     0.266
+    ],
+    [
+     "right_elbow_joint",
+     0.824,
+     0.973
+    ]
+   ],
+   "ballistic_land": [
+    14.591625932290615,
+    -0.17435542198169868
+   ],
+   "ballistic_vs_sim_m": 0.0036549858450592933,
+   "ballistic_err_to_target": 0.44272092400282254,
+   "work": {
+    "trunk": 78.66223184781121,
+    "legs": 118.8184554922272,
+    "shoulder": 51.41259613536457,
+    "wrist": 0.7542859254112387,
+    "counter_arm": 7.6776518070469155,
+    "elbow": 21.54169955373175
+   },
+   "closure": -4.17471757301081,
+   "W_act": 51.966660040386934,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.145,
+   "self_peak_rollout": 0.0,
+   "pert": null,
+   "pert_draw": null,
+   "secs": 0.4,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 1.4574338703507805,
+   "speed": 11.365142346982424,
+   "elev": 46.75199157110001,
+   "az": -3.60364372481131,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.087270858134282,
+    -1.1373882233878467,
+    0.022396365350314036
+   ],
+   "palm_speed": 11.305149830890203,
+   "release_height": 1.1340006315367162,
+   "slip_rollout": 0.0188852008797465,
+   "slip_monitor": 0.0188852008797465,
+   "unload_s_monitor": [
+    0.011,
+    0.018000000000000002
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6182335146404419,
+   "grip_peak_N": 349.6387889278981,
+   "grip_at_release_N": 47.26109760050363,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.031195280026688144,
+   "overspeed": 1.0044725150575424,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.711
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.647
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.988
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.248
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.884,
+     0.286
+    ],
+    [
+     "left_knee_joint",
+     0.82,
+     0.4
+    ]
+   ],
+   "ballistic_land": [
+    14.08642256456405,
+    -1.1373370026452412
+   ],
+   "ballistic_vs_sim_m": 0.0008498385410011202,
+   "ballistic_err_to_target": 1.4579244798693296,
+   "work": {
+    "trunk": 80.11347573089336,
+    "legs": 120.46065852641216,
+    "shoulder": 53.42716715587436,
+    "wrist": 0.9223808061934339,
+    "counter_arm": 8.40684233223083,
+    "elbow": 20.985441773850077
+   },
+   "closure": -1.9711209105094856,
+   "W_act": 47.83798843006085,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.1493842499854757,
+   "self_peak_rollout": 0.0,
+   "pert": 401,
+   "pert_draw": {
+    "friction_scale": 0.9334992247844537,
+    "lag": 0.011701478313810694
+   },
+   "secs": 0.3,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 1.479300935838591,
+   "speed": 11.359320621208079,
+   "elev": 47.30325990673585,
+   "az": -3.5371229914910853,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.030263194239355,
+    -1.1183550099909303,
+    0.027472265081561528
+   ],
+   "palm_speed": 11.300640304452003,
+   "release_height": 1.127302350807174,
+   "slip_rollout": 0.01815214337830428,
+   "slip_monitor": 0.01815214337830428,
+   "unload_s_monitor": [
+    0.0105,
+    0.0185
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6184362699168898,
+   "grip_peak_N": 349.4571402489053,
+   "grip_at_release_N": 47.49363216849497,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.030032854548923682,
+   "overspeed": 1.0036570221635515,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.707
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.644
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.989
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.249
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.888,
+     0.279
+    ],
+    [
+     "left_knee_joint",
+     0.82,
+     0.399
+    ]
+   ],
+   "ballistic_land": [
+    14.030818434308731,
+    -1.118390158054269
+   ],
+   "ballistic_vs_sim_m": 0.0005563514365914704,
+   "ballistic_err_to_target": 1.4789641308615171,
+   "work": {
+    "trunk": 79.62916045149595,
+    "legs": 118.94991779382873,
+    "shoulder": 52.485700679132755,
+    "wrist": 0.8611520193848765,
+    "counter_arm": 8.26120506785021,
+    "elbow": 21.02415749694448
+   },
+   "closure": -2.7149823525262753,
+   "W_act": 48.98199381793309,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.1493842499854757,
+   "self_peak_rollout": 0.0,
+   "pert": 401,
+   "pert_draw": {
+    "friction_scale": 0.9334992247844537,
+    "lag": 0.011701478313810694
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST",
+    "SLIP"
+   ],
+   "err": 0.9489103396972206,
+   "speed": 11.28487213748118,
+   "elev": 42.97120511400196,
+   "az": 0.1087883849687564,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.077039700167543,
+    -0.2263090212101814,
+    0.02846848620360759
+   ],
+   "palm_speed": 11.230375597913111,
+   "release_height": 1.1430171076489093,
+   "slip_rollout": 0.022547587957342106,
+   "slip_monitor": 0.022547587957342106,
+   "unload_s_monitor": [
+    0.004,
+    0.017
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6195507589109776,
+   "grip_peak_N": 397.9473472950146,
+   "grip_at_release_N": 46.96732125451894,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.029471861097225216,
+   "overspeed": 0.9890838231782397,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.705
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.662
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.979
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.247
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.899,
+     0.209
+    ],
+    [
+     "right_elbow_joint",
+     0.827,
+     0.976
+    ]
+   ],
+   "ballistic_land": [
+    14.080632528384985,
+    -0.22629805072349118
+   ],
+   "ballistic_vs_sim_m": 0.003592844966266827,
+   "ballistic_err_to_target": 0.9454189473680682,
+   "work": {
+    "trunk": 78.21277819226034,
+    "legs": 117.0903202189566,
+    "shoulder": 51.90377699655398,
+    "wrist": 0.7797095713604021,
+    "counter_arm": 7.693731205459982,
+    "elbow": 21.616957871478757
+   },
+   "closure": -0.4891639866308033,
+   "W_act": 46.62369863263602,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000000114,
+   "ball_mass": 0.14816724717898702,
+   "self_peak_rollout": 0.0,
+   "pert": 402,
+   "pert_draw": {
+    "friction_scale": 0.9938221163454253,
+    "lag": 0.009430513209427114
+   },
+   "secs": 0.3,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": [
+    "SLIP"
+   ]
+  },
+  {
+   "dt": 0.0005,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST",
+    "SLIP"
+   ],
+   "err": 0.972878923089883,
+   "speed": 11.278764342973366,
+   "elev": 43.44759692028019,
+   "az": 0.11947559064603103,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.052008450255745,
+    -0.22476150513349702,
+    0.030517719786266363
+   ],
+   "palm_speed": 11.218330664090114,
+   "release_height": 1.136310358616065,
+   "slip_rollout": 0.022077855363772953,
+   "slip_monitor": 0.022077855363772953,
+   "unload_s_monitor": [
+    0.005,
+    0.014
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6197739867938071,
+   "grip_peak_N": 397.9767453057073,
+   "grip_at_release_N": 47.176934700611135,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.0279787432549935,
+   "overspeed": 0.9852052376705316,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.711
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.671
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.982
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.248
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.902,
+     0.209
+    ],
+    [
+     "waist_pitch_joint",
+     0.831,
+     0.327
+    ]
+   ],
+   "ballistic_land": [
+    14.054557623084493,
+    -0.22475541905003488
+   ],
+   "ballistic_vs_sim_m": 0.002549180093920978,
+   "ballistic_err_to_target": 0.9703974808345813,
+   "work": {
+    "trunk": 77.58412121366811,
+    "legs": 113.28085275541626,
+    "shoulder": 51.23843563288084,
+    "wrist": 0.7198423569714665,
+    "counter_arm": 7.4867305460629385,
+    "elbow": 21.694005384529863
+   },
+   "closure": 0.5943674694961718,
+   "W_act": 44.71687820386155,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.14816724717898702,
+   "self_peak_rollout": 0.0,
+   "pert": 402,
+   "pert_draw": {
+    "friction_scale": 0.9938221163454253,
+    "lag": 0.009430513209427114
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": [
+    "SLIP"
+   ]
+  },
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.4985776534067812,
+   "speed": 11.601574089472296,
+   "elev": 45.099850030542356,
+   "az": -0.7525153729757735,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.769032290794723,
+    -0.44259863632867036,
+    0.027752183018459612
+   ],
+   "palm_speed": 11.539044237964786,
+   "release_height": 1.1443924611476268,
+   "slip_rollout": 0.01937000476137207,
+   "slip_monitor": 0.01937000476137207,
+   "unload_s_monitor": [
+    0.002,
+    0.011
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6183540905792911,
+   "grip_peak_N": 57.34328165996851,
+   "grip_at_release_N": 49.50708634850999,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.029249930650730893,
+   "overspeed": 1.0019703114342395,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.707
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.625
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.989
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.251
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.872,
+     0.271
+    ],
+    [
+     "left_knee_joint",
+     0.817,
+     0.391
+    ]
+   ],
+   "ballistic_land": [
+    14.772672692554945,
+    -0.44264564908767534
+   ],
+   "ballistic_vs_sim_m": 0.0036407053128945776,
+   "ballistic_err_to_target": 0.4969540603947865,
+   "work": {
+    "trunk": 79.63114257080541,
+    "legs": 121.65905231281656,
+    "shoulder": 52.67220220179619,
+    "wrist": 0.8979844793847314,
+    "counter_arm": 8.09485736400615,
+    "elbow": 20.89603195164866
+   },
+   "closure": -2.003946859440505,
+   "W_act": 49.01193243043422,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.81000000000087,
+   "ball_mass": 0.1490888116060217,
+   "self_peak_rollout": 0.0,
+   "pert": 403,
+   "pert_draw": {
+    "friction_scale": 1.0851224364100152,
+    "lag": 0.011422668993137722
+   },
+   "secs": 0.2,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.5098035603194125,
+   "speed": 11.595505714990077,
+   "elev": 45.649052370639666,
+   "az": -0.7041662540505411,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.725858233235584,
+    -0.4307313562624595,
+    0.03013039467017941
+   ],
+   "palm_speed": 11.53300636589575,
+   "release_height": 1.1382792279739862,
+   "slip_rollout": 0.01904061597386276,
+   "slip_monitor": 0.01904061597386276,
+   "unload_s_monitor": [
+    0.003,
+    0.009000000000000001
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6185651368329482,
+   "grip_peak_N": 56.023802221846175,
+   "grip_at_release_N": 49.70682689936694,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.02820501430013278,
+   "overspeed": 1.002294603750289,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.705
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.624
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.989
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.252
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.877,
+     0.264
+    ],
+    [
+     "left_knee_joint",
+     0.816,
+     0.39
+    ]
+   ],
+   "ballistic_land": [
+    14.728640939257204,
+    -0.4307656188713672
+   ],
+   "ballistic_vs_sim_m": 0.0027829169461425825,
+   "ballistic_err_to_target": 0.5083494715708022,
+   "work": {
+    "trunk": 79.15228866431399,
+    "legs": 120.14041567283732,
+    "shoulder": 51.79863042719438,
+    "wrist": 0.8504953367703543,
+    "counter_arm": 7.949247114564285,
+    "elbow": 20.915078605821797
+   },
+   "closure": -2.7408286146536223,
+   "W_act": 50.423531931644355,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.1490888116060217,
+   "self_peak_rollout": 0.0,
+   "pert": 403,
+   "pert_draw": {
+    "friction_scale": 1.0851224364100152,
+    "lag": 0.011422668993137722
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST"
+   ],
+   "err": 0.2072185847915413,
+   "speed": 11.61086374807579,
+   "elev": 43.155463032554714,
+   "az": 0.42344289084580844,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.846332970721043,
+    -0.14058489199682275,
+    0.026613368527524682
+   ],
+   "palm_speed": 11.54865101662563,
+   "release_height": 1.148027872522985,
+   "slip_rollout": 0.01611406216820323,
+   "slip_monitor": 0.01611406216820323,
+   "unload_s_monitor": [
+    0.007,
+    0.016
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6190524422758802,
+   "grip_peak_N": 159.03133853870543,
+   "grip_at_release_N": 48.36647711727173,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.030124191700352188,
+   "overspeed": 1.0027629695042384,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.72
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.635
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.981
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.257
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.887,
+     0.255
+    ],
+    [
+     "left_knee_joint",
+     0.817,
+     0.395
+    ]
+   ],
+   "ballistic_land": [
+    14.84866277730561,
+    -0.14056428824605183
+   ],
+   "ballistic_vs_sim_m": 0.0023298976878893475,
+   "ballistic_err_to_target": 0.20549894935412372,
+   "work": {
+    "trunk": 79.74514036469685,
+    "legs": 119.8718574960138,
+    "shoulder": 52.781994018012085,
+    "wrist": 0.9284786084314184,
+    "counter_arm": 8.330571288622748,
+    "elbow": 21.011678836155564
+   },
+   "closure": -2.2701140402850997,
+   "W_act": 48.86222442789306,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.14933585652328094,
+   "self_peak_rollout": 0.0,
+   "pert": 404,
+   "pert_draw": {
+    "friction_scale": 0.9417679002839306,
+    "lag": 0.011626389178531553
+   },
+   "secs": 0.2,
+   "v1_pass": false,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST"
+   ],
+   "err": 0.1985886544753329,
+   "speed": 11.610355053183573,
+   "elev": 43.76657374337675,
+   "az": 0.552573908752102,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.832003315586912,
+    -0.10813722844859164,
+    0.028533783023223194
+   ],
+   "palm_speed": 11.549457960362059,
+   "release_height": 1.1422949122508521,
+   "slip_rollout": 0.015397080219188671,
+   "slip_monitor": 0.015397080219188671,
+   "unload_s_monitor": [
+    0.009000000000000001,
+    0.0145
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6193064181918808,
+   "grip_peak_N": 159.03764932500988,
+   "grip_at_release_N": 48.91563210489877,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.029109245069069867,
+   "overspeed": 1.0027560130848832,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.717
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.632
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.982
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.256
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.89,
+     0.25
+    ],
+    [
+     "left_knee_joint",
+     0.817,
+     0.394
+    ]
+   ],
+   "ballistic_land": [
+    14.833142657478444,
+    -0.10812566615280242
+   ],
+   "ballistic_vs_sim_m": 0.0011394005584008122,
+   "ballistic_err_to_target": 0.1976276847161919,
+   "work": {
+    "trunk": 79.32111222444686,
+    "legs": 118.91991858083313,
+    "shoulder": 51.90315526515598,
+    "wrist": 0.8824711127671852,
+    "counter_arm": 8.174343202718031,
+    "elbow": 21.029997554330816
+   },
+   "closure": -2.9554049874801382,
+   "W_act": 50.35636720704874,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.14933585652328094,
+   "self_peak_rollout": 0.0,
+   "pert": 404,
+   "pert_draw": {
+    "friction_scale": 0.9417679002839306,
+    "lag": 0.011626389178531553
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST",
+    "SLIP"
+   ],
+   "err": 0.4547012280967051,
+   "speed": 11.566426445078866,
+   "elev": 42.209880133440805,
+   "az": -0.4701423827876353,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.748198220238145,
+    -0.37956364889444943,
+    0.022569067879182773
+   ],
+   "palm_speed": 11.507596362881355,
+   "release_height": 1.1561285746780103,
+   "slip_rollout": 0.024976240302964317,
+   "slip_monitor": 0.024976240302964317,
+   "unload_s_monitor": [
+    0.004,
+    0.017
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6177980914202986,
+   "grip_peak_N": 283.1697906435944,
+   "grip_at_release_N": 49.2234672635081,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.030505976344486374,
+   "overspeed": 0.9958377739125338,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.684
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.649
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.996
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.241
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.911,
+     0.27
+    ],
+    [
+     "right_elbow_joint",
+     0.84,
+     0.961
+    ]
+   ],
+   "ballistic_land": [
+    14.746482971151265,
+    -0.379545537951244
+   ],
+   "ballistic_vs_sim_m": 0.0017153446989763299,
+   "ballistic_err_to_target": 0.45563285196459297,
+   "work": {
+    "trunk": 78.345071133053,
+    "legs": 116.59411373483286,
+    "shoulder": 51.326826678450175,
+    "wrist": 0.6762831093476416,
+    "counter_arm": 7.210523785976939,
+    "elbow": 21.853619603226196
+   },
+   "closure": -3.2855515416371617,
+   "W_act": 48.85415474610866,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.81000000000087,
+   "ball_mass": 0.1491891514918349,
+   "self_peak_rollout": 0.0,
+   "pert": 405,
+   "pert_draw": {
+    "friction_scale": 1.000700468246543,
+    "lag": 0.00826153842627996
+   },
+   "secs": 0.2,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": [
+    "SLIP"
+   ]
+  },
+  {
+   "dt": 0.0005,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST",
+    "SLIP"
+   ],
+   "err": 0.47779031943719463,
+   "speed": 11.55467359640232,
+   "elev": 42.70483972387838,
+   "az": -0.47870264759723935,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.712274037339254,
+    -0.38251758635115846,
+    0.027893877834704556
+   ],
+   "palm_speed": 11.492487820226772,
+   "release_height": 1.1499460418946432,
+   "slip_rollout": 0.024547211126031025,
+   "slip_monitor": 0.024547211126031025,
+   "unload_s_monitor": [
+    0.0055,
+    0.014
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6180361827620119,
+   "grip_peak_N": 283.1703073778756,
+   "grip_at_release_N": 49.39956794752978,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.029428602965014372,
+   "overspeed": 0.9997285801387286,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.686
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.65
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.242
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.913,
+     0.252
+    ],
+    [
+     "right_elbow_joint",
+     0.839,
+     0.958
+    ]
+   ],
+   "ballistic_land": [
+    14.712579664445917,
+    -0.3825193814541469
+   ],
+   "ballistic_vs_sim_m": 0.00030563237839222827,
+   "ballistic_err_to_target": 0.4776086864089314,
+   "work": {
+    "trunk": 77.84757553661173,
+    "legs": 114.92349031165301,
+    "shoulder": 50.446189309748235,
+    "wrist": 0.639857744338915,
+    "counter_arm": 7.078669029699443,
+    "elbow": 21.854839885601685
+   },
+   "closure": -3.4934238713186208,
+   "W_act": 49.32730809711862,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.1491891514918349,
+   "self_peak_rollout": 0.0,
+   "pert": 405,
+   "pert_draw": {
+    "friction_scale": 1.000700468246543,
+    "lag": 0.00826153842627996
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": [
+    "SLIP"
+   ]
+  },
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.34173655697655386,
+   "speed": 11.546771385950528,
+   "elev": 40.897823095034816,
+   "az": 1.4326736480684021,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.67577931703499,
+    0.11220862077152025,
+    0.027522428881329997
+   ],
+   "palm_speed": 11.488956574977529,
+   "release_height": 1.150780324079341,
+   "slip_rollout": 0.018780121066921323,
+   "slip_monitor": 0.018780121066921323,
+   "unload_s_monitor": [
+    0.007,
+    0.014
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6190055633176473,
+   "grip_peak_N": 187.40145115605029,
+   "grip_at_release_N": 47.833058676749694,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.027589769420835353,
+   "overspeed": 0.9953843786436344,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.717
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.713
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.995
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.249
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.907,
+     0.209
+    ],
+    [
+     "waist_pitch_joint",
+     0.846,
+     0.286
+    ]
+   ],
+   "ballistic_land": [
+    14.678451998064917,
+    0.11228134731197753
+   ],
+   "ballistic_vs_sim_m": 0.0026736703307278674,
+   "ballistic_err_to_target": 0.3392372601544487,
+   "work": {
+    "trunk": 78.60199908413001,
+    "legs": 115.74574806358814,
+    "shoulder": 52.88510508990247,
+    "wrist": 0.7415967838599515,
+    "counter_arm": 7.151880224065084,
+    "elbow": 21.647709830260904
+   },
+   "closure": 0.1771658528361968,
+   "W_act": 42.43895075371092,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.1446896323848812,
+   "self_peak_rollout": 0.0,
+   "pert": 406,
+   "pert_draw": {
+    "friction_scale": 1.0449768282665068,
+    "lag": 0.009171659726599567
+   },
+   "secs": 0.3,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.3539729074954525,
+   "speed": 11.538072791365044,
+   "elev": 41.46510796581857,
+   "az": 1.4196854720523233,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.661240239560588,
+    0.10726708467161795,
+    0.03020559957059645
+   ],
+   "palm_speed": 11.475390294912035,
+   "release_height": 1.144770422106799,
+   "slip_rollout": 0.01848069727758067,
+   "slip_monitor": 0.01848069727758067,
+   "unload_s_monitor": [
+    0.0075,
+    0.0125
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6192701494708176,
+   "grip_peak_N": 187.3988708565717,
+   "grip_at_release_N": 47.889990395787656,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.026780449121174943,
+   "overspeed": 0.9952675649239857,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.719
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.713
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.995
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.248
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.907,
+     0.207
+    ],
+    [
+     "waist_pitch_joint",
+     0.849,
+     0.283
+    ]
+   ],
+   "ballistic_land": [
+    14.663495341607925,
+    0.10732416028150371
+   ],
+   "ballistic_vs_sim_m": 0.002255824210604631,
+   "ballistic_err_to_target": 0.3518419149761823,
+   "work": {
+    "trunk": 78.19135093307368,
+    "legs": 114.40746299629048,
+    "shoulder": 52.068071846009474,
+    "wrist": 0.7033661423664646,
+    "counter_arm": 6.9821967072020215,
+    "elbow": 21.702252768497008
+   },
+   "closure": -0.12321211508237617,
+   "W_act": 43.40510410139974,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.1446896323848812,
+   "self_peak_rollout": 0.0,
+   "pert": 406,
+   "pert_draw": {
+    "friction_scale": 1.0449768282665068,
+    "lag": 0.009171659726599567
+   },
+   "secs": 0.4,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST"
+   ],
+   "err": 0.638303792649628,
+   "speed": 11.481985897070992,
+   "elev": 40.17338298615261,
+   "az": 2.577926167920439,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.500198674605056,
+    0.39882135834052984,
+    0.02521868255408344
+   ],
+   "palm_speed": 11.425721766864916,
+   "release_height": 1.1551075204150243,
+   "slip_rollout": 0.017183239312764713,
+   "slip_monitor": 0.017183239312764713,
+   "unload_s_monitor": [
+    0.009000000000000001,
+    0.014
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6170483670595962,
+   "grip_peak_N": 179.3328658682449,
+   "grip_at_release_N": 49.38928340283736,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.02102868275978409,
+   "overspeed": 0.9901741603858686,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.708
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.725
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.983
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.252
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.91,
+     0.219
+    ],
+    [
+     "waist_pitch_joint",
+     0.85,
+     0.273
+    ]
+   ],
+   "ballistic_land": [
+    14.500343051944213,
+    0.3988357185202591
+   ],
+   "ballistic_vs_sim_m": 0.0001450897336966184,
+   "ballistic_err_to_target": 0.638200047352777,
+   "work": {
+    "trunk": 78.12262443137145,
+    "legs": 120.9503126632565,
+    "shoulder": 54.16009764904079,
+    "wrist": 0.714839820034564,
+    "counter_arm": 6.691406997924502,
+    "elbow": 21.94758038476665
+   },
+   "closure": 0.3586029518752891,
+   "W_act": 45.766651582232846,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000000114,
+   "ball_mass": 0.14979862766912097,
+   "self_peak_rollout": 0.0,
+   "pert": 407,
+   "pert_draw": {
+    "friction_scale": 1.0574717117708665,
+    "lag": 0.008595350057952927
+   },
+   "secs": 0.2,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST"
+   ],
+   "err": 0.6375796564274248,
+   "speed": 11.47594746110266,
+   "elev": 40.76402284518332,
+   "az": 2.568592563874843,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.498108758923495,
+    0.3950279727627445,
+    0.02842071097635692
+   ],
+   "palm_speed": 11.412683507465806,
+   "release_height": 1.1493169843791342,
+   "slip_rollout": 0.016843937256970372,
+   "slip_monitor": 0.016843937256970372,
+   "unload_s_monitor": [
+    0.011,
+    0.0125
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6172913730650023,
+   "grip_peak_N": 179.34680555813944,
+   "grip_at_release_N": 49.46653546056634,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.020499882454090956,
+   "overspeed": 0.9863333944604954,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.713
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.727
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.984
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.251
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.91,
+     0.212
+    ],
+    [
+     "waist_pitch_joint",
+     0.851,
+     0.267
+    ]
+   ],
+   "ballistic_land": [
+    14.498439687633518,
+    0.3950444844193051
+   ],
+   "ballistic_vs_sim_m": 0.00033134037773806165,
+   "ballistic_err_to_target": 0.6373301657684816,
+   "work": {
+    "trunk": 77.6996817383831,
+    "legs": 119.45240125291829,
+    "shoulder": 53.15416106624822,
+    "wrist": 0.6845603215121139,
+    "counter_arm": 6.61401119863218,
+    "elbow": 21.93319590227841
+   },
+   "closure": -0.12670115700735352,
+   "W_act": 46.8258791480301,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.14979862766912097,
+   "self_peak_rollout": 0.0,
+   "pert": 407,
+   "pert_draw": {
+    "friction_scale": 1.0574717117708665,
+    "lag": 0.008595350057952927
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.34666454481207215,
+   "speed": 11.764068047384765,
+   "elev": 40.824139463210734,
+   "az": 2.0408818773133195,
+   "t_rel": 0.165745213291113,
+   "land": [
+    15.192920264100882,
+    0.287059610271673,
+    0.0246155824845948
+   ],
+   "palm_speed": 11.702298517782584,
+   "release_height": 1.159656697352489,
+   "slip_rollout": 0.01766567646530106,
+   "slip_monitor": 0.01766567646530106,
+   "unload_s_monitor": [
+    0.017,
+    0.015
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6180194857523325,
+   "grip_peak_N": 100.3116463108393,
+   "grip_at_release_N": 47.679523525494744,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.026267636503621072,
+   "overspeed": 0.9972384854744923,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.721
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.696
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.997
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.25
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.91,
+     0.196
+    ],
+    [
+     "waist_pitch_joint",
+     0.841,
+     0.316
+    ]
+   ],
+   "ballistic_land": [
+    15.192996484632156,
+    0.2870688218719291
+   ],
+   "ballistic_vs_sim_m": 7.677514550197098e-05,
+   "ballistic_err_to_target": 0.3467149092206498,
+   "work": {
+    "trunk": 78.67144648520313,
+    "legs": 121.03803871577237,
+    "shoulder": 52.20032725395811,
+    "wrist": 0.7745290730976839,
+    "counter_arm": 7.253332186069445,
+    "elbow": 21.525102092569554
+   },
+   "closure": 0.8021911929225389,
+   "W_act": 46.47275921148633,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000000114,
+   "ball_mass": 0.13876109021520136,
+   "self_peak_rollout": 0.0,
+   "pert": 408,
+   "pert_draw": {
+    "friction_scale": 0.9673855782175055,
+    "lag": 0.009131651586236838
+   },
+   "secs": 0.3,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.3352597659042109,
+   "speed": 11.759253015511247,
+   "elev": 41.228200039312206,
+   "az": 2.0264290318565528,
+   "t_rel": 0.165745213291113,
+   "land": [
+    15.180080651080578,
+    0.28187227321776537,
+    0.03184059214187726
+   ],
+   "palm_speed": 11.694886860776442,
+   "release_height": 1.1528767261104191,
+   "slip_rollout": 0.017227028181718146,
+   "slip_monitor": 0.017227028181718146,
+   "unload_s_monitor": [
+    0.018000000000000002,
+    0.0175
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6182252264973125,
+   "grip_peak_N": 100.3140245131858,
+   "grip_at_release_N": 47.88574618434379,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.02305963157366575,
+   "overspeed": 1.000458344658892,
+   "overspeed_by_joint": {
+    "right_wrist_pitch_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.713
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.717
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.252
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.91,
+     0.206
+    ],
+    [
+     "waist_pitch_joint",
+     0.849,
+     0.269
+    ]
+   ],
+   "ballistic_land": [
+    15.18412951371474,
+    0.2820168485686106
+   ],
+   "ballistic_vs_sim_m": 0.004051443034572782,
+   "ballistic_err_to_target": 0.33758978599475353,
+   "work": {
+    "trunk": 78.53058803539895,
+    "legs": 120.85328182860289,
+    "shoulder": 53.113607503903424,
+    "wrist": 0.6937901055158147,
+    "counter_arm": 6.560248553335301,
+    "elbow": 21.58283757414539
+   },
+   "closure": 0.0018597876040121748,
+   "W_act": 46.912185529004226,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.13876109021520136,
+   "self_peak_rollout": 0.0,
+   "pert": 408,
+   "pert_draw": {
+    "friction_scale": 0.9673855782175055,
+    "lag": 0.009131651586236838
+   },
+   "secs": 0.4,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.614790682190288,
+   "speed": 11.575094420132483,
+   "elev": 46.24784493475589,
+   "az": -1.0211626802982883,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.650654927437872,
+    -0.5068772763766353,
+    0.024134897929576182
+   ],
+   "palm_speed": 11.5125700593041,
+   "release_height": 1.1472188674992316,
+   "slip_rollout": 0.018154782256646792,
+   "slip_monitor": 0.018154782256646792,
+   "unload_s_monitor": [
+    0.009000000000000001,
+    0.013000000000000001
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6181168588162835,
+   "grip_peak_N": 142.99495657519094,
+   "grip_at_release_N": 49.10143770914997,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.030490816951603383,
+   "overspeed": 1.0037711421620314,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0,
+    "right_wrist_pitch_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.693
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.621
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     1.004
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.249
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.862,
+     0.267
+    ],
+    [
+     "left_knee_joint",
+     0.817,
+     0.392
+    ]
+   ],
+   "ballistic_land": [
+    14.651387014541704,
+    -0.5068896359052004
+   ],
+   "ballistic_vs_sim_m": 0.0007321914268445124,
+   "ballistic_err_to_target": 0.6143868832718,
+   "work": {
+    "trunk": 80.27646568210305,
+    "legs": 125.95387424936271,
+    "shoulder": 52.82657349379129,
+    "wrist": 0.955105521163978,
+    "counter_arm": 8.16219587980247,
+    "elbow": 20.87861101841012
+   },
+   "closure": -1.2415573861280536,
+   "W_act": 50.14249876855014,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.017,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_wrist_pitch_joint",
+     1.017
+    ],
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.14736930256961428,
+   "self_peak_rollout": 0.0,
+   "pert": 409,
+   "pert_draw": {
+    "friction_scale": 0.9871551322678,
+    "lag": 0.011469693776483483
+   },
+   "secs": 0.3,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.6459066592573193,
+   "speed": 11.565442255119919,
+   "elev": 46.96619362519661,
+   "az": -0.9429403022087545,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.573598055730859,
+    -0.4864116892462511,
+    0.03169764795254125
+   ],
+   "palm_speed": 11.504209267028108,
+   "release_height": 1.1401453827497428,
+   "slip_rollout": 0.0175793225537069,
+   "slip_monitor": 0.0175793225537069,
+   "unload_s_monitor": [
+    0.01,
+    0.0125
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6183199461242642,
+   "grip_peak_N": 142.99484467346525,
+   "grip_at_release_N": 48.55849825825374,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.029908954270067234,
+   "overspeed": 1.0008926147344166,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.681
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.612
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.995
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.248
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.865,
+     0.266
+    ],
+    [
+     "left_knee_joint",
+     0.817,
+     0.39
+    ]
+   ],
+   "ballistic_land": [
+    14.577768530966255,
+    -0.4864805071846473
+   ],
+   "ballistic_vs_sim_m": 0.0041710429867957135,
+   "ballistic_err_to_target": 0.643222434027893,
+   "work": {
+    "trunk": 79.94662725771329,
+    "legs": 125.13910976897508,
+    "shoulder": 51.957305161732776,
+    "wrist": 0.8853834724076195,
+    "counter_arm": 7.997691170882543,
+    "elbow": 20.948242405696618
+   },
+   "closure": -1.9519934805581165,
+   "W_act": 51.11914735072118,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999998428,
+   "ball_mass": 0.14736930256961428,
+   "self_peak_rollout": 0.0,
+   "pert": 409,
+   "pert_draw": {
+    "friction_scale": 0.9871551322678,
+    "lag": 0.011469693776483483
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.45955524881480264,
+   "speed": 11.486993462668861,
+   "elev": 41.406306934492655,
+   "az": 1.4120236282066432,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.552237418697953,
+    0.10945015715477005,
+    0.026356080740718598
+   ],
+   "palm_speed": 11.429996151753008,
+   "release_height": 1.157688625645095,
+   "slip_rollout": 0.016809789690307303,
+   "slip_monitor": 0.016809789690307303,
+   "unload_s_monitor": [
+    0.012,
+    0.018000000000000002
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6205529549784958,
+   "grip_peak_N": 289.20568855042194,
+   "grip_at_release_N": 48.43619229736343,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.02378976040065861,
+   "overspeed": 0.9830929627003561,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.715
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.687
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.973
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.25
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.903,
+     0.198
+    ],
+    [
+     "right_elbow_joint",
+     0.832,
+     0.982
+    ]
+   ],
+   "ballistic_land": [
+    14.55381512696521,
+    0.10949503166618993
+   ],
+   "ballistic_vs_sim_m": 0.0015783463176209701,
+   "ballistic_err_to_target": 0.45803382005954646,
+   "work": {
+    "trunk": 78.74092336097608,
+    "legs": 121.42591967949787,
+    "shoulder": 52.20815754202586,
+    "wrist": 0.7404683257539174,
+    "counter_arm": 7.355691735776747,
+    "elbow": 21.910732863097106
+   },
+   "closure": 0.15439123721578518,
+   "W_act": 48.36252357624863,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000000114,
+   "ball_mass": 0.15049693434985287,
+   "self_peak_rollout": 0.0,
+   "pert": 410,
+   "pert_draw": {
+    "friction_scale": 0.931909230926911,
+    "lag": 0.008781230869276816
+   },
+   "secs": 0.3,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.4762531512575969,
+   "speed": 11.478971447819376,
+   "elev": 41.880478476109445,
+   "az": 1.3575284700614327,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.531653534628258,
+    0.09384693986678629,
+    0.030729305958771592
+   ],
+   "palm_speed": 11.419691088446152,
+   "release_height": 1.1511347566137518,
+   "slip_rollout": 0.01664473070150431,
+   "slip_monitor": 0.01664473070150431,
+   "unload_s_monitor": [
+    0.0125,
+    0.0165
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6207581042682528,
+   "grip_peak_N": 288.22354614523334,
+   "grip_at_release_N": 48.640232464739285,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.022289000621670385,
+   "overspeed": 0.982814128099644,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.721
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.698
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.977
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.251
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.907,
+     0.199
+    ],
+    [
+     "waist_pitch_joint",
+     0.835,
+     0.338
+    ]
+   ],
+   "ballistic_land": [
+    14.534412390101986,
+    0.09391354219810366
+   ],
+   "ballistic_vs_sim_m": 0.0027596592897408236,
+   "ballistic_err_to_target": 0.4735619057372542,
+   "work": {
+    "trunk": 78.18078036166517,
+    "legs": 118.62147999845979,
+    "shoulder": 51.595462195387924,
+    "wrist": 0.6871482476517521,
+    "counter_arm": 7.09366633009555,
+    "elbow": 21.98533626422896
+   },
+   "closure": 0.2065607397910174,
+   "W_act": 47.47011935308548,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000001413,
+   "ball_mass": 0.15049693434985287,
+   "self_peak_rollout": 0.0,
+   "pert": 410,
+   "pert_draw": {
+    "friction_scale": 0.931909230926911,
+    "lag": 0.008781230869276816
+   },
+   "secs": 0.4,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.29352124227579574,
+   "speed": 11.56159148462411,
+   "elev": 42.010284858343404,
+   "az": 1.4334102320935973,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.730088766551148,
+    0.11863012078307943,
+    0.02325444935760534
+   ],
+   "palm_speed": 11.50298616387908,
+   "release_height": 1.1501339007716824,
+   "slip_rollout": 0.0181908465561238,
+   "slip_monitor": 0.0181908465561238,
+   "unload_s_monitor": [
+    0.013000000000000001,
+    0.013000000000000001
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6192837633335283,
+   "grip_peak_N": 88.92329921555437,
+   "grip_at_release_N": 47.26122490238154,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.029757857413990174,
+   "overspeed": 0.9893183293174669,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.723
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.676
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.989
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.255
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.898,
+     0.219
+    ],
+    [
+     "waist_pitch_joint",
+     0.83,
+     0.316
+    ]
+   ],
+   "ballistic_land": [
+    14.728945973610422,
+    0.1186068042525438
+   ],
+   "ballistic_vs_sim_m": 0.0011430307808496583,
+   "ballistic_err_to_target": 0.2945575117166549,
+   "work": {
+    "trunk": 78.58280118109265,
+    "legs": 119.16655835833565,
+    "shoulder": 52.4421948685057,
+    "wrist": 0.7725793575604399,
+    "counter_arm": 7.770262415296459,
+    "elbow": 21.63460908559538
+   },
+   "closure": -1.5113221447824383,
+   "W_act": 48.30805151100349,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.14342072682348875,
+   "self_peak_rollout": 0.0,
+   "pert": 411,
+   "pert_draw": {
+    "friction_scale": 1.0305206880975062,
+    "lag": 0.009860574839416807
+   },
+   "secs": 0.3,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.31202560036798865,
+   "speed": 11.561117420253114,
+   "elev": 42.58456242644796,
+   "az": 1.5314448034131267,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.720791382852772,
+    0.14212515232014628,
+    0.030665628189545217
+   ],
+   "palm_speed": 11.499397917294015,
+   "release_height": 1.144090929061767,
+   "slip_rollout": 0.018452368662959448,
+   "slip_monitor": 0.018452368662959448,
+   "unload_s_monitor": [
+    0.0155,
+    0.012
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.619508054807062,
+   "grip_peak_N": 88.9274174415828,
+   "grip_at_release_N": 47.41298327785218,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.029105488410394287,
+   "overspeed": 0.9904945668104124,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.722
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.673
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.99
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.254
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.9,
+     0.216
+    ],
+    [
+     "waist_pitch_joint",
+     0.831,
+     0.314
+    ]
+   ],
+   "ballistic_land": [
+    14.723661657763186,
+    0.1422028929935974
+   ],
+   "ballistic_vs_sim_m": 0.0028713275106928378,
+   "ballistic_err_to_target": 0.3095088431208189,
+   "work": {
+    "trunk": 78.17792773612841,
+    "legs": 118.10573995780646,
+    "shoulder": 51.465672413920174,
+    "wrist": 0.7354213560875957,
+    "counter_arm": 7.63139763380806,
+    "elbow": 21.634115478067805
+   },
+   "closure": -2.4486186366642038,
+   "W_act": 49.94734345118872,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.14342072682348875,
+   "self_peak_rollout": 0.0,
+   "pert": 411,
+   "pert_draw": {
+    "friction_scale": 1.0305206880975062,
+    "lag": 0.009860574839416807
+   },
+   "secs": 0.4,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": false,
+   "reasons": [
+    "SLIP"
+   ],
+   "err": 0.270546055015508,
+   "speed": 11.593277600986767,
+   "elev": 42.240595974618365,
+   "az": 1.7445200239976872,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.816516168883183,
+    0.20012930396741416,
+    0.022102299626555306
+   ],
+   "palm_speed": 11.534961064507854,
+   "release_height": 1.162201384321657,
+   "slip_rollout": 0.021776242093657784,
+   "slip_monitor": 0.021776242093657784,
+   "unload_s_monitor": [
+    0.007,
+    0.009000000000000001
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6177411454270209,
+   "grip_peak_N": 134.47679321165478,
+   "grip_at_release_N": 47.919519480008,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.024768410119657913,
+   "overspeed": 0.9812008447427343,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.688
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.666
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.978
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.242
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.885,
+     0.282
+    ],
+    [
+     "right_elbow_joint",
+     0.841,
+     0.972
+    ]
+   ],
+   "ballistic_land": [
+    14.814411211103911,
+    0.20007128701580457
+   ],
+   "ballistic_vs_sim_m": 0.0021057571605462427,
+   "ballistic_err_to_target": 0.2719242641774805,
+   "work": {
+    "trunk": 78.52957274937184,
+    "legs": 123.67813755145981,
+    "shoulder": 51.476176041724656,
+    "wrist": 0.6920780729751426,
+    "counter_arm": 7.119661628814948,
+    "elbow": 21.98017271608528
+   },
+   "closure": -4.186410794788475,
+   "W_act": 53.39907839061229,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.14427700905505886,
+   "self_peak_rollout": 0.0,
+   "pert": 412,
+   "pert_draw": {
+    "friction_scale": 1.0692185658092743,
+    "lag": 0.008176321718326586
+   },
+   "secs": 0.3,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": [
+    "SLIP"
+   ]
+  },
+  {
+   "dt": 0.0005,
+   "valid": false,
+   "reasons": [
+    "SLIP"
+   ],
+   "err": 0.2876600671862454,
+   "speed": 11.587591451992548,
+   "elev": 42.80096565426631,
+   "az": 1.7579855238277378,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.793472686279987,
+    0.2017018520550346,
+    0.0290811697425756
+   ],
+   "palm_speed": 11.524785019899332,
+   "release_height": 1.1563263434732856,
+   "slip_rollout": 0.021430857298182168,
+   "slip_monitor": 0.021430857298182168,
+   "unload_s_monitor": [
+    0.0085,
+    0.009000000000000001
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.617977534931449,
+   "grip_peak_N": 134.47378106541026,
+   "grip_at_release_N": 48.069656690505084,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.02398926354380393,
+   "overspeed": 0.980244233535024,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.686
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.662
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.98
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.242
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.891,
+     0.278
+    ],
+    [
+     "right_elbow_joint",
+     0.84,
+     0.967
+    ]
+   ],
+   "ballistic_land": [
+    14.794934445475906,
+    0.20174794859399225
+   ],
+   "ballistic_vs_sim_m": 0.0014624858419002903,
+   "ballistic_err_to_target": 0.2866521360902802,
+   "work": {
+    "trunk": 78.14485776668084,
+    "legs": 122.4182634745931,
+    "shoulder": 50.507310091221385,
+    "wrist": 0.656654469201752,
+    "counter_arm": 6.98768855172761,
+    "elbow": 21.9646903353576
+   },
+   "closure": -4.91550385577513,
+   "W_act": 54.582770992573295,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.14427700905505886,
+   "self_peak_rollout": 0.0,
+   "pert": 412,
+   "pert_draw": {
+    "friction_scale": 1.0692185658092743,
+    "lag": 0.008176321718326586
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": [
+    "SLIP"
+   ]
+  },
+  {
+   "dt": 0.001,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST"
+   ],
+   "err": 0.46623326900372325,
+   "speed": 11.576390270052022,
+   "elev": 45.032307217732914,
+   "az": -0.46742533376441275,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.711187445257693,
+    -0.36713239724097696,
+    0.025330714264695128
+   ],
+   "palm_speed": 11.516311600878028,
+   "release_height": 1.1441519387873276,
+   "slip_rollout": 0.018607818178268194,
+   "slip_monitor": 0.018607818178268194,
+   "unload_s_monitor": [
+    0.004,
+    0.012
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6180273013899398,
+   "grip_peak_N": 268.6977496222105,
+   "grip_at_release_N": 47.98684562047156,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.03156189437588597,
+   "overspeed": 1.004886367140264,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.705
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.619
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.988
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.25
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.881,
+     0.275
+    ],
+    [
+     "left_knee_joint",
+     0.82,
+     0.394
+    ]
+   ],
+   "ballistic_land": [
+    14.712689084911966,
+    -0.3671427199387461
+   ],
+   "ballistic_vs_sim_m": 0.001501675134433745,
+   "ballistic_err_to_target": 0.4653173217739378,
+   "work": {
+    "trunk": 79.9701288318567,
+    "legs": 120.54565674831306,
+    "shoulder": 52.972793231254315,
+    "wrist": 0.9154770051396782,
+    "counter_arm": 8.497564406501143,
+    "elbow": 20.947216512408595
+   },
+   "closure": -2.0969166644905766,
+   "W_act": 48.78522365885611,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000000114,
+   "ball_mass": 0.1463815448923747,
+   "self_peak_rollout": 0.0,
+   "pert": 413,
+   "pert_draw": {
+    "friction_scale": 1.0449259442562646,
+    "lag": 0.011727073759553952
+   },
+   "secs": 0.3,
+   "v1_pass": false,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST"
+   ],
+   "err": 0.49285636998625654,
+   "speed": 11.56923172479759,
+   "elev": 45.6129997104922,
+   "az": -0.44186727421267774,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.663124746153343,
+    -0.36108929454253985,
+    0.02843059198462593
+   ],
+   "palm_speed": 11.507253593292964,
+   "release_height": 1.1370961086152156,
+   "slip_rollout": 0.01822910254744758,
+   "slip_monitor": 0.01822910254744758,
+   "unload_s_monitor": [
+    0.003,
+    0.011
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6182375795599517,
+   "grip_peak_N": 268.692596153596,
+   "grip_at_release_N": 48.16774196008191,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.030287211965404293,
+   "overspeed": 1.0028597508806825,
+   "overspeed_by_joint": {
+    "right_shoulder_yaw_joint": 1.0
+   },
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.701
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.617
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.989
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.251
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.885,
+     0.268
+    ],
+    [
+     "left_knee_joint",
+     0.819,
+     0.393
+    ]
+   ],
+   "ballistic_land": [
+    14.664427150527164,
+    -0.3610991670198346
+   ],
+   "ballistic_vs_sim_m": 0.0013024417909276685,
+   "ballistic_err_to_target": 0.49197810973397194,
+   "work": {
+    "trunk": 79.51475136753055,
+    "legs": 119.13493778648193,
+    "shoulder": 52.10330913749334,
+    "wrist": 0.8505139465917515,
+    "counter_arm": 8.34064406737011,
+    "elbow": 20.988695687446924
+   },
+   "closure": -2.792061833028755,
+   "W_act": 49.80503578643819,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000001413,
+   "ball_mass": 0.1463815448923747,
+   "self_peak_rollout": 0.0,
+   "pert": 413,
+   "pert_draw": {
+    "friction_scale": 1.0449259442562646,
+    "lag": 0.011727073759553952
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": false,
+   "reasons": [
+    "STANCE_LOST",
+    "SLIP"
+   ],
+   "err": 0.3226024265473256,
+   "speed": 11.604789432240876,
+   "elev": 43.14129218308083,
+   "az": -0.10269124086471335,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.834450208920765,
+    -0.27773724730464217,
+    0.02637797296357031
+   ],
+   "palm_speed": 11.542951372123149,
+   "release_height": 1.1494978814653247,
+   "slip_rollout": 0.02139274234583152,
+   "slip_monitor": 0.02139274234583152,
+   "unload_s_monitor": [
+    0.005,
+    0.023
+   ],
+   "stance_monitor_ok": false,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6179641205540182,
+   "grip_peak_N": 159.8094445040478,
+   "grip_at_release_N": 46.47452291353572,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.031124442644727357,
+   "overspeed": 0.9872217314953757,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.695
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.635
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.982
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.249
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.889,
+     0.301
+    ],
+    [
+     "right_elbow_joint",
+     0.824,
+     0.967
+    ]
+   ],
+   "ballistic_land": [
+    14.836554327473586,
+    -0.27773813232341155
+   ],
+   "ballistic_vs_sim_m": 0.0021041187389451246,
+   "ballistic_err_to_target": 0.32153786022096925,
+   "work": {
+    "trunk": 79.70819176239452,
+    "legs": 121.55927716212392,
+    "shoulder": 52.42368330454204,
+    "wrist": 0.8157217583685695,
+    "counter_arm": 7.9634780816807,
+    "elbow": 21.306491862969178
+   },
+   "closure": -3.5773208473994806,
+   "W_act": 49.641456634440814,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.14114785137348124,
+   "self_peak_rollout": 0.0,
+   "pert": 414,
+   "pert_draw": {
+    "friction_scale": 0.9626313728219371,
+    "lag": 0.010217912010520882
+   },
+   "secs": 0.3,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": [
+    "STANCE_LOST",
+    "SLIP"
+   ]
+  },
+  {
+   "dt": 0.0005,
+   "valid": false,
+   "reasons": [
+    "STANCE_LOST",
+    "SLIP"
+   ],
+   "err": 0.32686511198426993,
+   "speed": 11.600453914484866,
+   "elev": 43.679177552384644,
+   "az": -0.05308299052478572,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.808793656276542,
+    -0.2661329601064763,
+    0.03225971024404831
+   ],
+   "palm_speed": 11.538940755387777,
+   "release_height": 1.1435472935729574,
+   "slip_rollout": 0.021085658040851288,
+   "slip_monitor": 0.021085658040851288,
+   "unload_s_monitor": [
+    0.006500000000000001,
+    0.02
+   ],
+   "stance_monitor_ok": false,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6181628333625265,
+   "grip_peak_N": 159.48598518478474,
+   "grip_at_release_N": 46.60849073879695,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.029750142737714924,
+   "overspeed": 0.9903322667203884,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.694
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.635
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.983
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.249
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.894,
+     0.292
+    ],
+    [
+     "right_elbow_joint",
+     0.823,
+     0.964
+    ]
+   ],
+   "ballistic_land": [
+    14.813288987466237,
+    -0.266136682001592
+   ],
+   "ballistic_vs_sim_m": 0.004495332730460024,
+   "ballistic_err_to_target": 0.32427887427316704,
+   "work": {
+    "trunk": 79.17008698642486,
+    "legs": 119.54648327169419,
+    "shoulder": 51.5933814109107,
+    "wrist": 0.7751636213905639,
+    "counter_arm": 7.824088826339615,
+    "elbow": 21.30343708660493
+   },
+   "closure": -4.3595078745559075,
+   "W_act": 51.181314579003214,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.14114785137348124,
+   "self_peak_rollout": 0.0,
+   "pert": 414,
+   "pert_draw": {
+    "friction_scale": 0.9626313728219371,
+    "lag": 0.010217912010520882
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": [
+    "STANCE_LOST",
+    "SLIP"
+   ]
+  },
+  {
+   "dt": 0.001,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST"
+   ],
+   "err": 0.5383190397192167,
+   "speed": 11.53121511436936,
+   "elev": 43.43145515957317,
+   "az": -0.6159066643907675,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.647212806134444,
+    -0.40784462025005996,
+    0.02776922899019822
+   ],
+   "palm_speed": 11.470807955282151,
+   "release_height": 1.146107226527496,
+   "slip_rollout": 0.01815542747223807,
+   "slip_monitor": 0.01815542747223807,
+   "unload_s_monitor": [
+    0.003,
+    0.018000000000000002
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6194954920299497,
+   "grip_peak_N": 206.84848087221135,
+   "grip_at_release_N": 46.563748982770306,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.031091234911475474,
+   "overspeed": 0.9967915283172367,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.72
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.661
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.992
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.254
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.902,
+     0.271
+    ],
+    [
+     "left_knee_joint",
+     0.82,
+     0.402
+    ]
+   ],
+   "ballistic_land": [
+    14.650542786256441,
+    -0.4078780279516394
+   ],
+   "ballistic_vs_sim_m": 0.003330147697538162,
+   "ballistic_err_to_target": 0.5361769420916096,
+   "work": {
+    "trunk": 79.40508546933744,
+    "legs": 118.40931790388083,
+    "shoulder": 52.87741859468464,
+    "wrist": 0.8556793260881307,
+    "counter_arm": 8.137873899933926,
+    "elbow": 21.2260542451548
+   },
+   "closure": -3.4434530210883825,
+   "W_act": 48.89653401103255,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.14317241157086272,
+   "self_peak_rollout": 0.0,
+   "pert": 415,
+   "pert_draw": {
+    "friction_scale": 0.9535673357054255,
+    "lag": 0.010760891054021919
+   },
+   "secs": 0.2,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": false,
+   "reasons": [
+    "START_NOT_AT_REST"
+   ],
+   "err": 0.555813602708493,
+   "speed": 11.525262661338047,
+   "elev": 43.836019141763664,
+   "az": -0.61805179311358,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.622407337147855,
+    -0.4091848100121561,
+    0.027807055345116814
+   ],
+   "palm_speed": 11.464962480867262,
+   "release_height": 1.1394023819342256,
+   "slip_rollout": 0.018134599569586164,
+   "slip_monitor": 0.018134599569586164,
+   "unload_s_monitor": [
+    0.0045000000000000005,
+    0.0165
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6197051782120964,
+   "grip_peak_N": 206.26233021232775,
+   "grip_at_release_N": 46.80340784855818,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.02861530367915066,
+   "overspeed": 0.99439966006714,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.725
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.678
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.994
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.256
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.902,
+     0.201
+    ],
+    [
+     "waist_pitch_joint",
+     0.829,
+     0.317
+    ]
+   ],
+   "ballistic_land": [
+    14.622818590057713,
+    -0.4091888923508548
+   ],
+   "ballistic_vs_sim_m": 0.0004112731712086392,
+   "ballistic_err_to_target": 0.5555383660493178,
+   "work": {
+    "trunk": 78.63950644071653,
+    "legs": 114.58592937823715,
+    "shoulder": 52.46389318669175,
+    "wrist": 0.7885102021929093,
+    "counter_arm": 7.9431421957573445,
+    "elbow": 21.338246606956147
+   },
+   "closure": -0.6597252252078736,
+   "W_act": 45.53848894207685,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.80999999999992,
+   "ball_mass": 0.14317241157086272,
+   "self_peak_rollout": 0.0,
+   "pert": 415,
+   "pert_draw": {
+    "friction_scale": 0.9535673357054255,
+    "lag": 0.010760891054021919
+   },
+   "secs": 0.4,
+   "v1_pass": false,
+   "v2_pass": false,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.001,
+   "valid": true,
+   "reasons": [],
+   "err": 0.13449972535030513,
+   "speed": 11.618028776829513,
+   "elev": 42.6767140369479,
+   "az": 1.1448243721234275,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.872729480300114,
+    0.04748279536697376,
+    0.023739343618485946
+   ],
+   "palm_speed": 11.55718196395938,
+   "release_height": 1.1501719155751675,
+   "slip_rollout": 0.016751229898476876,
+   "slip_monitor": 0.016751229898476876,
+   "unload_s_monitor": [
+    0.004,
+    0.01
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6170739386411038,
+   "grip_peak_N": 195.3627253448122,
+   "grip_at_release_N": 48.47349557597906,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.02561650880308275,
+   "overspeed": 0.9824570669041409,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.706
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.647
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.982
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.25
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.881,
+     0.265
+    ],
+    [
+     "right_elbow_joint",
+     0.826,
+     0.972
+    ]
+   ],
+   "ballistic_land": [
+    14.872302495571654,
+    0.047478477220146725
+   ],
+   "ballistic_vs_sim_m": 0.0004270065628650502,
+   "ballistic_err_to_target": 0.1348977802275147,
+   "work": {
+    "trunk": 79.19881963327572,
+    "legs": 123.61573820092552,
+    "shoulder": 51.656032688147164,
+    "wrist": 0.8049546284436705,
+    "counter_arm": 7.723839820242053,
+    "elbow": 21.36197832620848
+   },
+   "closure": -2.9197494640879817,
+   "W_act": 52.506903413046516,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.809999999999363,
+   "ball_mass": 0.1451195627768554,
+   "self_peak_rollout": 0.0,
+   "pert": 416,
+   "pert_draw": {
+    "friction_scale": 1.0970185593157515,
+    "lag": 0.009983045340083294
+   },
+   "secs": 0.2,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  },
+  {
+   "dt": 0.0005,
+   "valid": true,
+   "reasons": [],
+   "err": 0.15792677845377828,
+   "speed": 11.612200591480498,
+   "elev": 43.27319382498609,
+   "az": 1.1255192280090272,
+   "t_rel": 0.165745213291113,
+   "land": [
+    14.846014593385782,
+    0.04084212887100302,
+    0.030359449152246646
+   ],
+   "palm_speed": 11.54905611749918,
+   "release_height": 1.144393221869308,
+   "slip_rollout": 0.01669250688036193,
+   "slip_monitor": 0.01669250688036193,
+   "unload_s_monitor": [
+    0.006,
+    0.0105
+   ],
+   "stance_monitor_ok": true,
+   "minload_N": [
+    0.0,
+    0.0
+   ],
+   "nonfoot_or_other_contacts": [],
+   "ball_contacts_pre_release": [],
+   "ball_contacts_post_release": [],
+   "ball_z_min_pre_release": 0.6173200434286199,
+   "grip_peak_N": 195.36436494223108,
+   "grip_at_release_N": 48.60224386160705,
+   "weld_active_at_release_step": 1,
+   "weld_active_after": 0,
+   "comz_drop": 0.025537881353713487,
+   "overspeed": 0.9858644858373171,
+   "overspeed_by_joint": {},
+   "torque_over_rating": {},
+   "held_over_rating": {},
+   "util_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0,
+     0.697
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0,
+     0.639
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0,
+     0.983
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0,
+     0.25
+    ],
+    [
+     "left_hip_pitch_joint",
+     0.887,
+     0.265
+    ],
+    [
+     "right_elbow_joint",
+     0.825,
+     0.968
+    ]
+   ],
+   "ballistic_land": [
+    14.848742219562842,
+    0.040896486510994534
+   ],
+   "ballistic_vs_sim_m": 0.002728167757820533,
+   "ballistic_err_to_target": 0.15530785578815828,
+   "work": {
+    "trunk": 78.87193431855702,
+    "legs": 122.72823340249505,
+    "shoulder": 50.67928141958704,
+    "wrist": 0.7644349675347152,
+    "counter_arm": 7.581161599575269,
+    "elbow": 21.32532307674116
+   },
+   "closure": -3.606448639943988,
+   "W_act": 53.73548944213018,
+   "iterations": 50,
+   "integrator": 3,
+   "self_pairs_peakN": {},
+   "self_peak_monitor": 0.0,
+   "joint_torque_incl_brake_util_max": 1.0,
+   "joint_torque_incl_brake_top": [
+    [
+     "right_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "right_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ]
+   ],
+   "ball_az_postrelease_fullmodel": -9.810000000001413,
+   "ball_mass": 0.1451195627768554,
+   "self_peak_rollout": 0.0,
+   "pert": 416,
+   "pert_draw": {
+    "friction_scale": 1.0970185593157515,
+    "lag": 0.009983045340083294
+   },
+   "secs": 0.4,
+   "v1_pass": true,
+   "v2_pass": true,
+   "reasons_v2": []
+  }
+ ],
+ "n_pass_v1": 5,
+ "n_pass_v2": 7,
+ "n_pert": 16,
+ "nominal_pass_both": true
+}

@@ -1,0 +1,42 @@
+<mujoco model="planar_jumper">
+  <compiler angle="radian"/>
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast" cone="pyramidal" impratio="10"/>
+  <default>
+    <joint damping="0.5" armature="0.01" limited="true"/>
+    <geom friction="0.9 0.005 0.0001" condim="3" solref="0.008 1" solimp="0.95 0.99 0.001"/>
+  </default>
+  <worldbody>
+    <geom name="floor" type="plane" size="10 10 .1" pos="0 0 0"/>
+    <body name="trunk" pos="0 0 0.95">
+      <joint name="bx" type="slide" axis="1 0 0" limited="false"/>
+      <joint name="bz" type="slide" axis="0 0 1" limited="false"/>
+      <joint name="bp" type="hinge" axis="0 1 0" limited="false"/>
+      <geom name="trunk" type="capsule" fromto="0 0 0 0 0 0.50" size="0.09" mass="35"/>
+      <body name="uarm" pos="0 0 0.46">
+        <joint name="shoulder" axis="0 1 0" range="-3.0 1.2"/>
+        <geom type="capsule" fromto="0 0 0 0 0 -0.31" size="0.04" mass="2.1"/>
+        <body name="farm" pos="0 0 -0.31">
+          <joint name="elbow" axis="0 1 0" range="-0.1 2.6"/>
+          <geom type="capsule" fromto="0 0 0 0 0 -0.36" size="0.033" mass="1.8"/>
+          <site name="hand" pos="0 0 -0.36" size="0.02"/>
+        </body>
+      </body>
+      <body name="thigh" pos="0 0 0">
+        <joint name="hip" axis="0 1 0" range="-2.4 0.3"/>
+        <geom type="capsule" fromto="0 0 0 0 0 -0.42" size="0.055" mass="8.0"/>
+        <body name="shank" pos="0 0 -0.42">
+          <joint name="knee" axis="0 1 0" range="0 2.5"/>
+          <geom type="capsule" fromto="0 0 0 0 0 -0.42" size="0.045" mass="3.5"/>
+          <body name="foot" pos="0 0 -0.42">
+            <joint name="ankle" axis="0 1 0" range="-0.8 0.7"/>
+            <geom name="foot" type="capsule" fromto="-0.06 0 -0.03 0.16 0 -0.03" size="0.028" mass="1.1"/>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor joint="hip" gear="1"/><motor joint="knee" gear="1"/><motor joint="ankle" gear="1"/>
+    <motor joint="shoulder" gear="1"/><motor joint="elbow" gear="1"/>
+  </actuator>
+</mujoco>

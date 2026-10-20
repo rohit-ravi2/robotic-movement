@@ -1,0 +1,1705 @@
+{
+ "robot": "H1",
+ "scale": 1.0,
+ "supplied": {
+  "cycle": "two-step running cycle, mirror-symmetric legs (left = right shifted half a cycle, roll/yaw sign-flipped), flight phase required (t_f >= 0.05 s)",
+  "stride_choice": "among the ceiling model's feasible strides at v (its grid of t_c, t_f, h0; dz from spring-mass consistency), with t_c >= pi x 0.040 s (the stance force's half-sine inside the project actuator lag's -3 dB band; kept at 40 ms whatever the plant lag), t_f >= TF_MIN and t_f >= the knee's fold/unfold time (quintic peak rate and torque within KNEE_U of the rating): the stride with the largest actuator margin (min of the max over hip/knee of stance torque utilisation, stance speed/1.1, swing time/available)",
+  "swing_cart": "(default, SWING_MODE=cart) ankle x relative to the hip: quintic from -Lc/2 (rate -v, continuous with the stance) to +Lc/2 with touchdown rate -beta v (beta = the largest of 1, .75, .5, .25, 0 whose inverse-dynamics hip/knee torques stay within KNEE_U of the rating; beta 1 = foot at rest on the ground at liftoff/touchdown); sole height above the floor: CLEAR x 64 s^3 (1-s)^3, the hip's height from the scaffold (other stance compression / ballistic flight), the leg never longer than at touchdown; soles level; numerical IK on the model",
+  "swing": "(legacy joint-space modes) quintic thigh move liftoff->touchdown with the STANCE joint rates as boundary velocities (ground-speed matching: foot at rest on the ground at touchdown; thigh rate continuous at liftoff); knee folds to the ceiling's 3 cm floor-clearance angle during the first flight, stays folded while the other foot is down, unfolds during the last flight; soles level; foot under the hip laterally",
+  "compression": "dz = g tf tc / (2 pi): the stance descent rate at touchdown equals the flight landing speed (spring-mass consistency; the ceiling's half-sine force impulse then equals m g T exactly)",
+  "feedforward": "inverse dynamics of the swing and upper-body reference on the model (base at v with the scaffold's vertical acceleration, no contact; zero for a stance leg and while waiting for a touchdown), advanced by ACT_TAU",
+  "stance": "FORCE CONTROL of a loaded stance leg (load-weighted): F_z = m (g + dz (pi/t_c)^2 sin) + m (K_z (z_ref - z) + D_z (vz_ref - vz)), K_z = (pi/t_c)^2, D_z = 2 pi/t_c; F_xy directed from the foot at the COM and tilted by the attitude moment (M_x = h dF_y, M_y = -h dF_x); residual moment to the CoP clipped to the sole polygon and |M_z| <= 0.05 F_z; |F_xy| <= 0.8 F_z; tau = -J^T [F; M] through the model's foot Jacobian; the leg's joint PD scaled by 0.1",
+  "trunk_arms": "trunk held at the keyframe; ARMS: antiphase shoulder-pitch swing that cancels the FUNDAMENTAL (cycle-frequency harmonic) of the legs' yaw angular momentum about the COM over the reference cycle (w_sp = -L_z1 / dL_z/dw_sp); the search refines both through knots",
+  "feedback": "Raibert: placement (about the COM's neutral point: + COM-ahead-of-hips offset) dx=(vx-v)(tc/2+sqrt(h/g)) with the instantaneous COM vx (constant in flight), dy=vy(tc/2+sqrt(h/g)) with vy averaged over one step (the sway), latched at touchdown and released through the stance; attitude servo in the stance force: moment about the COM M = -I_c (om^2 (attitude - (lean,0,0)) + 2 om pelvis rate), I_c = composite inertia about the COM, om = min(pi/t_c, 0.5/ACT_TAU); swing-leg hip targets corrected for the actual pelvis attitude (world-frame placement)",
+  "lag_comp": "the tracked reference and the feedforward are advanced by ACT_TAU (the known actuator lag); the feedback terms act on the state predicted ACT_TAU ahead (q + qdot tau, COM + v tau, attitude + rate tau)",
+  "tracker": "PD per joint, omega 25.0 legs / 20.0 upper, zeta 1, I_eff = the joint's diagonal of the model's mass matrix (locked-chain inertia)",
+  "act_tau": 0.002,
+  "clock": "event-synchronised cycle phase: advances with time, held at each scheduled touchdown until the expected foot lands (after >= 20 ms unloaded), jumps to the touchdown phase if that foot lands up to t_f + 0.25 t_c early (earlier contacts are scuffs); both legs' stance/swing follow it",
+  "gates": "envelope+backemf+OVERSPEED 1.1, actuator lag ACT_TAU (see act_tau), energy closure, no non-foot floor contact, slip <= 0.03 m/stance, no fall, periodic over cycles 2..12 at 1 ms and 0.5 ms; tolerances {'z': 0.02, 'pitch': 0.05, 'roll': 0.05, 'q': 0.08, 'qd': 1.5, 'vx': 0.1}",
+  "start_momentum": "base velocity solved so the COM moves at (v, -dvy/2, 0) and the angular momentum about the COM is zero",
+  "start_sway": "initial lateral COM velocity -dvy/2, dvy = g T y_off / h (the scaffold's periodic sway with feet under the hips)",
+  "friction": "MuJoCo pyramidal cone, condim 3, mu = 1.0 (model values)",
+  "stride_def": "stride = one gait cycle = two steps"
+ },
+ "budget": {
+  "iters": 60,
+  "pop": 12,
+  "workers": 6
+ },
+ "rungs": [
+  {
+   "v": 2.0,
+   "ok_both_dt": true,
+   "stride_extrapolated": true,
+   "meas": [
+    {
+     "value": 2.4365,
+     "valid": true,
+     "reasons": [],
+     "periodic": true,
+     "per_err": 0.2901,
+     "per_n": 13,
+     "t_run": 5.647,
+     "overspeed": 0.9034,
+     "closure": 3.5574,
+     "closure_tol": 44.7666,
+     "slip_max": 0.0231,
+     "yaw_end": 0.0167,
+     "n_td": [
+      29,
+      31
+     ],
+     "cadence_hz": 5.4645,
+     "flight_mean": 0.0255,
+     "stride_len": 0.8917,
+     "W_pos": 5040.33,
+     "cot": 0.7576,
+     "dt": 0.001
+    },
+    {
+     "value": 2.4292,
+     "valid": true,
+     "reasons": [],
+     "periodic": true,
+     "per_err": 0.3827,
+     "per_n": 13,
+     "t_run": 5.6475,
+     "overspeed": 0.8821,
+     "closure": 1.725,
+     "closure_tol": 43.7047,
+     "slip_max": 0.0242,
+     "yaw_end": 0.0289,
+     "n_td": [
+      29,
+      31
+     ],
+     "cadence_hz": 5.487,
+     "flight_mean": 0.0245,
+     "stride_len": 0.8854,
+     "W_pos": 4982.2281,
+     "cot": 0.7535,
+     "dt": 0.0005
+    }
+   ],
+   "stride": {
+    "util": 0.8878,
+    "t_unfold": 0.0994,
+    "tc": 0.14,
+    "tf": 0.1,
+    "h0": 0.7519,
+    "dz": 0.0219,
+    "step": 0.36,
+    "step_hz": 4.1667,
+    "rule": "max actuator margin among strides whose flight fits the knee fold/unfold",
+    "extrapolated_from": 1.5,
+    "stance": {
+     "hip": [
+      0.52,
+      0.199
+     ],
+     "knee": [
+      0.888,
+      0.387
+     ],
+     "sweep": 0.277,
+     "ka_start": 0.641,
+     "ka_end": 0.641
+    },
+    "swing": {
+     "t_hip": 0.063,
+     "t_knee": 0.096,
+     "t_sw": 0.34,
+     "k_clear": 1.234
+    }
+   },
+   "secs": 329,
+   "evals": 324,
+   "s_per_eval": 1.016,
+   "hist": [
+    [
+     0,
+     114.64857576550547
+    ],
+    [
+     1,
+     101.24435375113357
+    ],
+    [
+     2,
+     101.24435375113357
+    ],
+    [
+     3,
+     10.062404699581325
+    ],
+    [
+     4,
+     -1.0942779584667923
+    ],
+    [
+     5,
+     -1.0942779584667923
+    ],
+    [
+     6,
+     -1.0942779584667923
+    ],
+    [
+     7,
+     -1.0942779584667923
+    ],
+    [
+     8,
+     -1.0942779584667923
+    ],
+    [
+     9,
+     -1.0966024044057254
+    ],
+    [
+     10,
+     -1.1513913695080042
+    ],
+    [
+     11,
+     -1.1513913695080042
+    ],
+    [
+     12,
+     -1.2146036060327106
+    ],
+    [
+     13,
+     -1.2146036060327106
+    ],
+    [
+     14,
+     -1.2146036060327106
+    ],
+    [
+     15,
+     -1.2146036060327106
+    ],
+    [
+     16,
+     -1.2146036060327106
+    ],
+    [
+     17,
+     -1.2146036060327106
+    ],
+    [
+     18,
+     -1.2146036060327106
+    ],
+    [
+     19,
+     -1.2146036060327106
+    ],
+    [
+     20,
+     -1.2146036060327106
+    ],
+    [
+     21,
+     -1.2146036060327106
+    ],
+    [
+     22,
+     -1.2146036060327106
+    ],
+    [
+     23,
+     -1.2146036060327106
+    ],
+    [
+     24,
+     -1.2146036060327106
+    ],
+    [
+     25,
+     -1.2146036060327106
+    ],
+    [
+     26,
+     -1.2146036060327106
+    ],
+    [
+     27,
+     -1.2146036060327106
+    ]
+   ],
+   "z": [
+    0.051610617596529136,
+    0.15864110475597457,
+    -0.5588661650490162,
+    0.18991058801682434,
+    -0.16727606235920553,
+    -0.4303580437057633,
+    -0.1597680736662036,
+    0.35752322284304194,
+    -0.08101147319256044,
+    -0.04570565388814251,
+    0.4668515467363481,
+    0.2950475932083719,
+    0.1821493194008984,
+    0.33907019962417495,
+    0.0756503281467483,
+    0.15389828535536393,
+    0.16972741861387514,
+    -0.3268001619005302,
+    0.1915010083998357,
+    -0.25910882437281907,
+    0.28985710554835964,
+    0.08097678814958578,
+    0.2696906168652099,
+    0.5039549872917782,
+    -0.060745131660691835,
+    -0.07801197786814672,
+    0.1515071051883667,
+    0.21345900414571095,
+    0.06594129168558235,
+    0.11482517123120586,
+    0.4599963962004798,
+    0.2871400271740408,
+    -0.5099302407223104,
+    -0.2941540869615446,
+    -0.4834006059040872,
+    -0.4083192064658909,
+    -0.8942915963714226,
+    -0.9997384171998098,
+    -0.044698571921836856,
+    0.028657482447748767,
+    -0.012007047865047929,
+    -0.055455118289578526,
+    0.07256858412916743,
+    0.16187675273378188,
+    0.013615148207818423,
+    -0.07607106989229404,
+    -0.7999021992307183,
+    -0.5975906408431252,
+    0.2004848930578183,
+    0.2070834515338135,
+    -0.5993350150569534,
+    -0.09704482678328771,
+    -0.02081013763357912,
+    0.8573080735840454,
+    0.28460497148764174,
+    0.3696325454412651,
+    0.02158018165438047,
+    0.36199690373380977,
+    0.06418335428765097,
+    0.002991581633047108,
+    -0.23983293536026945,
+    -0.1342812723919829,
+    0.07172575264376208,
+    -0.3517535561305333,
+    -0.0782119342595821,
+    0.21768287982241544,
+    0.4997372481232938,
+    0.5437172415690901,
+    -0.3747377544624348,
+    -0.13045272019336535,
+    0.24585648515469946
+   ],
+   "params": {
+    "amp": 0.925052449107513,
+    "tscale": 0.9804320919709952,
+    "lean": 0.11146412128867486
+   },
+   "utilisation": {
+    "right_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.445
+    },
+    "right_hip_roll": {
+     "torque": 1.0,
+     "torque_p95": 0.372,
+     "speed": 0.125
+    },
+    "right_hip_yaw": {
+     "torque": 0.462,
+     "torque_p95": 0.362,
+     "speed": 0.321
+    },
+    "right_knee": {
+     "torque": 1.0,
+     "torque_p95": 0.863,
+     "speed": 0.833
+    },
+    "right_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.897
+    },
+    "left_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.44
+    },
+    "left_hip_roll": {
+     "torque": 1.0,
+     "torque_p95": 0.36,
+     "speed": 0.127
+    },
+    "left_hip_yaw": {
+     "torque": 0.477,
+     "torque_p95": 0.354,
+     "speed": 0.297
+    },
+    "left_knee": {
+     "torque": 1.0,
+     "torque_p95": 0.859,
+     "speed": 0.788
+    },
+    "left_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.903
+    },
+    "torso": {
+     "torque": 0.44,
+     "torque_p95": 0.392,
+     "speed": 0.159
+    },
+    "right_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.819
+    },
+    "right_shoulder_roll": {
+     "torque": 0.424,
+     "torque_p95": 0.3,
+     "speed": 0.322
+    },
+    "right_elbow": {
+     "torque": 0.389,
+     "torque_p95": 0.269,
+     "speed": 0.069
+    },
+    "left_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.732
+    },
+    "left_shoulder_roll": {
+     "torque": 0.471,
+     "torque_p95": 0.305,
+     "speed": 0.323
+    },
+    "left_elbow": {
+     "torque": 0.301,
+     "torque_p95": 0.271,
+     "speed": 0.071
+    }
+   },
+   "technique": {
+    "cadence_hz": 5.464480874316945,
+    "stride_len": 0.8917466903927597,
+    "flight_fraction": 0.40375586854460094,
+    "flight_mean": 0.025452380952380966,
+    "duty": [
+     0.2812633376013658,
+     0.2799829278702518
+    ],
+    "pelvis_pitch_mean": 0.185,
+    "trunk_mean": {
+     "torso": -0.002
+    },
+    "arm_ptp": {
+     "right_shoulder_pitch": 0.705,
+     "right_elbow": 0.093,
+     "left_shoulder_pitch": 0.706,
+     "left_elbow": 0.095
+    },
+    "cot": 0.7576083583348961,
+    "speed": 2.4364663671933346
+   }
+  },
+  {
+   "v": 2.5,
+   "ok_both_dt": true,
+   "stride_extrapolated": true,
+   "meas": [
+    {
+     "value": 2.8856,
+     "valid": true,
+     "reasons": [],
+     "periodic": true,
+     "per_err": 0.8289,
+     "per_n": 11,
+     "t_run": 5.726,
+     "overspeed": 1.0689,
+     "closure": 3.5251,
+     "closure_tol": 48.0737,
+     "slip_max": 0.0275,
+     "yaw_end": 0.0531,
+     "n_td": [
+      15,
+      14
+     ],
+     "cadence_hz": 4.7281,
+     "flight_mean": 0.0172,
+     "stride_len": 1.2206,
+     "W_pos": 5752.4418,
+     "cot": 0.7357,
+     "dt": 0.001
+    },
+    {
+     "value": 2.883,
+     "valid": true,
+     "reasons": [],
+     "periodic": true,
+     "per_err": 0.7915,
+     "per_n": 11,
+     "t_run": 5.726,
+     "overspeed": 1.0603,
+     "closure": 1.7393,
+     "closure_tol": 47.9344,
+     "slip_max": 0.0263,
+     "yaw_end": 0.0467,
+     "n_td": [
+      15,
+      14
+     ],
+     "cadence_hz": 4.7562,
+     "flight_mean": 0.0148,
+     "stride_len": 1.2123,
+     "W_pos": 5701.7754,
+     "cot": 0.7325,
+     "dt": 0.0005
+    }
+   ],
+   "stride": {
+    "util": 0.8878,
+    "t_unfold": 0.0994,
+    "tc": 0.14,
+    "tf": 0.1,
+    "h0": 0.7519,
+    "dz": 0.0219,
+    "step": 0.36,
+    "step_hz": 4.1667,
+    "rule": "max actuator margin among strides whose flight fits the knee fold/unfold",
+    "extrapolated_from": 1.5,
+    "stance": {
+     "hip": [
+      0.52,
+      0.199
+     ],
+     "knee": [
+      0.888,
+      0.387
+     ],
+     "sweep": 0.277,
+     "ka_start": 0.641,
+     "ka_end": 0.641
+    },
+    "swing": {
+     "t_hip": 0.063,
+     "t_knee": 0.096,
+     "t_sw": 0.34,
+     "k_clear": 1.234
+    }
+   },
+   "secs": 243,
+   "evals": 288,
+   "s_per_eval": 0.845,
+   "hist": [
+    [
+     0,
+     107.96928782439831
+    ],
+    [
+     1,
+     107.96928782439831
+    ],
+    [
+     2,
+     107.96928782439831
+    ],
+    [
+     3,
+     101.21997374095544
+    ],
+    [
+     4,
+     -1.0778281230093234
+    ],
+    [
+     5,
+     -1.0778281230093234
+    ],
+    [
+     6,
+     -1.0778281230093234
+    ],
+    [
+     7,
+     -1.0778281230093234
+    ],
+    [
+     8,
+     -1.0778281230093234
+    ],
+    [
+     9,
+     -1.1532060849447363
+    ],
+    [
+     10,
+     -1.1532060849447363
+    ],
+    [
+     11,
+     -1.1532060849447363
+    ],
+    [
+     12,
+     -1.1532060849447363
+    ],
+    [
+     13,
+     -1.1532060849447363
+    ],
+    [
+     14,
+     -1.1532060849447363
+    ],
+    [
+     15,
+     -1.1532060849447363
+    ],
+    [
+     16,
+     -1.1532060849447363
+    ],
+    [
+     17,
+     -1.1532060849447363
+    ],
+    [
+     18,
+     -1.1532060849447363
+    ],
+    [
+     19,
+     -1.1532060849447363
+    ],
+    [
+     20,
+     -1.1532060849447363
+    ],
+    [
+     21,
+     -1.1532060849447363
+    ],
+    [
+     22,
+     -1.1532060849447363
+    ],
+    [
+     23,
+     -1.1532060849447363
+    ],
+    [
+     24,
+     -1.1532060849447363
+    ]
+   ],
+   "z": [
+    0.02187706424055794,
+    0.008666168987451456,
+    -0.47076913785303093,
+    0.28251884288244694,
+    -0.20452381058842242,
+    -0.6086498265576685,
+    -0.08125547260259765,
+    0.2697138260345705,
+    0.017043634100734992,
+    -0.3105303629997018,
+    0.690075130510343,
+    0.0530296975493756,
+    0.16505942878615126,
+    0.39556411475202063,
+    0.05171416485747434,
+    0.20235887317744378,
+    0.06758600711775342,
+    -0.42420668781172827,
+    0.2120624958971148,
+    -0.14993770079718868,
+    0.4803590831217115,
+    -0.14219003765813684,
+    0.16716871702421243,
+    0.42521022131890596,
+    -0.13089197736965283,
+    0.1129115022652703,
+    -0.028280306166986815,
+    0.2939198213108191,
+    -0.14633104509868464,
+    0.06391271951452883,
+    0.27985616760316834,
+    0.15763442935123387,
+    -0.4748925482580275,
+    -0.1991911941088467,
+    -0.33772106306478106,
+    -0.3243008052788105,
+    -0.5424887943060736,
+    -0.9946531337856044,
+    -0.17102566005707442,
+    0.05262211781223805,
+    0.24859580809767926,
+    -0.017322295357061604,
+    0.17935546801440175,
+    0.2383578264659625,
+    0.18247488155926328,
+    -0.1276986000684862,
+    -0.9142298757956718,
+    -0.5756820666213014,
+    0.40996828902004623,
+    0.06469844730517853,
+    -0.7668584674258424,
+    -0.358111335525662,
+    -0.04999237114455196,
+    0.9999345976673719,
+    0.28578157943208293,
+    0.4420667948952504,
+    -0.16215733657943993,
+    0.6437381181587157,
+    -0.1351653075419483,
+    0.18476434417713108,
+    -0.3411554771618058,
+    -0.32812684136500436,
+    0.17235712158837713,
+    -0.20134605203538317,
+    -0.14875713847660554,
+    0.1132395588136613,
+    0.49032404807705504,
+    0.5927049965633916,
+    -0.3327251912790888,
+    -0.03950476085639192,
+    0.29871107192604884
+   ],
+   "params": {
+    "amp": 0.9334549617441823,
+    "tscale": 0.9940742858715412,
+    "lean": 0.12467776798151221
+   },
+   "utilisation": {
+    "right_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.431
+    },
+    "right_hip_roll": {
+     "torque": 0.501,
+     "torque_p95": 0.386,
+     "speed": 0.091
+    },
+    "right_hip_yaw": {
+     "torque": 0.57,
+     "torque_p95": 0.337,
+     "speed": 0.193
+    },
+    "right_knee": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.862
+    },
+    "right_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 1.052
+    },
+    "left_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.426
+    },
+    "left_hip_roll": {
+     "torque": 0.534,
+     "torque_p95": 0.363,
+     "speed": 0.093
+    },
+    "left_hip_yaw": {
+     "torque": 0.557,
+     "torque_p95": 0.334,
+     "speed": 0.243
+    },
+    "left_knee": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.866
+    },
+    "left_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 1.06
+    },
+    "torso": {
+     "torque": 0.499,
+     "torque_p95": 0.375,
+     "speed": 0.151
+    },
+    "right_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.828
+    },
+    "right_shoulder_roll": {
+     "torque": 0.475,
+     "torque_p95": 0.375,
+     "speed": 0.389
+    },
+    "right_elbow": {
+     "torque": 0.439,
+     "torque_p95": 0.391,
+     "speed": 0.078
+    },
+    "left_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.818
+    },
+    "left_shoulder_roll": {
+     "torque": 0.513,
+     "torque_p95": 0.382,
+     "speed": 0.386
+    },
+    "left_elbow": {
+     "torque": 0.428,
+     "torque_p95": 0.387,
+     "speed": 0.078
+    }
+   },
+   "technique": {
+    "cadence_hz": 4.7281323877068555,
+    "stride_len": 1.2205941377704659,
+    "flight_fraction": 0.3887489504617968,
+    "flight_mean": 0.017198347107438026,
+    "duty": [
+     0.3056255247691016,
+     0.3056255247691016
+    ],
+    "pelvis_pitch_mean": 0.194,
+    "trunk_mean": {
+     "torso": 0.003
+    },
+    "arm_ptp": {
+     "right_shoulder_pitch": 0.938,
+     "right_elbow": 0.092,
+     "left_shoulder_pitch": 0.94,
+     "left_elbow": 0.093
+    },
+    "cot": 0.7356778111265017,
+    "speed": 2.8855653375188317
+   }
+  },
+  {
+   "v": 3.0,
+   "ok_both_dt": true,
+   "stride_extrapolated": true,
+   "meas": [
+    {
+     "value": 3.2215,
+     "valid": true,
+     "reasons": [],
+     "periodic": true,
+     "per_err": 0.939,
+     "per_n": 13,
+     "t_run": 5.816,
+     "overspeed": 0.9865,
+     "closure": 6.4863,
+     "closure_tol": 54.1172,
+     "slip_max": 0.0204,
+     "yaw_end": 0.056,
+     "n_td": [
+      17,
+      16
+     ],
+     "cadence_hz": 5.4945,
+     "flight_mean": 0.0236,
+     "stride_len": 1.1726,
+     "W_pos": 5875.9355,
+     "cot": 0.6738,
+     "dt": 0.001
+    },
+    {
+     "value": 3.2147,
+     "valid": true,
+     "reasons": [],
+     "periodic": true,
+     "per_err": 0.499,
+     "per_n": 14,
+     "t_run": 5.816,
+     "overspeed": 0.9806,
+     "closure": 4.2451,
+     "closure_tol": 53.7672,
+     "slip_max": 0.0213,
+     "yaw_end": 0.0641,
+     "n_td": [
+      17,
+      17
+     ],
+     "cadence_hz": 5.5096,
+     "flight_mean": 0.0163,
+     "stride_len": 1.1669,
+     "W_pos": 5768.7696,
+     "cot": 0.6225,
+     "dt": 0.0005
+    }
+   ],
+   "stride": {
+    "util": 0.8878,
+    "t_unfold": 0.0994,
+    "tc": 0.14,
+    "tf": 0.1,
+    "h0": 0.7519,
+    "dz": 0.0219,
+    "step": 0.36,
+    "step_hz": 4.1667,
+    "rule": "max actuator margin among strides whose flight fits the knee fold/unfold",
+    "extrapolated_from": 1.5,
+    "stance": {
+     "hip": [
+      0.52,
+      0.199
+     ],
+     "knee": [
+      0.888,
+      0.387
+     ],
+     "sweep": 0.277,
+     "ka_start": 0.641,
+     "ka_end": 0.641
+    },
+    "swing": {
+     "t_hip": 0.063,
+     "t_knee": 0.096,
+     "t_sw": 0.34,
+     "k_clear": 1.234
+    }
+   },
+   "secs": 271,
+   "evals": 288,
+   "s_per_eval": 0.943,
+   "hist": [
+    [
+     0,
+     102.79019039999369
+    ],
+    [
+     1,
+     101.97015121448888
+    ],
+    [
+     2,
+     101.26218000184686
+    ],
+    [
+     3,
+     10.61574614089478
+    ],
+    [
+     4,
+     10.61574614089478
+    ],
+    [
+     5,
+     10.61574614089478
+    ],
+    [
+     6,
+     10.61574614089478
+    ],
+    [
+     7,
+     -1.0696295175441561
+    ],
+    [
+     8,
+     -1.0696295175441561
+    ],
+    [
+     9,
+     -1.0715754986207964
+    ],
+    [
+     10,
+     -1.0715754986207964
+    ],
+    [
+     11,
+     -1.0715754986207964
+    ],
+    [
+     12,
+     -1.0715754986207964
+    ],
+    [
+     13,
+     -1.0715754986207964
+    ],
+    [
+     14,
+     -1.0715754986207964
+    ],
+    [
+     15,
+     -1.0715754986207964
+    ],
+    [
+     16,
+     -1.0715754986207964
+    ],
+    [
+     17,
+     -1.0715754986207964
+    ],
+    [
+     18,
+     -1.0715754986207964
+    ],
+    [
+     19,
+     -1.0715754986207964
+    ],
+    [
+     20,
+     -1.0715754986207964
+    ],
+    [
+     21,
+     -1.0715754986207964
+    ],
+    [
+     22,
+     -1.0715754986207964
+    ],
+    [
+     23,
+     -1.0715754986207964
+    ],
+    [
+     24,
+     -1.0715754986207964
+    ]
+   ],
+   "z": [
+    0.12217264850717711,
+    -0.22517534918043808,
+    -0.3458273561820059,
+    0.12995577521605972,
+    -0.5306804649319331,
+    -0.5735961618811306,
+    -0.19374089252379328,
+    0.6597678167855394,
+    0.10287253362888571,
+    -0.10114018142491413,
+    0.4076789200966745,
+    -0.04820258257605474,
+    0.12077440636136384,
+    0.37597178972130674,
+    0.18520778319656395,
+    0.37995500556014067,
+    -0.11003410136811087,
+    -0.39909589656211886,
+    0.2093112158573152,
+    0.0037761181153406903,
+    0.5155248424649912,
+    0.0006986429098768399,
+    0.2438518537404384,
+    0.34424178258210664,
+    -0.16592282559075275,
+    -0.16421701443209044,
+    0.06447521616642506,
+    0.3556564699417556,
+    -0.0753308482366464,
+    -0.12299706740649055,
+    0.35710742643467097,
+    0.09945002572992995,
+    -0.5021271337567221,
+    -0.15146478139541925,
+    -0.23908125320318271,
+    -0.20957333633282746,
+    -0.7144507605821364,
+    -0.9990553205958946,
+    -0.21486499534367792,
+    0.13281332466249157,
+    0.2917614791607558,
+    0.05160050617517291,
+    -0.06805627032138242,
+    0.15827410828208144,
+    0.2128761689088786,
+    0.07839082410121445,
+    -0.9467829190296211,
+    -0.7465520121182672,
+    0.4183365437728511,
+    0.11213932537496821,
+    -0.6742880961308387,
+    -0.44711754929941433,
+    -0.19186270203837333,
+    0.7503241809812377,
+    0.3388644917401733,
+    0.5254199258338665,
+    -0.13973611230101468,
+    0.5809653558515647,
+    -0.25881936085669305,
+    0.12043280707754542,
+    -0.3457295278548769,
+    -0.2693625178209647,
+    0.26444264855085453,
+    -0.11692665650601342,
+    -0.026969906576313922,
+    -0.049286983317062855,
+    0.6403035986088402,
+    0.6127537711999386,
+    -0.32530395104701015,
+    0.06504501927959103,
+    0.17644252852516662
+   ],
+   "params": {
+    "amp": 0.934939209790598,
+    "tscale": 1.0097567528919387,
+    "lean": 0.09411063213129166
+   },
+   "utilisation": {
+    "right_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.42
+    },
+    "right_hip_roll": {
+     "torque": 0.938,
+     "torque_p95": 0.522,
+     "speed": 0.108
+    },
+    "right_hip_yaw": {
+     "torque": 0.482,
+     "torque_p95": 0.251,
+     "speed": 0.249
+    },
+    "right_knee": {
+     "torque": 1.0,
+     "torque_p95": 0.939,
+     "speed": 0.905
+    },
+    "right_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.971
+    },
+    "left_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.464
+    },
+    "left_hip_roll": {
+     "torque": 0.906,
+     "torque_p95": 0.511,
+     "speed": 0.111
+    },
+    "left_hip_yaw": {
+     "torque": 0.467,
+     "torque_p95": 0.241,
+     "speed": 0.226
+    },
+    "left_knee": {
+     "torque": 1.0,
+     "torque_p95": 0.941,
+     "speed": 0.89
+    },
+    "left_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.971
+    },
+    "torso": {
+     "torque": 0.609,
+     "torque_p95": 0.459,
+     "speed": 0.201
+    },
+    "right_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.863
+    },
+    "right_shoulder_roll": {
+     "torque": 0.529,
+     "torque_p95": 0.368,
+     "speed": 0.301
+    },
+    "right_elbow": {
+     "torque": 0.397,
+     "torque_p95": 0.366,
+     "speed": 0.069
+    },
+    "left_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.905
+    },
+    "left_shoulder_roll": {
+     "torque": 0.519,
+     "torque_p95": 0.366,
+     "speed": 0.301
+    },
+    "left_elbow": {
+     "torque": 0.385,
+     "torque_p95": 0.368,
+     "speed": 0.064
+    }
+   },
+   "technique": {
+    "cadence_hz": 5.494505494505496,
+    "stride_len": 1.1726158207555157,
+    "flight_fraction": 0.3638236505974454,
+    "flight_mean": 0.023552941176470603,
+    "duty": [
+     0.3263288009888752,
+     0.30984754841367945
+    ],
+    "pelvis_pitch_mean": 0.115,
+    "trunk_mean": {
+     "torso": 0.0
+    },
+    "arm_ptp": {
+     "right_shoulder_pitch": 0.896,
+     "right_elbow": 0.093,
+     "left_shoulder_pitch": 0.896,
+     "left_elbow": 0.093
+    },
+    "cot": 0.6737798020202307,
+    "speed": 3.221472035042627
+   }
+  },
+  {
+   "v": 3.5,
+   "ok_both_dt": false,
+   "stride_extrapolated": true,
+   "meas": [
+    {
+     "value": 3.7927,
+     "valid": false,
+     "reasons": [
+      "OVERSPEED",
+      "SLIP"
+     ],
+     "periodic": false,
+     "per_err": 3.7433,
+     "per_n": 5,
+     "t_run": 5.678,
+     "overspeed": 1.294,
+     "closure": 7.3649,
+     "closure_tol": 80.8414,
+     "slip_max": 0.0535,
+     "yaw_end": -0.0078,
+     "n_td": [
+      30,
+      30
+     ],
+     "cadence_hz": 5.6818,
+     "flight_mean": 0.0118,
+     "stride_len": 1.335,
+     "W_pos": 7499.0241,
+     "cot": 0.7228,
+     "dt": 0.001
+    },
+    {
+     "value": 3.7799,
+     "valid": false,
+     "reasons": [
+      "OVERSPEED",
+      "SLIP"
+     ],
+     "periodic": false,
+     "per_err": 2.373,
+     "per_n": 10,
+     "t_run": 5.6785,
+     "overspeed": 1.1932,
+     "closure": 3.6735,
+     "closure_tol": 79.3122,
+     "slip_max": 0.0618,
+     "yaw_end": 0.0812,
+     "n_td": [
+      28,
+      29
+     ],
+     "cadence_hz": 5.7307,
+     "flight_mean": 0.0079,
+     "stride_len": 1.3192,
+     "W_pos": 7364.3215,
+     "cot": 0.7149,
+     "dt": 0.0005
+    }
+   ],
+   "stride": {
+    "util": 0.8878,
+    "t_unfold": 0.0994,
+    "tc": 0.14,
+    "tf": 0.1,
+    "h0": 0.7519,
+    "dz": 0.0219,
+    "step": 0.36,
+    "step_hz": 4.1667,
+    "rule": "max actuator margin among strides whose flight fits the knee fold/unfold",
+    "extrapolated_from": 1.5,
+    "stance": {
+     "hip": [
+      0.52,
+      0.199
+     ],
+     "knee": [
+      0.888,
+      0.387
+     ],
+     "sweep": 0.277,
+     "ka_start": 0.641,
+     "ka_end": 0.641
+    },
+    "swing": {
+     "t_hip": 0.063,
+     "t_knee": 0.096,
+     "t_sw": 0.34,
+     "k_clear": 1.234
+    }
+   },
+   "secs": 83,
+   "evals": 720,
+   "s_per_eval": 0.116,
+   "hist": [
+    [
+     0,
+     115.96465682953712
+    ],
+    [
+     1,
+     103.4014540917675
+    ],
+    [
+     2,
+     103.4014540917675
+    ],
+    [
+     3,
+     103.4014540917675
+    ],
+    [
+     4,
+     103.4014540917675
+    ],
+    [
+     5,
+     103.4014540917675
+    ],
+    [
+     6,
+     103.4014540917675
+    ],
+    [
+     7,
+     103.4014540917675
+    ],
+    [
+     8,
+     103.4014540917675
+    ],
+    [
+     9,
+     103.4014540917675
+    ],
+    [
+     10,
+     103.4014540917675
+    ],
+    [
+     11,
+     103.4014540917675
+    ],
+    [
+     12,
+     103.4014540917675
+    ],
+    [
+     13,
+     103.4014540917675
+    ],
+    [
+     14,
+     103.4014540917675
+    ],
+    [
+     15,
+     103.4014540917675
+    ],
+    [
+     16,
+     103.4014540917675
+    ],
+    [
+     17,
+     103.4014540917675
+    ],
+    [
+     18,
+     103.4014540917675
+    ],
+    [
+     19,
+     103.4014540917675
+    ],
+    [
+     20,
+     103.4014540917675
+    ],
+    [
+     21,
+     103.4014540917675
+    ],
+    [
+     22,
+     103.4014540917675
+    ],
+    [
+     23,
+     103.4014540917675
+    ],
+    [
+     24,
+     103.4014540917675
+    ],
+    [
+     25,
+     103.4014540917675
+    ],
+    [
+     26,
+     103.4014540917675
+    ],
+    [
+     27,
+     103.4014540917675
+    ],
+    [
+     28,
+     103.4014540917675
+    ],
+    [
+     29,
+     103.4014540917675
+    ],
+    [
+     30,
+     103.4014540917675
+    ],
+    [
+     31,
+     103.4014540917675
+    ],
+    [
+     32,
+     103.4014540917675
+    ],
+    [
+     33,
+     103.4014540917675
+    ],
+    [
+     34,
+     103.4014540917675
+    ],
+    [
+     35,
+     103.4014540917675
+    ],
+    [
+     36,
+     103.4014540917675
+    ],
+    [
+     37,
+     103.4014540917675
+    ],
+    [
+     38,
+     103.4014540917675
+    ],
+    [
+     39,
+     103.4014540917675
+    ],
+    [
+     40,
+     103.4014540917675
+    ],
+    [
+     41,
+     103.4014540917675
+    ],
+    [
+     42,
+     103.4014540917675
+    ],
+    [
+     43,
+     103.4014540917675
+    ],
+    [
+     44,
+     103.4014540917675
+    ],
+    [
+     45,
+     103.4014540917675
+    ],
+    [
+     46,
+     103.4014540917675
+    ],
+    [
+     47,
+     103.4014540917675
+    ],
+    [
+     48,
+     103.4014540917675
+    ],
+    [
+     49,
+     103.4014540917675
+    ],
+    [
+     50,
+     103.4014540917675
+    ],
+    [
+     51,
+     103.4014540917675
+    ],
+    [
+     52,
+     103.4014540917675
+    ],
+    [
+     53,
+     103.4014540917675
+    ],
+    [
+     54,
+     103.4014540917675
+    ],
+    [
+     55,
+     103.4014540917675
+    ],
+    [
+     56,
+     103.4014540917675
+    ],
+    [
+     57,
+     103.4014540917675
+    ],
+    [
+     58,
+     103.4014540917675
+    ],
+    [
+     59,
+     103.4014540917675
+    ],
+    [
+     60,
+     103.4014540917675
+    ]
+   ],
+   "z": [
+    0.057234321071438485,
+    -0.20902195990843567,
+    -0.3821594506727063,
+    0.043709102056029875,
+    -0.548908321486508,
+    -0.6350718791955958,
+    -0.0683807132696988,
+    0.6653118014192733,
+    0.0017117208429921482,
+    -0.16544910403046936,
+    0.44751385735505667,
+    0.02179821845281163,
+    0.06893839459035361,
+    0.17890304388256742,
+    0.16541352023013167,
+    0.4473216531618173,
+    -0.08405598081033441,
+    -0.369449424806885,
+    0.309213692585936,
+    -0.006091004244804788,
+    0.5951983200816313,
+    0.048807822871783,
+    0.2876714802498087,
+    0.34859442617090547,
+    -0.11019953861999104,
+    -0.09411188837477494,
+    -0.05507781575789225,
+    0.23079647149497204,
+    0.07363119943586882,
+    -0.13930666760542598,
+    0.32788455914830344,
+    0.15291074541015506,
+    -0.5476329643345446,
+    -0.3164574899714461,
+    -0.25302539267032226,
+    -0.21124629603894735,
+    -0.6537676893408535,
+    -0.9994419326514484,
+    -0.19893418225923912,
+    0.168578609505861,
+    0.5067114897262934,
+    -0.12457553436032177,
+    0.03502142749993212,
+    0.1849820040683047,
+    0.1374172472062304,
+    -0.04181058600840595,
+    -0.9997197101186008,
+    -0.7347047302071823,
+    0.42377729625454624,
+    0.1552020985761354,
+    -0.5972389332092266,
+    -0.2606561687198847,
+    -0.15544736726731825,
+    0.677693874392239,
+    0.6437911833551879,
+    0.5002943998587098,
+    -0.07005315641714885,
+    0.493418247682452,
+    -0.10849902527539959,
+    0.18088388607422132,
+    -0.4967622481177135,
+    -0.2624269914459177,
+    0.0969668535207385,
+    -0.1149468142149163,
+    -0.03910235055275124,
+    0.008262488784715694,
+    0.7063000393209566,
+    0.5271410282002006,
+    -0.15037162535026247,
+    -0.09435646720550031,
+    0.1615629697772392
+   ],
+   "params": {
+    "amp": 0.9699256749299475,
+    "tscale": 0.985846529919175,
+    "lean": 0.09039074244430981
+   },
+   "utilisation": {
+    "right_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.58
+    },
+    "right_hip_roll": {
+     "torque": 1.0,
+     "torque_p95": 0.558,
+     "speed": 0.123
+    },
+    "right_hip_yaw": {
+     "torque": 0.486,
+     "torque_p95": 0.361,
+     "speed": 0.309
+    },
+    "right_knee": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 1.008
+    },
+    "right_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 1.228
+    },
+    "left_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.553
+    },
+    "left_hip_roll": {
+     "torque": 1.0,
+     "torque_p95": 0.581,
+     "speed": 0.135
+    },
+    "left_hip_yaw": {
+     "torque": 0.738,
+     "torque_p95": 0.368,
+     "speed": 0.336
+    },
+    "left_knee": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 1.008
+    },
+    "left_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 1.282
+    },
+    "torso": {
+     "torque": 0.696,
+     "torque_p95": 0.46,
+     "speed": 0.201
+    },
+    "right_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.897
+    },
+    "right_shoulder_roll": {
+     "torque": 0.522,
+     "torque_p95": 0.345,
+     "speed": 0.289
+    },
+    "right_elbow": {
+     "torque": 0.581,
+     "torque_p95": 0.379,
+     "speed": 0.08
+    },
+    "left_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.899
+    },
+    "left_shoulder_roll": {
+     "torque": 0.523,
+     "torque_p95": 0.351,
+     "speed": 0.273
+    },
+    "left_elbow": {
+     "torque": 0.576,
+     "torque_p95": 0.385,
+     "speed": 0.081
+    }
+   },
+   "technique": {
+    "cadence_hz": 5.681818181818181,
+    "stride_len": 1.335029937479285,
+    "flight_fraction": 0.46098388464800677,
+    "flight_mean": 0.011764705882352948,
+    "duty": [
+     0.2625106022052587,
+     0.27523324851569125
+    ],
+    "pelvis_pitch_mean": 0.155,
+    "trunk_mean": {
+     "torso": -0.0
+    },
+    "arm_ptp": {
+     "right_shoulder_pitch": 0.981,
+     "right_elbow": 0.123,
+     "left_shoulder_pitch": 1.011,
+     "left_elbow": 0.132
+    },
+    "cot": 0.7227626038503696,
+    "speed": 3.7926986860206946
+   }
+  }
+ ]
+}

@@ -1,0 +1,468 @@
+{
+ "tag": "S3",
+ "strat": "S3",
+ "disp": 0.3488638712033703,
+ "reason": null,
+ "saturated_frac": {
+  "left_wrist_pitch_joint": 0.8760162601626016,
+  "right_wrist_pitch_joint": 0.8353658536585366,
+  "left_wrist_yaw_joint": 0.790650406504065,
+  "right_wrist_yaw_joint": 0.790650406504065,
+  "left_shoulder_pitch_joint": 0.7378048780487805,
+  "right_shoulder_pitch_joint": 0.733739837398374
+ },
+ "grip_mean_N": [
+  84.28597560975594,
+  89.59837398373976
+ ],
+ "grip_p95_N": [
+  112.19,
+  122.94500000000001
+ ],
+ "bag_robot_body_contact_peak_N": {
+  "left_hip_yaw_link": 370.6180515650544,
+  "right_hip_yaw_link": 330.9684717157143
+ },
+ "samples": [
+  {
+   "t": 0.22,
+   "grip": [
+    0.0,
+    0.0
+   ],
+   "bag_vx": -9.949736743498861e-17,
+   "top": [
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_ankle_pitch_joint",
+     0.1765900371045268
+    ],
+    [
+     "right_ankle_pitch_joint",
+     0.1710639128701723
+    ]
+   ]
+  },
+  {
+   "t": 0.72,
+   "grip": [
+    0.0,
+    0.0
+   ],
+   "bag_vx": -8.409229234411274e-16,
+   "top": [
+    [
+     "left_wrist_pitch_joint",
+     0.24311196897633636
+    ],
+    [
+     "right_wrist_pitch_joint",
+     0.24301488130694224
+    ],
+    [
+     "waist_pitch_joint",
+     0.1831658555730769
+    ]
+   ]
+  },
+  {
+   "t": 1.22,
+   "grip": [
+    0.0,
+    0.0
+   ],
+   "bag_vx": 1.618244933593047e-15,
+   "top": [
+    [
+     "left_wrist_pitch_joint",
+     0.24310669608521493
+    ],
+    [
+     "right_wrist_pitch_joint",
+     0.2430212337842704
+    ],
+    [
+     "waist_pitch_joint",
+     0.18320347928408978
+    ]
+   ]
+  },
+  {
+   "t": 0.44,
+   "grip": [
+    58.5,
+    59.3
+   ],
+   "bag_vx": -0.004527662800997288,
+   "top": [
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_wrist_yaw_joint",
+     0.7525369432993785
+    ]
+   ]
+  },
+  {
+   "t": 0.94,
+   "grip": [
+    56.3,
+    56.6
+   ],
+   "bag_vx": -0.0004491309458149165,
+   "top": [
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "right_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_wrist_yaw_joint",
+     0.7055715267904361
+    ]
+   ]
+  },
+  {
+   "t": 0.66,
+   "grip": [
+    98.6,
+    98.5
+   ],
+   "bag_vx": -0.26590170819720615,
+   "top": [
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ],
+    [
+     "left_wrist_yaw_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 1.16,
+   "grip": [
+    93.9,
+    93.6
+   ],
+   "bag_vx": -0.01117927686268021,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 1.66,
+   "grip": [
+    96.7,
+    96.6
+   ],
+   "bag_vx": -0.007530000967705005,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 2.16,
+   "grip": [
+    96.8,
+    95.5
+   ],
+   "bag_vx": -0.005831616381010918,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 2.66,
+   "grip": [
+    88.3,
+    79.3
+   ],
+   "bag_vx": -0.12037592392464905,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 3.16,
+   "grip": [
+    95.7,
+    108.1
+   ],
+   "bag_vx": -0.24463806760563844,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 3.66,
+   "grip": [
+    143.1,
+    149.0
+   ],
+   "bag_vx": 0.036791875561052116,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_shoulder_roll_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 4.16,
+   "grip": [
+    75.6,
+    105.2
+   ],
+   "bag_vx": 0.02209239092260357,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 4.66,
+   "grip": [
+    103.6,
+    120.8
+   ],
+   "bag_vx": 0.0020575203775685356,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 5.16,
+   "grip": [
+    96.9,
+    115.1
+   ],
+   "bag_vx": 0.0007605070485107409,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 5.66,
+   "grip": [
+    102.1,
+    112.0
+   ],
+   "bag_vx": 0.00048817565039015756,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 6.16,
+   "grip": [
+    103.0,
+    111.5
+   ],
+   "bag_vx": 0.0002854807194125243,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 6.66,
+   "grip": [
+    103.9,
+    110.6
+   ],
+   "bag_vx": 0.0001622756464766685,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 7.16,
+   "grip": [
+    103.6,
+    111.1
+   ],
+   "bag_vx": 9.305726565563414e-05,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  },
+  {
+   "t": 7.66,
+   "grip": [
+    103.6,
+    111.2
+   ],
+   "bag_vx": 5.044587673965965e-05,
+   "top": [
+    [
+     "left_shoulder_pitch_joint",
+     1.0
+    ],
+    [
+     "left_elbow_joint",
+     1.0
+    ],
+    [
+     "left_wrist_pitch_joint",
+     1.0
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,21 @@
+# robot models (fetched by scripts/get_models.sh)
+models/
+
+# large or regenerable outputs
+*.pkl
+*.npy
+*.npz
+*.mp4
+*.log
+*.out
+results/md_build/
+results/md_campaign/
+results/viz/
+results/demo/
+
+# python
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+MUJOCO_LOG.TXT

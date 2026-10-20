@@ -1,0 +1,116 @@
+# Canonical body specification — planar sagittal jumper, bilaterally lumped.
+# EVERY parameter carries provenance. Tags:
+#   CITED    — value taken from the named published source
+#   DERIVED  — computed from CITED values by the stated rule
+#   INVENTED — no source; chosen by the author. MUST be listed in FINDINGS.
+#
+# Model convention: planar (sagittal). Both legs lumped into one leg chain and both
+# arms into one arm chain, so all masses and torque limits are BILATERAL TOTALS.
+# Bilateral symmetry makes this physically honest for a two-footed vertical jump.
+
+meta:
+  name: human_baseline_75kg
+  units:
+    angle: radian          # ASSERTED in tests/test_units.py — MuJoCo defaults to DEGREES
+    mass: kg
+    length: m
+    torque: N*m
+    ang_vel: rad/s
+    time: s
+  subject:
+    body_mass: {value: 75.0, tag: INVENTED, note: "reference adult male; scales all segment masses"}
+    height:    {value: 1.75, tag: INVENTED, note: "reference adult male; scales all segment lengths"}
+
+sources:
+  winter2009: "Winter DA, Biomechanics and Motor Control of Human Movement, 4th ed., Wiley 2009, Table 4.1 (segment mass fractions, COM locations, radii of gyration as fractions of segment length)"
+  deleva1996: "de Leva P, Adjustments to Zatsiorsky-Seluyanov's segment inertia parameters, J Biomech 29(9):1223-1230, 1996, PMID 8872282"
+
+# ---------------------------------------------------------------- segments
+# mass_fraction: of total body mass. BILATERAL where the segment is paired.
+# length_fraction: of standing height.
+# com_from_proximal / rog_about_com: fractions of that segment's own length.
+segments:
+  trunk_head:
+    mass_fraction:   {value: 0.578, tag: CITED, src: winter2009, note: "head+neck 0.081 + trunk 0.497"}
+    length_fraction: {value: 0.288, tag: CITED, src: winter2009, note: "hip to shoulder"}
+    com_from_proximal: {value: 0.50, tag: INVENTED, note: "lumped head+trunk; Winter gives separate values"}
+    rog_about_com:   {value: 0.50, tag: INVENTED, note: "lumped segment; not a Winter row"}
+  thigh:
+    mass_fraction:   {value: 0.200, tag: DERIVED, src: winter2009, note: "2 x 0.100 (bilateral)"}
+    length_fraction: {value: 0.245, tag: CITED, src: winter2009}
+    com_from_proximal: {value: 0.433, tag: CITED, src: winter2009}
+    rog_about_com:   {value: 0.323, tag: CITED, src: winter2009}
+  shank:
+    mass_fraction:   {value: 0.093, tag: DERIVED, src: winter2009, note: "2 x 0.0465 (bilateral)"}
+    length_fraction: {value: 0.246, tag: CITED, src: winter2009}
+    com_from_proximal: {value: 0.433, tag: CITED, src: winter2009}
+    rog_about_com:   {value: 0.302, tag: CITED, src: winter2009}
+  foot:
+    mass_fraction:   {value: 0.029, tag: DERIVED, src: winter2009, note: "2 x 0.0145 (bilateral)"}
+    length_fraction: {value: 0.152, tag: CITED, src: winter2009, note: "foot length"}
+    com_from_proximal: {value: 0.50, tag: CITED, src: winter2009}
+    rog_about_com:   {value: 0.475, tag: CITED, src: winter2009}
+    ankle_from_heel_fraction: {value: 0.25, tag: INVENTED, note: "ankle placed 25% along foot from heel"}
+  upper_arm:
+    mass_fraction:   {value: 0.056, tag: DERIVED, src: winter2009, note: "2 x 0.028 (bilateral)"}
+    length_fraction: {value: 0.186, tag: CITED, src: winter2009}
+    com_from_proximal: {value: 0.436, tag: CITED, src: winter2009}
+    rog_about_com:   {value: 0.322, tag: CITED, src: winter2009}
+  forearm_hand:
+    mass_fraction:   {value: 0.044, tag: DERIVED, src: winter2009, note: "2 x (forearm 0.016 + hand 0.006)"}
+    length_fraction: {value: 0.254, tag: DERIVED, src: winter2009, note: "forearm 0.146 + hand 0.108"}
+    com_from_proximal: {value: 0.468, tag: CITED, src: winter2009, note: "forearm+hand combined"}
+    rog_about_com:   {value: 0.468, tag: CITED, src: winter2009, note: "forearm+hand combined"}
+
+# ---------------------------------------------------------------- actuators
+# BILATERAL totals. tau_max is the peak isometric value at the optimum joint angle;
+# the torque-angle shape function below scales it over the range of motion.
+# NOTE: every tau_max and omega_max below is INVENTED pending the Stage 2 strength
+# extraction. They are order-of-magnitude plausible for an adult male, doubled for
+# two limbs, but they are NOT sourced and must be treated as placeholders.
+joints:
+  hip:
+    tau_max:   {value: 500.0, tag: INVENTED, note: "~250 N*m/leg extension, bilateral"}
+    omega_max: {value: 14.0,  tag: INVENTED}
+    range:     {value: [-0.35, 2.40], tag: INVENTED, note: "POSITIVE = flexion (trunk toward thigh); sign convention fixed 2026-09-14"}
+    torque_angle: {peak_at: 1.05, width: 1.45, floor: 0.45, tag: INVENTED,
+                   note: "extensor torque peaks in mid-flexion, falls toward full extension"}
+  knee:
+    tau_max:   {value: 500.0, tag: INVENTED, note: "~250 N*m/leg extension, bilateral"}
+    omega_max: {value: 18.0,  tag: INVENTED}
+    range:     {value: [0.0, 2.50], tag: INVENTED, note: "0 = full extension"}
+    torque_angle: {peak_at: 1.05, width: 1.20, floor: 0.35, tag: INVENTED,
+                   note: "knee extensor torque falls sharply near full extension, where takeoff occurs"}
+  ankle:
+    tau_max:   {value: 300.0, tag: INVENTED, note: "~150 N*m/leg plantarflexion, bilateral"}
+    omega_max: {value: 14.0,  tag: INVENTED}
+    range:     {value: [-0.70, 0.55], tag: INVENTED, note: "negative = dorsiflexion"}
+    torque_angle: {peak_at: -0.15, width: 0.90, floor: 0.40, tag: INVENTED}
+  shoulder:
+    tau_max:   {value: 120.0, tag: INVENTED, note: "~60 N*m/arm flexion, bilateral"}
+    omega_max: {value: 20.0,  tag: INVENTED}
+    range:     {value: [-3.00, 1.20], tag: INVENTED}
+    torque_angle: {peak_at: -0.40, width: 1.60, floor: 0.45, tag: INVENTED}
+  elbow:
+    tau_max:   {value: 100.0, tag: INVENTED, note: "~50 N*m/arm, bilateral"}
+    omega_max: {value: 24.0,  tag: INVENTED}
+    range:     {value: [-0.10, 2.60], tag: INVENTED}
+    torque_angle: {peak_at: 1.40, width: 1.40, floor: 0.40, tag: INVENTED}
+
+actuation:
+  activation_tau: {value: 0.040, tag: INVENTED, note: "first-order force-development lag, 30-50 ms range"}
+  torque_speed_model: {value: linear, tag: INVENTED,
+                       note: "tau_avail = tau_max * f_angle(theta) * max(0, 1 - omega/omega_max) when omega aids the torque"}
+
+contact:
+  friction: {value: 0.9, tag: INVENTED}
+  points:   {value: [heel, toe], tag: INVENTED}
+
+# ---------------------------------------------------------------- omissions
+# Present here so they are never silently carried.
+known_omissions:
+  - "bi-articular coupling (rectus femoris, gastrocnemius): knee and ankle torques treated as independent. Load-bearing in the jumping literature."
+  - "series elasticity: no tendon spring, so eccentric energy storage is absent. See docs/SJ_vs_CMJ.md."
+  - "three-dimensional trunk rotation: planar only."
+  - "muscle activation-deactivation asymmetry: single first-order lag both directions."
+  - "joint passive stiffness at range limits: hard limits only."

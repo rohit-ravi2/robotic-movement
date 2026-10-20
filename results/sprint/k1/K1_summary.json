@@ -1,0 +1,759 @@
+{
+ "track": "K1",
+ "date": "2026-10-18",
+ "ratings": "published = min(Menagerie MJCF actuatorfrcrange, Unitree URDF effort, Unitree published joint max 120 N.m): knee 120 (MJCF/URDF 139), hip roll 88 (MJCF 139), ankle p/r 35, waist r/p 35 (MJCF 50); others unchanged",
+ "rating_sources": [
+  "https://www.unitree.com/g1 (Maximum Torque of Knee Joint [1]: G1 90 N.m, G1 EDU 120 N.m; [1] max of the largest joint motor)",
+  "unitree_ros g1_29dof.urdf effort (hip 88, knee 139, ankle 35, waist r/p 35)"
+ ],
+ "flight_gate": "SPRINT_FLIGHTGATE=0.040: every step (touchdown-to-touchdown, either foot) after 2 transient cycles must contain a both-feet-unloaded (<1 N each) interval >= 40 ms, at both 1 ms and 0.5 ms",
+ "protocol": "warm z = ladder_G1_cont_lag2ms_c2 rung 2 (3.21 m/s), its exact extrapolated stride (planner at 2.0 m/s, knee-139 body); CMA 30 it x pop 12 per rung, seeds 1,2; rung v = scaffold reference speed; 2 ms ungated restarted at v_start 2.5 (v_start 3.0 attempt aborted, k1/aborted_vstart3)",
+ "conditions": {
+  "_K1_pub_lag10ms_gate_s1": {
+   "rungs": [
+    [
+     2.0,
+     false,
+     [
+      2.624,
+      2.611
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     1.75,
+     true,
+     [
+      2.433,
+      2.416
+     ],
+     [
+      [],
+      []
+     ]
+    ]
+   ],
+   "top_valid_mps": 2.416,
+   "top_rung": 1.75,
+   "file": "ladder_G1_K1_pub_lag10ms_gate_s1_r1.75.json",
+   "meas": [
+    [
+     2.4335,
+     0.042,
+     0.049
+    ],
+    [
+     2.416,
+     0.043,
+     0.0485
+    ]
+   ],
+   "cadence_step_hz": 5.19,
+   "stride_len_m": 0.94,
+   "duty": [
+    0.25,
+    0.24
+   ],
+   "slip_max": [
+    0.0276,
+    0.0292
+   ],
+   "torque_saturated_p95": [
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_pitch_joint",
+    "right_shoulder_pitch_joint"
+   ],
+   "speed_ratio_top": [
+    [
+     "right_ankle_pitch_joint",
+     1.056
+    ],
+    [
+     "left_ankle_pitch_joint",
+     1.055
+    ],
+    [
+     "right_ankle_roll_joint",
+     0.965
+    ]
+   ],
+   "perturb_both_dt_valid": {
+    "none": true,
+    "vx": true,
+    "vxm": false,
+    "qnoise1": false,
+    "qnoise2": true,
+    "lag125": false
+   }
+  },
+  "_K1_pub_lag10ms_gate_s2": {
+   "rungs": [
+    [
+     2.0,
+     false,
+     [
+      2.765,
+      2.748
+     ],
+     [
+      [
+       "NO_FLIGHT"
+      ],
+      []
+     ]
+    ],
+    [
+     1.75,
+     false,
+     [
+      2.466,
+      2.46
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     1.5,
+     true,
+     [
+      2.267,
+      2.259
+     ],
+     [
+      [],
+      []
+     ]
+    ]
+   ],
+   "top_valid_mps": 2.259,
+   "top_rung": 1.5,
+   "file": "ladder_G1_K1_pub_lag10ms_gate_s2_r1.5.json",
+   "meas": [
+    [
+     2.2669,
+     0.043,
+     0.048
+    ],
+    [
+     2.2587,
+     0.0425,
+     0.048
+    ]
+   ],
+   "cadence_step_hz": 4.8,
+   "stride_len_m": 0.95,
+   "duty": [
+    0.26,
+    0.27
+   ],
+   "slip_max": [
+    0.0177,
+    0.0186
+   ],
+   "torque_saturated_p95": [
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_pitch_joint",
+    "right_ankle_roll_joint",
+    "right_shoulder_pitch_joint"
+   ],
+   "speed_ratio_top": [
+    [
+     "left_ankle_pitch_joint",
+     1.054
+    ],
+    [
+     "left_ankle_roll_joint",
+     1.04
+    ],
+    [
+     "right_ankle_roll_joint",
+     1.033
+    ]
+   ],
+   "perturb_both_dt_valid": {
+    "none": true,
+    "vx": true,
+    "vxm": true,
+    "qnoise1": true,
+    "qnoise2": true,
+    "lag125": false
+   }
+  },
+  "_K1_pub_lag10ms_nogate_s1": {
+   "rungs": [
+    [
+     2.0,
+     true,
+     [
+      2.609,
+      2.591
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.25,
+     true,
+     [
+      2.893,
+      2.875
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.5,
+     true,
+     [
+      3.112,
+      3.11
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.75,
+     false,
+     [
+      2.952,
+      2.943
+     ],
+     [
+      [
+       "FELL",
+       "SLIP"
+      ],
+      [
+       "FELL",
+       "SLIP"
+      ]
+     ]
+    ]
+   ],
+   "top_valid_mps": 3.11,
+   "top_rung": 2.5,
+   "file": "ladder_G1_K1_pub_lag10ms_nogate_s1_r2.5.json",
+   "meas": [
+    [
+     3.1121,
+     0.022,
+     0.037
+    ],
+    [
+     3.1102,
+     0.022,
+     0.032
+    ]
+   ],
+   "cadence_step_hz": 5.33,
+   "stride_len_m": 1.17,
+   "duty": [
+    0.29,
+    0.29
+   ],
+   "slip_max": [
+    0.0229,
+    0.0256
+   ],
+   "torque_saturated_p95": [
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_pitch_joint",
+    "right_shoulder_pitch_joint"
+   ],
+   "speed_ratio_top": [
+    [
+     "right_knee_joint",
+     1.008
+    ],
+    [
+     "left_knee_joint",
+     1.007
+    ],
+    [
+     "left_ankle_pitch_joint",
+     1.007
+    ]
+   ],
+   "perturb_both_dt_valid": {
+    "none": true,
+    "vx": true,
+    "vxm": false,
+    "qnoise1": true,
+    "qnoise2": true,
+    "lag125": false
+   }
+  },
+  "_K1_pub_lag10ms_nogate_s2": {
+   "rungs": [
+    [
+     2.0,
+     true,
+     [
+      2.666,
+      2.655
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.25,
+     true,
+     [
+      3.017,
+      3.009
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.5,
+     true,
+     [
+      3.05,
+      3.036
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.75,
+     true,
+     [
+      3.218,
+      3.203
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     3.0,
+     false,
+     [
+      3.404,
+      3.392
+     ],
+     [
+      [
+       "FELL",
+       "SLIP"
+      ],
+      [
+       "FELL",
+       "SLIP"
+      ]
+     ]
+    ]
+   ],
+   "top_valid_mps": 3.203,
+   "top_rung": 2.75,
+   "file": "ladder_G1_K1_pub_lag10ms_nogate_s2_r2.75.json",
+   "meas": [
+    [
+     3.218,
+     0.02,
+     0.041
+    ],
+    [
+     3.2028,
+     0.0205,
+     0.0415
+    ]
+   ],
+   "cadence_step_hz": 5.38,
+   "stride_len_m": 1.2,
+   "duty": [
+    0.28,
+    0.29
+   ],
+   "slip_max": [
+    0.0281,
+    0.0294
+   ],
+   "torque_saturated_p95": [
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_pitch_joint",
+    "right_shoulder_pitch_joint"
+   ],
+   "speed_ratio_top": [
+    [
+     "left_ankle_pitch_joint",
+     1.044
+    ],
+    [
+     "left_knee_joint",
+     1.025
+    ],
+    [
+     "right_knee_joint",
+     1.024
+    ]
+   ],
+   "perturb_both_dt_valid": {
+    "none": true,
+    "vx": true,
+    "vxm": false,
+    "qnoise1": true,
+    "qnoise2": false,
+    "lag125": false
+   }
+  },
+  "_K1_pub_lag2ms_gate_s1": {
+   "rungs": [
+    [
+     2.5,
+     true,
+     [
+      3.115,
+      3.105
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.75,
+     false,
+     [
+      3.219,
+      3.218
+     ],
+     [
+      [
+       "FELL",
+       "SLIP"
+      ],
+      [
+       "FELL",
+       "SLIP"
+      ]
+     ]
+    ]
+   ],
+   "top_valid_mps": 3.105,
+   "top_rung": 2.5,
+   "file": "ladder_G1_K1_pub_lag2ms_gate_s1_r2.5.json",
+   "meas": [
+    [
+     3.1146,
+     0.04,
+     0.046
+    ],
+    [
+     3.1052,
+     0.0415,
+     0.0485
+    ]
+   ],
+   "cadence_step_hz": 5.13,
+   "stride_len_m": 1.21,
+   "duty": [
+    0.26,
+    0.26
+   ],
+   "slip_max": [
+    0.025,
+    0.0264
+   ],
+   "torque_saturated_p95": [
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_pitch_joint",
+    "right_shoulder_pitch_joint"
+   ],
+   "speed_ratio_top": [
+    [
+     "left_ankle_pitch_joint",
+     1.052
+    ],
+    [
+     "right_ankle_pitch_joint",
+     1.05
+    ],
+    [
+     "right_ankle_roll_joint",
+     1.038
+    ]
+   ],
+   "perturb_both_dt_valid": {
+    "none": true,
+    "vx": false,
+    "vxm": false,
+    "qnoise1": true,
+    "qnoise2": true,
+    "lag125": false
+   }
+  },
+  "_K1_pub_lag2ms_gate_s2": {
+   "rungs": [
+    [
+     2.5,
+     false,
+     [
+      2.841,
+      2.836
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.25,
+     true,
+     [
+      2.595,
+      2.58
+     ],
+     [
+      [],
+      []
+     ]
+    ]
+   ],
+   "top_valid_mps": 2.58,
+   "top_rung": 2.25,
+   "file": "ladder_G1_K1_pub_lag2ms_gate_s2_r2.25.json",
+   "meas": [
+    [
+     2.595,
+     0.044,
+     0.049
+    ],
+    [
+     2.5804,
+     0.04,
+     0.049
+    ]
+   ],
+   "cadence_step_hz": 5.35,
+   "stride_len_m": 0.97,
+   "duty": [
+    0.24,
+    0.22
+   ],
+   "slip_max": [
+    0.0293,
+    0.03
+   ],
+   "torque_saturated_p95": [
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_pitch_joint",
+    "right_ankle_roll_joint",
+    "right_shoulder_pitch_joint"
+   ],
+   "speed_ratio_top": [
+    [
+     "right_ankle_pitch_joint",
+     1.055
+    ],
+    [
+     "left_ankle_pitch_joint",
+     1.055
+    ],
+    [
+     "right_ankle_roll_joint",
+     0.988
+    ]
+   ],
+   "perturb_both_dt_valid": {
+    "none": true,
+    "vx": false,
+    "vxm": false,
+    "qnoise1": false,
+    "qnoise2": true,
+    "lag125": true
+   }
+  },
+  "_K1_pub_lag2ms_nogate_s1": {
+   "rungs": [
+    [
+     2.5,
+     true,
+     [
+      3.105,
+      3.09
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.75,
+     false,
+     [
+      3.19,
+      3.181
+     ],
+     [
+      [],
+      []
+     ]
+    ]
+   ],
+   "top_valid_mps": 3.09,
+   "top_rung": 2.5,
+   "file": "ladder_G1_K1_pub_lag2ms_nogate_s1_r2.5.json",
+   "meas": [
+    [
+     3.1054,
+     0.012,
+     0.052
+    ],
+    [
+     3.0902,
+     0.011,
+     0.0535
+    ]
+   ],
+   "cadence_step_hz": 4.92,
+   "stride_len_m": 1.26,
+   "duty": [
+    0.29,
+    0.28
+   ],
+   "slip_max": [
+    0.0238,
+    0.0256
+   ],
+   "torque_saturated_p95": [
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_pitch_joint",
+    "right_shoulder_pitch_joint"
+   ],
+   "speed_ratio_top": [
+    [
+     "right_ankle_pitch_joint",
+     1.051
+    ],
+    [
+     "left_ankle_pitch_joint",
+     1.033
+    ],
+    [
+     "left_knee_joint",
+     0.913
+    ]
+   ],
+   "perturb_both_dt_valid": {
+    "none": true,
+    "vx": false,
+    "vxm": false,
+    "qnoise1": true,
+    "qnoise2": true,
+    "lag125": true
+   }
+  },
+  "_K1_pub_lag2ms_nogate_s2": {
+   "rungs": [
+    [
+     2.5,
+     true,
+     [
+      3.142,
+      3.133
+     ],
+     [
+      [],
+      []
+     ]
+    ],
+    [
+     2.75,
+     false,
+     [
+      0.0,
+      0.0
+     ],
+     [
+      [
+       "FELL"
+      ],
+      [
+       "FELL"
+      ]
+     ]
+    ]
+   ],
+   "top_valid_mps": 3.133,
+   "top_rung": 2.5,
+   "file": "ladder_G1_K1_pub_lag2ms_nogate_s2_r2.5.json",
+   "meas": [
+    [
+     3.1424,
+     0.027,
+     0.043
+    ],
+    [
+     3.1326,
+     0.0245,
+     0.037
+    ]
+   ],
+   "cadence_step_hz": 5.09,
+   "stride_len_m": 1.23,
+   "duty": [
+    0.29,
+    0.29
+   ],
+   "slip_max": [
+    0.0229,
+    0.0232
+   ],
+   "torque_saturated_p95": [
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_pitch_joint",
+    "right_shoulder_pitch_joint"
+   ],
+   "speed_ratio_top": [
+    [
+     "right_ankle_pitch_joint",
+     1.005
+    ],
+    [
+     "left_ankle_roll_joint",
+     0.996
+    ],
+    [
+     "right_ankle_roll_joint",
+     0.983
+    ]
+   ],
+   "perturb_both_dt_valid": {
+    "none": true,
+    "vx": false,
+    "vxm": true,
+    "qnoise1": true,
+    "qnoise2": false,
+    "lag125": false
+   }
+  }
+ }
+}

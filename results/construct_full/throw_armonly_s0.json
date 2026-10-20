@@ -1,0 +1,235 @@
+{
+ "scenario": "throw_armonly",
+ "robot": "G1",
+ "seed": 0,
+ "supplied": {
+  "effect": {
+   "effector": "right_palm",
+   "mass": 0.145,
+   "support": "both",
+   "direction": null,
+   "driven": [
+    "right_shoulder_pitch_joint",
+    "right_shoulder_roll_joint",
+    "right_shoulder_yaw_joint",
+    "right_elbow_joint",
+    "right_wrist_pitch_joint"
+   ]
+  },
+  "structure": "windup->release reference (t_w 0.40, t_ref 0.55, leg cap 0.30 on support legs, 95% joint range), tracker omega 20, knots 17x10 + release + amp + tscale",
+  "budget": {
+   "iters": 2400,
+   "pop": 16,
+   "evals": 38400
+  },
+  "prior_steps": {
+   "windup": 800,
+   "path": 1600,
+   "prep": 0,
+   "prep_err": null
+  }
+ },
+ "result": {
+  "value": 12.701722614189002,
+  "valid_both_dt": true,
+  "reasons": [],
+  "meas": [
+   {
+    "dt": 0.001,
+    "value": 12.702,
+    "valid": true,
+    "reasons": []
+   },
+   {
+    "dt": 0.0005,
+    "value": 12.702,
+    "valid": true,
+    "reasons": []
+   }
+  ],
+  "extra": {
+   "elev": 0.682,
+   "az": 0.2979,
+   "t_rel": 0.5145,
+   "work": {
+    "shoulder": 75.0884953857907,
+    "elbow": 17.847684214701754,
+    "wrist": 3.0206711412330898
+   },
+   "com_speed": 0.2349,
+   "cp_err_rel": 0.0603,
+   "overspeed": 1.0088
+  },
+  "amp": 0.9184206913113608,
+  "tscale": 0.8215185055639407,
+  "secs": 15802
+ },
+ "emerged": {
+  "effector": "right_palm",
+  "speed": 12.69898043786084,
+  "release_t": 0.514,
+  "chain": [
+   "pelvis",
+   "torso_link",
+   "right_shoulder_yaw_link",
+   "right_elbow_link",
+   "right_wrist_yaw_link"
+  ],
+  "peak_omega": [
+   1.3,
+   1.2,
+   39.6,
+   45.1,
+   61.7
+  ],
+  "peak_t": [
+   0.45,
+   0.45,
+   0.356,
+   0.499,
+   0.503
+  ],
+  "peak_order": [
+   "right_shoulder_yaw_link",
+   "pelvis",
+   "torso_link",
+   "right_elbow_link",
+   "right_wrist_yaw_link"
+  ],
+  "strict_proximal_to_distal": false,
+  "ownership_joint": {
+   "right_elbow": 5.04,
+   "right_shoulder_pitch": 3.48,
+   "right_wrist_pitch": 2.62,
+   "right_shoulder_yaw": 1.21,
+   "right_shoulder_roll": 0.51
+  },
+  "ownership_group": {
+   "shoulder": 5.2,
+   "elbow": 5.04,
+   "wrist": 2.62
+  },
+  "ownership_base": -0.13070369674632493,
+  "excursions": {
+   "right_shoulder_pitch": {
+    "min": -13.0,
+    "max": 117.8,
+    "limit": [
+     -177.0,
+     153.0
+    ],
+    "beyond_human": true,
+    "limit_use": 0.77
+   },
+   "right_shoulder_roll": {
+    "min": -35.0,
+    "max": -1.9,
+    "limit": [
+     -129.0,
+     91.0
+    ],
+    "beyond_human": null,
+    "limit_use": 0.27
+   },
+   "right_shoulder_yaw": {
+    "min": -87.7,
+    "max": 70.0,
+    "limit": [
+     -150.0,
+     150.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.58
+   },
+   "right_elbow": {
+    "min": 47.6,
+    "max": 118.9,
+    "limit": [
+     -60.0,
+     120.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.99
+   },
+   "right_wrist_pitch": {
+    "min": -63.9,
+    "max": 51.9,
+    "limit": [
+     -92.5,
+     92.5
+    ],
+    "beyond_human": null,
+    "limit_use": 0.69
+   }
+  },
+  "beyond_human": [
+   "right_shoulder_pitch"
+  ],
+  "W_pos": {
+   "shoulder": 75.0884953857907,
+   "elbow": 17.84768421470176,
+   "wrist": 3.0206711412330933
+  },
+  "lag": {
+   "prox_peak_t": 0.45,
+   "distal_power_during_prox_rise_W": 301.63459274481164,
+   "distal_power_after_W": 327.29840181195004
+  },
+  "W_total": 95.95685074172555
+ },
+ "z": [
+  0.9999946887235388,
+  0.6079834439844789,
+  0.48897056571788006,
+  0.0818262744952342,
+  -0.9256524061568169,
+  -0.3490016217890036,
+  -0.21377956566602818,
+  -0.07069291851517429,
+  0.07102992488700763,
+  0.017244339048688405,
+  0.8549563289573021,
+  -0.02668783079779972,
+  -0.7708131893791467,
+  -0.24617801074773973,
+  -0.43020222883302967,
+  0.2654450982246353,
+  0.25525295026880745,
+  -0.26054510121163393,
+  -0.476604135426452,
+  0.1094325443878969,
+  0.0937057311820891,
+  0.05671843071442792,
+  -0.22995970478612507,
+  0.5358195033394035,
+  -0.476760791292398,
+  0.998971809863648,
+  -0.35694890989621963,
+  0.8281919375119043,
+  0.5676659799320692,
+  -0.17350718274983198,
+  0.13763620339061042,
+  0.6034915110818944,
+  -0.0629012943041586,
+  -0.12471901101256849,
+  -0.4646664384072913,
+  0.38040744288836315,
+  -0.9966949107930859,
+  0.7043078859419143,
+  0.3606244832245555,
+  0.04747786976501745,
+  -0.4283538695660302,
+  -0.17801011549834167,
+  -0.08212776203437144,
+  -0.8077697045437836,
+  0.06434059028818093,
+  0.7610946619633805,
+  -0.45369836298037913,
+  -0.024208692748918903,
+  -0.19241703195047596,
+  -0.04451185083823478,
+  0.12160494038448506,
+  0.7960517282784018,
+  -0.16160498145353072
+ ]
+}

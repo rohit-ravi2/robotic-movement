@@ -1,0 +1,971 @@
+meta:
+  name: T1
+  mjcf: results/heldout/models/scene_t1_heldout.xml
+  total_mass: 31.614357000000002
+  n_actuated: 23
+  timestep: 0.002
+  units:
+    angle: radian
+    torque: N*m
+    ang_vel: rad/s
+    mass: kg
+  capacity_sets:
+    primary: peak
+    rationale: single published torque set (MJCF actuatorfrcrange)
+  heldout: true
+sources:
+  menagerie_t1: MuJoCo Menagerie booster_t1 MJCF (derived copy results/heldout/models/scene_t1_heldout.xml; names mapped, see src/heldout_onboard.py)
+  booster_t1_urdf: 'Booster Robotics booster_gym T1_serial.urdf (https://raw.githubusercontent.com/BoosterRobotics/booster_gym/main/resources/T1/T1_serial.urdf,
+    sha256 027a5333ce4ed0a1cf6fcbbb12e59709d34b31c926fb4bd682ea5e4cbbc36071): effort and velocity limits'
+joints:
+  head_yaw_joint:
+    range:
+      value:
+      - -1.57
+      - 1.57
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_t1
+    group: neck
+    side: center
+    source_name: AAHead_yaw
+    tau_max:
+      value: 7.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.56
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 7.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 7.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  head_pitch_joint:
+    range:
+      value:
+      - -0.35
+      - 1.22
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: neck
+    side: center
+    source_name: Head_pitch
+    tau_max:
+      value: 7.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.56
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 7.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 7.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_shoulder_pitch_joint:
+    range:
+      value:
+      - -3.31
+      - 1.22
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: shoulders
+    side: left
+    source_name: Left_Shoulder_Pitch
+    tau_max:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.84
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 18.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_shoulder_roll_joint:
+    range:
+      value:
+      - -1.74
+      - 1.57
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: shoulders
+    side: left
+    source_name: Left_Shoulder_Roll
+    tau_max:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.84
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 18.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_elbow_joint:
+    range:
+      value:
+      - -2.27
+      - 2.27
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: elbows
+    side: left
+    source_name: Left_Elbow_Pitch
+    tau_max:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.84
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 18.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_forearm_yaw_joint:
+    range:
+      value:
+      - -2.44
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_t1
+    group: elbows
+    side: left
+    source_name: Left_Elbow_Yaw
+    tau_max:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.84
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 18.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_shoulder_pitch_joint:
+    range:
+      value:
+      - -3.31
+      - 1.22
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: shoulders
+    side: right
+    source_name: Right_Shoulder_Pitch
+    tau_max:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.84
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 18.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_shoulder_roll_joint:
+    range:
+      value:
+      - -1.57
+      - 1.74
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: shoulders
+    side: right
+    source_name: Right_Shoulder_Roll
+    tau_max:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.84
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 18.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_elbow_joint:
+    range:
+      value:
+      - -2.27
+      - 2.27
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: elbows
+    side: right
+    source_name: Right_Elbow_Pitch
+    tau_max:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.84
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 18.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_forearm_yaw_joint:
+    range:
+      value:
+      - 0.0
+      - 2.44
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_t1
+    group: elbows
+    side: right
+    source_name: Right_Elbow_Yaw
+    tau_max:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.84
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 18.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 18.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  waist_yaw_joint:
+    range:
+      value:
+      - -1.57
+      - 1.57
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_t1
+    group: waist
+    side: center
+    source_name: Waist
+    tau_max:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 10.88
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 30.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_hip_pitch_joint:
+    range:
+      value:
+      - -1.8
+      - 1.57
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: hips
+    side: left
+    source_name: Left_Hip_Pitch
+    tau_max:
+      value: 45.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.5
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 45.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 45.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_hip_roll_joint:
+    range:
+      value:
+      - -0.2
+      - 1.57
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: hips
+    side: left
+    source_name: Left_Hip_Roll
+    tau_max:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 10.9
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 30.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_hip_yaw_joint:
+    range:
+      value:
+      - -1.0
+      - 1.0
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_t1
+    group: hips
+    side: left
+    source_name: Left_Hip_Yaw
+    tau_max:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 10.9
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 30.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_knee_joint:
+    range:
+      value:
+      - 0.0
+      - 2.34
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: knees
+    side: left
+    source_name: Left_Knee_Pitch
+    tau_max:
+      value: 60.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 11.7
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 60.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 60.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_ankle_pitch_joint:
+    range:
+      value:
+      - -0.87
+      - 0.35
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: ankles
+    side: left
+    source_name: Left_Ankle_Pitch
+    tau_max:
+      value: 20.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.8
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 20.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 20.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  left_ankle_roll_joint:
+    range:
+      value:
+      - -0.44
+      - 0.44
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: ankles
+    side: left
+    source_name: Left_Ankle_Roll
+    tau_max:
+      value: 15.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.4
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 15.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 15.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_hip_pitch_joint:
+    range:
+      value:
+      - -1.8
+      - 1.57
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: hips
+    side: right
+    source_name: Right_Hip_Pitch
+    tau_max:
+      value: 45.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.5
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 45.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 45.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_hip_roll_joint:
+    range:
+      value:
+      - -1.57
+      - 0.2
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: hips
+    side: right
+    source_name: Right_Hip_Roll
+    tau_max:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 10.9
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 30.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_hip_yaw_joint:
+    range:
+      value:
+      - -1.0
+      - 1.0
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 0.0
+      - 1.0
+      tag: CITED
+      src: menagerie_t1
+    group: hips
+    side: right
+    source_name: Right_Hip_Yaw
+    tau_max:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 10.9
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 30.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 30.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_knee_joint:
+    range:
+      value:
+      - 0.0
+      - 2.34
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: knees
+    side: right
+    source_name: Right_Knee_Pitch
+    tau_max:
+      value: 60.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 11.7
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 60.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 60.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_ankle_pitch_joint:
+    range:
+      value:
+      - -0.87
+      - 0.35
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 0.0
+      - 1.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: ankles
+    side: right
+    source_name: Right_Ankle_Pitch
+    tau_max:
+      value: 20.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 18.8
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 20.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 20.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+  right_ankle_roll_joint:
+    range:
+      value:
+      - -0.44
+      - 0.44
+      tag: CITED
+      src: menagerie_t1
+    armature:
+      value: 0.005
+      tag: CITED
+      src: menagerie_t1
+    axis:
+      value:
+      - 1.0
+      - 0.0
+      - 0.0
+      tag: CITED
+      src: menagerie_t1
+    group: ankles
+    side: right
+    source_name: Right_Ankle_Roll
+    tau_max:
+      value: 15.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+    omega_max:
+      value: 12.4
+      tag: CITED
+      src: booster_t1_urdf
+    tau_max_continuous:
+      value: 15.0
+      tag: CITED
+      src: booster_t1_urdf
+      note: URDF effort (equal to the MJCF)
+    tau_max_peak:
+      value: 15.0
+      tag: CITED
+      src: menagerie_t1
+      note: MJCF actuatorfrcrange
+joint_groups:
+  neck:
+  - head_yaw_joint
+  - head_pitch_joint
+  shoulders:
+  - left_shoulder_pitch_joint
+  - left_shoulder_roll_joint
+  - right_shoulder_pitch_joint
+  - right_shoulder_roll_joint
+  elbows:
+  - left_elbow_joint
+  - left_forearm_yaw_joint
+  - right_elbow_joint
+  - right_forearm_yaw_joint
+  waist:
+  - waist_yaw_joint
+  hips:
+  - left_hip_pitch_joint
+  - left_hip_roll_joint
+  - left_hip_yaw_joint
+  - right_hip_pitch_joint
+  - right_hip_roll_joint
+  - right_hip_yaw_joint
+  knees:
+  - left_knee_joint
+  - right_knee_joint
+  ankles:
+  - left_ankle_pitch_joint
+  - left_ankle_roll_joint
+  - right_ankle_pitch_joint
+  - right_ankle_roll_joint

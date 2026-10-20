@@ -1,0 +1,104 @@
+{
+ "tag": "S1",
+ "strat": "S1",
+ "dt001": {
+  "t_held": 8.0,
+  "reason": null,
+  "util_rms": 0.5145214833385001,
+  "util_p95": 1.0,
+  "trace_dt": 0.01,
+  "ik_err": 0.0015149395206720186,
+  "bag_p": [
+   0.34023192714048006,
+   -0.0004824535127236442,
+   0.3522638928964199
+  ],
+  "tilt_deg": 0.0,
+  "grips": [
+   [
+    0.3716283285892905,
+    0.08,
+    0.755
+   ],
+   [
+    0.3716283285892905,
+    -0.08,
+    0.755
+   ]
+  ],
+  "infeasible": null,
+  "start_pen": 0.00021287670990671292,
+  "start_pen_bag": 0.0,
+  "anchor_err": 0.05006034770383594,
+  "v_start_max": 0.511247872775638,
+  "strat": "S1",
+  "scene": "models/mujoco_menagerie/unitree_g1/scene_luggage_v2.xml",
+  "pelvis_drift": 0.005526534212069176,
+  "foot_travel_max": 0.017600846848429608,
+  "grip_peak_N": [
+   96.2,
+   119.5
+  ],
+  "tilt_range_deg": [
+   1.4438622495364691e-05,
+   2.8833407231287422
+  ],
+  "body_contact": null,
+  "lift_max": 0.006598287965746297,
+  "base_on_floor_frac_late": 1.0,
+  "disp_total": 0.007649878519499144,
+  "disp": 0.0014913388269823268,
+  "score": 0.010371081712389915
+ },
+ "dt0005": {
+  "t_held": 8.0,
+  "reason": null,
+  "util_rms": 0.5078575473191946,
+  "util_p95": 1.0,
+  "trace_dt": 0.005,
+  "ik_err": 0.001806307587551644,
+  "bag_p": [
+   0.3419715867215026,
+   0.0008278864036224311,
+   0.35213679915376206
+  ],
+  "tilt_deg": 0.0,
+  "grips": [
+   [
+    0.3716283285892905,
+    0.08,
+    0.755
+   ],
+   [
+    0.3716283285892905,
+    -0.08,
+    0.755
+   ]
+  ],
+  "infeasible": null,
+  "start_pen": 0.00021296069713749597,
+  "start_pen_bag": 0.0,
+  "anchor_err": 0.050145556949339046,
+  "v_start_max": 0.4859979009687638,
+  "strat": "S1",
+  "scene": "models/mujoco_menagerie/unitree_g1/scene_luggage_v2.xml",
+  "pelvis_drift": 0.009599124422465053,
+  "foot_travel_max": 0.014825920895386912,
+  "grip_peak_N": [
+   173.0,
+   111.1
+  ],
+  "tilt_range_deg": [
+   5.598568198963992e-06,
+   1.607980102994749
+  ],
+  "body_contact": null,
+  "lift_max": 0.0037870894507427977,
+  "base_on_floor_frac_late": 1.0,
+  "disp_total": 0.009787746314085148,
+  "disp": 0.0016347571077618083,
+  "score": 0.026428460919700872
+ },
+ "valid_both": true,
+ "disp_min": 0.0014913388269823268
+}

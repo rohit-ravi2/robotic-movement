@@ -1,0 +1,509 @@
+{
+ "robot": "H1",
+ "scale": 4.0,
+ "supplied": {
+  "cycle": "two-step running cycle, mirror-symmetric legs (left = right shifted half a cycle, roll/yaw sign-flipped), flight phase required (t_f >= 0.05 s)",
+  "stride_choice": "among the ceiling model's feasible strides at v (its grid of t_c, t_f, h0; dz from spring-mass consistency), with t_c >= pi x 0.040 s (the stance force's half-sine inside the project actuator lag's -3 dB band; kept at 40 ms whatever the plant lag), t_f >= TF_MIN and t_f >= the knee's fold/unfold time (quintic peak rate and torque within KNEE_U of the rating): the stride with the largest actuator margin (min of the max over hip/knee of stance torque utilisation, stance speed/1.1, swing time/available)",
+  "swing_cart": "(default, SWING_MODE=cart) ankle x relative to the hip: quintic from -Lc/2 (rate -v, continuous with the stance) to +Lc/2 with touchdown rate -beta v (beta = the largest of 1, .75, .5, .25, 0 whose inverse-dynamics hip/knee torques stay within KNEE_U of the rating; beta 1 = foot at rest on the ground at liftoff/touchdown); sole height above the floor: CLEAR x 64 s^3 (1-s)^3, the hip's height from the scaffold (other stance compression / ballistic flight), the leg never longer than at touchdown; soles level; numerical IK on the model",
+  "swing": "(legacy joint-space modes) quintic thigh move liftoff->touchdown with the STANCE joint rates as boundary velocities (ground-speed matching: foot at rest on the ground at touchdown; thigh rate continuous at liftoff); knee folds to the ceiling's 3 cm floor-clearance angle during the first flight, stays folded while the other foot is down, unfolds during the last flight; soles level; foot under the hip laterally",
+  "compression": "dz = g tf tc / (2 pi): the stance descent rate at touchdown equals the flight landing speed (spring-mass consistency; the ceiling's half-sine force impulse then equals m g T exactly)",
+  "feedforward": "inverse dynamics of the swing and upper-body reference on the model (base at v with the scaffold's vertical acceleration, no contact; zero for a stance leg and while waiting for a touchdown), advanced by ACT_TAU",
+  "stance": "FORCE CONTROL of a loaded stance leg (load-weighted): F_z = m (g + dz (pi/t_c)^2 sin) + m (K_z (z_ref - z) + D_z (vz_ref - vz)), K_z = (pi/t_c)^2, D_z = 2 pi/t_c; F_xy directed from the foot at the COM and tilted by the attitude moment (M_x = h dF_y, M_y = -h dF_x); residual moment to the CoP clipped to the sole polygon and |M_z| <= 0.05 F_z; |F_xy| <= 0.8 F_z; tau = -J^T [F; M] through the model's foot Jacobian; the leg's joint PD scaled by 0.1",
+  "trunk_arms": "trunk held at the keyframe; ARMS: antiphase shoulder-pitch swing that cancels the FUNDAMENTAL (cycle-frequency harmonic) of the legs' yaw angular momentum about the COM over the reference cycle (w_sp = -L_z1 / dL_z/dw_sp); the search refines both through knots",
+  "feedback": "Raibert: placement (about the COM's neutral point: + COM-ahead-of-hips offset) dx=(vx-v)(tc/2+sqrt(h/g)) with the instantaneous COM vx (constant in flight), dy=vy(tc/2+sqrt(h/g)) with vy averaged over one step (the sway), latched at touchdown and released through the stance; attitude servo in the stance force: moment about the COM M = -I_c (om^2 (attitude - (lean,0,0)) + 2 om pelvis rate), I_c = composite inertia about the COM, om = min(pi/t_c, 0.5/ACT_TAU); swing-leg hip targets corrected for the actual pelvis attitude (world-frame placement)",
+  "lag_comp": "the tracked reference and the feedforward are advanced by ACT_TAU (the known actuator lag); the feedback terms act on the state predicted ACT_TAU ahead (q + qdot tau, COM + v tau, attitude + rate tau)",
+  "tracker": "PD per joint, omega 25.0 legs / 20.0 upper, zeta 1, I_eff = the joint's diagonal of the model's mass matrix (locked-chain inertia)",
+  "act_tau": 0.002,
+  "clock": "event-synchronised cycle phase: advances with time, held at each scheduled touchdown until the expected foot lands (after >= 20 ms unloaded), jumps to the touchdown phase if that foot lands up to t_f + 0.25 t_c early (earlier contacts are scuffs); both legs' stance/swing follow it",
+  "gates": "envelope+backemf+OVERSPEED 1.1, actuator lag ACT_TAU (see act_tau), energy closure, no non-foot floor contact, slip <= 0.03 m/stance, no fall, periodic over cycles 2..12 at 1 ms and 0.5 ms; tolerances {'z': 0.02, 'pitch': 0.05, 'roll': 0.05, 'q': 0.08, 'qd': 1.5, 'vx': 0.1}",
+  "start_momentum": "base velocity solved so the COM moves at (v, -dvy/2, 0) and the angular momentum about the COM is zero",
+  "start_sway": "initial lateral COM velocity -dvy/2, dvy = g T y_off / h (the scaffold's periodic sway with feet under the hips)",
+  "friction": "MuJoCo pyramidal cone, condim 3, mu = 1.0 (model values)",
+  "stride_def": "stride = one gait cycle = two steps"
+ },
+ "budget": {
+  "iters": 200,
+  "pop": 12,
+  "workers": 3
+ },
+ "rungs": [
+  {
+   "v": 4.0,
+   "ok_both_dt": true,
+   "stride_extrapolated": true,
+   "meas": [
+    {
+     "value": 4.5848,
+     "valid": true,
+     "reasons": [],
+     "periodic": true,
+     "per_err": 0.7896,
+     "per_n": 11,
+     "t_run": 5.304,
+     "overspeed": 1.0073,
+     "closure": 21.4273,
+     "closure_tol": 115.2116,
+     "slip_max": 0.023,
+     "yaw_end": 0.1399,
+     "n_td": [
+      14,
+      14
+     ],
+     "cadence_hz": 5.3333,
+     "flight_mean": 0.0275,
+     "stride_len": 1.7193,
+     "W_pos": 9079.8592,
+     "cot": 0.8192,
+     "dt": 0.001
+    },
+    {
+     "value": 4.585,
+     "valid": true,
+     "reasons": [],
+     "periodic": true,
+     "per_err": 0.8335,
+     "per_n": 11,
+     "t_run": 5.3045,
+     "overspeed": 1.0057,
+     "closure": 10.9701,
+     "closure_tol": 116.6657,
+     "slip_max": 0.0269,
+     "yaw_end": 0.1645,
+     "n_td": [
+      14,
+      14
+     ],
+     "cadence_hz": 5.3476,
+     "flight_mean": 0.0178,
+     "stride_len": 1.7148,
+     "W_pos": 9034.8013,
+     "cot": 0.8164,
+     "dt": 0.0005
+    }
+   ],
+   "stride": {
+    "util": 0.1368,
+    "t_unfold": 0.0469,
+    "tc": 0.14,
+    "tf": 0.075,
+    "h0": 0.7199,
+    "dz": 0.0164,
+    "step": 0.86,
+    "step_hz": 4.6512,
+    "rule": "max actuator margin among strides whose flight fits the knee fold/unfold",
+    "extrapolated_from": 4.0,
+    "stance": {
+     "hip": [
+      0.137,
+      0.062
+     ],
+     "knee": [
+      0.11,
+      0.131
+     ],
+     "sweep": 0.742,
+     "ka_start": 0.526,
+     "ka_end": 0.526
+    },
+    "swing": {
+     "t_hip": 0.034,
+     "t_knee": 0.024,
+     "t_sw": 0.29,
+     "k_clear": 1.367
+    }
+   },
+   "secs": 1463,
+   "evals": 588,
+   "s_per_eval": 2.488,
+   "hist": [
+    [
+     0,
+     114.38304713306395
+    ],
+    [
+     1,
+     101.23690604626366
+    ],
+    [
+     2,
+     101.0515187064893
+    ],
+    [
+     3,
+     100.98385315953395
+    ],
+    [
+     4,
+     100.98385315953395
+    ],
+    [
+     5,
+     10.673306974244966
+    ],
+    [
+     6,
+     10.673306974244966
+    ],
+    [
+     7,
+     10.673306974244966
+    ],
+    [
+     8,
+     10.673306974244966
+    ],
+    [
+     9,
+     10.673306974244966
+    ],
+    [
+     10,
+     10.673306974244966
+    ],
+    [
+     11,
+     10.673306974244966
+    ],
+    [
+     12,
+     10.673306974244966
+    ],
+    [
+     13,
+     10.673306974244966
+    ],
+    [
+     14,
+     10.673306974244966
+    ],
+    [
+     15,
+     10.575599612298246
+    ],
+    [
+     16,
+     10.055932575870644
+    ],
+    [
+     17,
+     -1.0918132732993122
+    ],
+    [
+     18,
+     -1.0918132732993122
+    ],
+    [
+     19,
+     -1.1004445866640702
+    ],
+    [
+     20,
+     -1.1004445866640702
+    ],
+    [
+     21,
+     -1.1004445866640702
+    ],
+    [
+     22,
+     -1.1004445866640702
+    ],
+    [
+     23,
+     -1.1004445866640702
+    ],
+    [
+     24,
+     -1.1004445866640702
+    ],
+    [
+     25,
+     -1.1004445866640702
+    ],
+    [
+     26,
+     -1.1136391582828669
+    ],
+    [
+     27,
+     -1.1152807735584838
+    ],
+    [
+     28,
+     -1.1152807735584838
+    ],
+    [
+     29,
+     -1.1152807735584838
+    ],
+    [
+     30,
+     -1.1152807735584838
+    ],
+    [
+     31,
+     -1.1335707359186764
+    ],
+    [
+     32,
+     -1.1335707359186764
+    ],
+    [
+     33,
+     -1.1335707359186764
+    ],
+    [
+     34,
+     -1.1462110674203345
+    ],
+    [
+     35,
+     -1.1462110674203345
+    ],
+    [
+     36,
+     -1.1462110674203345
+    ],
+    [
+     37,
+     -1.1462110674203345
+    ],
+    [
+     38,
+     -1.1462110674203345
+    ],
+    [
+     39,
+     -1.1462110674203345
+    ],
+    [
+     40,
+     -1.1462110674203345
+    ],
+    [
+     41,
+     -1.1462110674203345
+    ],
+    [
+     42,
+     -1.1462110674203345
+    ],
+    [
+     43,
+     -1.1462110674203345
+    ],
+    [
+     44,
+     -1.1462110674203345
+    ],
+    [
+     45,
+     -1.1462110674203345
+    ],
+    [
+     46,
+     -1.1462110674203345
+    ],
+    [
+     47,
+     -1.1462110674203345
+    ],
+    [
+     48,
+     -1.1462110674203345
+    ],
+    [
+     49,
+     -1.1462110674203345
+    ]
+   ],
+   "z": [
+    -0.14766576855438884,
+    0.27566009065313485,
+    0.6396719256426486,
+    0.10772575795718141,
+    -0.4740165700578526,
+    0.09406456757961354,
+    0.09985728816498132,
+    0.33984108633526733,
+    0.017176550904063705,
+    -0.3348531797971514,
+    0.6781953159826498,
+    0.6671490235749785,
+    -0.043212810554858455,
+    0.9922288249068574,
+    0.7728674224613413,
+    0.593855483987231,
+    -0.1191361487477221,
+    -0.3748170799547586,
+    0.3230444337660155,
+    -0.015076212073393297,
+    0.7968343851180385,
+    -0.4219382769315403,
+    -0.3246172536804099,
+    0.1625699190293478,
+    -0.0184376084002388,
+    -0.16632738557701193,
+    0.3137434089984915,
+    -0.16515958856096938,
+    0.18952262301294798,
+    0.49641114261651353,
+    0.42867570001941335,
+    0.25275043305950706,
+    -0.2590813916921952,
+    0.12628353533275222,
+    -0.9994866352433853,
+    0.03917380222915742,
+    -0.9980787941134015,
+    -0.7908655291794158,
+    -0.47260226908940484,
+    -0.3831888714041937,
+    0.28222261678395527,
+    -0.024382094279835537,
+    0.13171651226328757,
+    0.7650935346850714,
+    0.5797512999786492,
+    0.9306987551326318,
+    -0.43899197570907833,
+    -0.9198949171007995,
+    0.047930956578375566,
+    0.9151467255672875,
+    -0.2833623843280887,
+    -0.6818755845520486,
+    -0.0325731682953664,
+    0.6769923208412046,
+    0.9997483851345754,
+    0.6149129940243847,
+    0.4907546602398991,
+    0.3146413558281811,
+    -0.714500572211418,
+    0.16342405642538294,
+    0.2873326865714987,
+    0.13490857751638174,
+    0.3519214110296529,
+    -0.7391140262379086,
+    -0.18177411934132628,
+    0.39747506776009445,
+    0.8713657894217303,
+    -0.30518259666978553,
+    -0.2932065827258808,
+    0.18666144533428067,
+    0.9375661534348588
+   ],
+   "params": {
+    "amp": 0.9413586834548239,
+    "tscale": 1.0279992168001422,
+    "lean": 0.2843915383587147
+   },
+   "utilisation": {
+    "right_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.637
+    },
+    "right_hip_roll": {
+     "torque": 1.0,
+     "torque_p95": 0.48,
+     "speed": 0.158
+    },
+    "right_hip_yaw": {
+     "torque": 0.716,
+     "torque_p95": 0.438,
+     "speed": 0.403
+    },
+    "right_knee": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 1.005
+    },
+    "right_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.39
+    },
+    "left_hip_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.634
+    },
+    "left_hip_roll": {
+     "torque": 1.0,
+     "torque_p95": 0.468,
+     "speed": 0.21
+    },
+    "left_hip_yaw": {
+     "torque": 1.0,
+     "torque_p95": 0.44,
+     "speed": 0.408
+    },
+    "left_knee": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 1.003
+    },
+    "left_ankle": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.364
+    },
+    "torso": {
+     "torque": 0.437,
+     "torque_p95": 0.367,
+     "speed": 0.276
+    },
+    "right_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.986
+    },
+    "right_shoulder_roll": {
+     "torque": 0.858,
+     "torque_p95": 0.605,
+     "speed": 0.305
+    },
+    "right_elbow": {
+     "torque": 0.704,
+     "torque_p95": 0.499,
+     "speed": 0.114
+    },
+    "left_shoulder_pitch": {
+     "torque": 1.0,
+     "torque_p95": 1.0,
+     "speed": 0.993
+    },
+    "left_shoulder_roll": {
+     "torque": 0.831,
+     "torque_p95": 0.607,
+     "speed": 0.344
+    },
+    "left_elbow": {
+     "torque": 0.69,
+     "torque_p95": 0.502,
+     "speed": 0.126
+    }
+   },
+   "technique": {
+    "cadence_hz": 5.333333333333333,
+    "stride_len": 1.7193166011305019,
+    "flight_fraction": 0.5628095452498875,
+    "flight_mean": 0.027504950495049522,
+    "duty": [
+     0.22017109410175598,
+     0.21701936064835659
+    ],
+    "pelvis_pitch_mean": 0.265,
+    "trunk_mean": {
+     "torso": 0.0
+    },
+    "arm_ptp": {
+     "right_shoulder_pitch": 1.027,
+     "right_elbow": 0.128,
+     "left_shoulder_pitch": 1.049,
+     "left_elbow": 0.128
+    },
+    "cot": 0.8192283700451362,
+    "speed": 4.584844269681338
+   }
+  }
+ ]
+}

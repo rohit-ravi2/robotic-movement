@@ -1,0 +1,102 @@
+{
+ "tag": "S2",
+ "strat": "S2",
+ "dt001": {
+  "t_held": 8.0,
+  "reason": null,
+  "util_rms": 0.45632444200662264,
+  "util_p95": 1.0,
+  "trace_dt": 0.01,
+  "ik_err": 0.0009107298488563083,
+  "bag_p": [
+   0.35939880373814764,
+   0.0011502059235950278,
+   0.350247023758135
+  ],
+  "tilt_deg": 0.0,
+  "grips": [
+   [
+    0.26700446559541613,
+    0.1,
+    1.0
+   ],
+   [
+    0.26700446559541613,
+    -0.1,
+    1.0
+   ]
+  ],
+  "infeasible": null,
+  "start_pen": 0.00021287670990667847,
+  "start_pen_bag": 0.0,
+  "anchor_err": 0.014712431750190772,
+  "v_start_max": 0.9199984706362285,
+  "strat": "S2",
+  "scene": "models/mujoco_menagerie/unitree_g1/scene_luggage_v2.xml",
+  "pelvis_drift": 0.010606274480614955,
+  "foot_travel_max": 0.016861601470714447,
+  "grip_peak_N": [
+   121.6,
+   101.1
+  ],
+  "tilt_range_deg": [
+   0.0,
+   9.829773393873635
+  ],
+  "body_contact": null,
+  "lift_max": 0.0,
+  "base_on_floor_frac_late": 1.0,
+  "disp": 0.05867111723567386,
+  "score": -0.013038673035011591
+ },
+ "dt0005": {
+  "t_held": 8.0,
+  "reason": null,
+  "util_rms": 0.4544840586917253,
+  "util_p95": 1.0,
+  "trace_dt": 0.005,
+  "ik_err": 0.0009089304227273365,
+  "bag_p": [
+   0.3706470920576789,
+   0.0009896843774417133,
+   0.34999945304312996
+  ],
+  "tilt_deg": 0.0,
+  "grips": [
+   [
+    0.26700446559541613,
+    0.1,
+    1.0
+   ],
+   [
+    0.26700446559541613,
+    -0.1,
+    1.0
+   ]
+  ],
+  "infeasible": null,
+  "start_pen": 0.00021296069713751847,
+  "start_pen_bag": 0.0,
+  "anchor_err": 0.014700063118250348,
+  "v_start_max": 0.0057442108087482685,
+  "strat": "S2",
+  "scene": "models/mujoco_menagerie/unitree_g1/scene_luggage_v2.xml",
+  "pelvis_drift": 0.0097685039243664,
+  "foot_travel_max": 0.01457215186849181,
+  "grip_peak_N": [
+   123.5,
+   98.9
+  ],
+  "tilt_range_deg": [
+   8.45192788808014e-06,
+   9.93322979707451
+  ],
+  "body_contact": null,
+  "lift_max": 0.0,
+  "base_on_floor_frac_late": 1.0,
+  "disp": 0.059163742762466026,
+  "score": -0.01371533689329349
+ },
+ "valid_both": true,
+ "disp_min": 0.05867111723567386
+}

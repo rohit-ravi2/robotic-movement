@@ -1,0 +1,741 @@
+{
+ "job": "M1_kick_goal",
+ "cfg": "g5_0",
+ "seed": 1,
+ "robot": "G1",
+ "phys": 3,
+ "warm": "../results/movements/M1_kick_goal/r1/final/g5_0_s1_s1.json",
+ "rdraws": 2,
+ "supplied": {
+  "body": "stock Menagerie G1 (MJX model used by the construct campaigns), unchanged geometry/masses/ranges/speeds",
+  "ratings": "min(MJCF peak, Unitree URDF effort, vendor published joint max 120 N m): knee 120, ankle pitch/roll 35, waist roll/pitch 35, hip roll 88, hip pitch/yaw 88, waist yaw 88, shoulders/elbows 25, wrists 5 N m; applied as the torque envelope of driven joints and the force limit of held servos",
+  "lag": "first-order actuator lag 10 ms (throw.LAG_TAU), torque-speed droop and back-EMF brake (construct plant)",
+  "contact": "robot-floor: Menagerie MJX explicit pairs (foot solref 0.008); ball geom solref 0.002, robot/floor geoms 0.02 -> MIXED ball-floor and ball-robot solref 0.011 (default solmix; near-inelastic, no bounce); posts 0.002; ball condim 6, rolling friction 0.0055 m (c_rr 0.05), torsional 0.005 m; effector collider = 4 cm sphere at the foot site (ImpactTask); PHYS 2: the ball collides with EVERY robot collision geom (group 3: shins, ankle braces, feet, thighs, hips, pelvis, torso, head, arms, hands; contype 2 / conaffinity 0 so no new robot-robot or robot-floor contact)",
+  "ball": "0.43 kg, r 0.11 m, hollow-shell inertia, on the floor at (0.30, -0.17) in front of the right foot (kick_ball placement)",
+  "goal": {
+   "width": 2.0,
+   "height": 1.0,
+   "post_r": 0.06,
+   "D": 5.0,
+   "az": 0.0,
+   "az_deg": 0.0,
+   "note": "D = distance from the ball's start to the goal plane along the bearing az; inner mouth 2.0 x 1.0 m; posts/bar cylinders r 0.06 m outside the mouth"
+  },
+  "flight": "robot + ball continued together for 0.30 s after t_rel (last driven command held, servos at targets; any robot-ball contact = BALL_RECONTACT), then ball-only MuJoCo continuation (requires no robot contact and separating velocity at t_rel), same dt and contact params, air drag via MuJoCo ellipsoid fluid model (rho 1.2, mu 1.8e-5), cap 8 s",
+  "support": "left foot (right-foot kick): ImpactTask stance gates + support-foot horizontal travel <= 0.02 m",
+  "scaffold": "kick_ball construction: body-derived wind-up -> release reference for effector direction (elev 15 deg [kick_ball's value], az = goal bearing), tracker omega 40, tscale range 0.9-1.45, 21 driven joints",
+  "objective": "valid first; among valid, maximise min(mouth margin min(W/2-|u|, H-z) [m], (0.02 - slip)/0.02) + 0.01 x ball speed (gate-margin objective)",
+  "search": {
+   "score": "worse-of over (1 ms, 0.5 ms fresh) + 2 fixed perturbation draws on fresh plants (alternating dt)",
+   "cma_seed_rule": "seeds >= 1"
+  },
+  "budget": {
+   "iters": 30,
+   "pop": 12,
+   "evals": 360
+  }
+ },
+ "prior_steps": {
+  "windup": 163,
+  "path": 228,
+  "prep": 49
+ },
+ "result": {
+  "goal_both_dt": true,
+  "score": -0.728447632308183,
+  "meas": [
+   {
+    "dt": 0.001,
+    "valid": true,
+    "reasons": [],
+    "t_rel": 0.4042,
+    "com_speed": 0.3114,
+    "com_speed_rel": 0.3114,
+    "feet_bw_rel": 0.0,
+    "overspeed": 0.6167,
+    "overspeed_by_joint": {},
+    "ball_speed": 4.8279,
+    "ball_elev": 0.2774,
+    "ball_az": 0.034,
+    "eff_speed": 4.6105,
+    "dmin_obj": 0.1713,
+    "slip": 0.0052,
+    "rec_mode": "step",
+    "rec_fell": true,
+    "rec_nonfoot": true,
+    "rec_t_fall": 0.593,
+    "rec_t_touchdown": 0.062,
+    "rec_step_xy": [
+     0.19330513206783687,
+     -0.14191356207593217
+    ],
+    "rec_up_end": 0.2017,
+    "rec_zrel": 0.4414,
+    "rec_travel": 0.1664,
+    "rec_pelvis_min": 0.3331,
+    "lim_kick_deg": 0.7552,
+    "lim_kick_joint": "right_ankle_pitch_joint",
+    "lim_rec_deg": 1.3557,
+    "lim_rec_joint": "right_hip_roll_joint",
+    "cont_contacts": 0.0,
+    "cont_clear": null,
+    "cont_ball_speed": 3.2781,
+    "rel_released": true,
+    "rel_touching": false,
+    "rel_sep_speed": 7.6858,
+    "rel_shortfall": 0.0,
+    "goal_goal": true,
+    "goal_crossed": true,
+    "goal_u": 0.2492,
+    "goal_z": 0.11,
+    "goal_t_cross": 0.87,
+    "goal_margin": 0.7508,
+    "goal_miss": 0.0,
+    "goal_stop_s": null
+   },
+   {
+    "dt": 0.0005,
+    "valid": true,
+    "reasons": [],
+    "t_rel": 0.4042,
+    "com_speed": 0.3177,
+    "com_speed_rel": 0.3177,
+    "feet_bw_rel": 0.0,
+    "overspeed": 0.6115,
+    "overspeed_by_joint": {},
+    "ball_speed": 4.9388,
+    "ball_elev": 0.2638,
+    "ball_az": 0.0372,
+    "eff_speed": 4.6499,
+    "dmin_obj": 0.169,
+    "slip": 0.0046,
+    "rec_mode": "step",
+    "rec_fell": true,
+    "rec_nonfoot": true,
+    "rec_t_fall": 0.6055,
+    "rec_t_touchdown": 0.062,
+    "rec_step_xy": [
+     0.21737909366378133,
+     -0.15877331414712614
+    ],
+    "rec_up_end": 0.1686,
+    "rec_zrel": 0.4007,
+    "rec_travel": 0.1443,
+    "rec_pelvis_min": 0.2924,
+    "lim_kick_deg": 0.7869,
+    "lim_kick_joint": "right_ankle_pitch_joint",
+    "lim_rec_deg": 1.5794,
+    "lim_rec_joint": "left_ankle_roll_joint",
+    "cont_contacts": 0.0,
+    "cont_clear": null,
+    "cont_ball_speed": 3.3993,
+    "rel_released": true,
+    "rel_touching": false,
+    "rel_sep_speed": 7.723,
+    "rel_shortfall": 0.0,
+    "goal_goal": true,
+    "goal_crossed": true,
+    "goal_u": 0.2621,
+    "goal_z": 0.11,
+    "goal_t_cross": 0.8157,
+    "goal_margin": 0.7379,
+    "goal_miss": 0.0,
+    "goal_stop_s": null
+   }
+  ],
+  "amp": 0.5888101785022273,
+  "tscale": 1.1621723114703753,
+  "secs": 502
+ },
+ "emerged": {
+  "effector": "right_foot",
+  "speed": 4.644791451137147,
+  "release_t": 0.403,
+  "chain": [
+   "pelvis",
+   "right_hip_yaw_link",
+   "right_knee_link",
+   "right_ankle_roll_link"
+  ],
+  "peak_omega": [
+   5.4,
+   16.8,
+   16.5,
+   23.8
+  ],
+  "peak_t": [
+   0.322,
+   0.403,
+   0.403,
+   0.161
+  ],
+  "peak_order": [
+   "right_ankle_roll_link",
+   "pelvis",
+   "right_hip_yaw_link",
+   "right_knee_link"
+  ],
+  "strict_proximal_to_distal": false,
+  "ownership_joint": {
+   "right_hip_yaw": 3.91,
+   "right_hip_roll": -1.79,
+   "right_ankle_pitch": 0.28,
+   "right_hip_pitch": 0.09,
+   "right_knee": -0.08,
+   "right_ankle_roll": -0.0,
+   "left_hip_pitch": 0.0,
+   "left_hip_roll": -0.0
+  },
+  "ownership_group": {
+   "legs": 2.41,
+   "trunk": 0.0,
+   "shoulder": 0.0,
+   "elbow": 0.0,
+   "wrist": 0.0,
+   "counter_arm": 0.0
+  },
+  "ownership_base": 2.2386044831161636,
+  "excursions": {
+   "left_hip_pitch": {
+    "min": -17.9,
+    "max": 34.5,
+    "limit": [
+     -145.0,
+     165.0
+    ],
+    "beyond_human": true,
+    "limit_use": 0.21
+   },
+   "left_hip_roll": {
+    "min": -1.6,
+    "max": 6.1,
+    "limit": [
+     -30.0,
+     170.0
+    ],
+    "beyond_human": null,
+    "limit_use": 0.05
+   },
+   "left_hip_yaw": {
+    "min": -19.0,
+    "max": -0.0,
+    "limit": [
+     -158.0,
+     158.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.12
+   },
+   "left_knee": {
+    "min": 21.1,
+    "max": 53.7,
+    "limit": [
+     -5.0,
+     165.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.33
+   },
+   "left_ankle_pitch": {
+    "min": -32.9,
+    "max": -17.6,
+    "limit": [
+     -50.0,
+     30.0
+    ],
+    "beyond_human": null,
+    "limit_use": 0.66
+   },
+   "left_ankle_roll": {
+    "min": -7.2,
+    "max": 2.0,
+    "limit": [
+     -15.0,
+     15.0
+    ],
+    "beyond_human": null,
+    "limit_use": 0.48
+   },
+   "right_hip_pitch": {
+    "min": -41.5,
+    "max": -12.4,
+    "limit": [
+     -145.0,
+     165.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.29
+   },
+   "right_hip_roll": {
+    "min": -13.6,
+    "max": 11.1,
+    "limit": [
+     -170.0,
+     30.0
+    ],
+    "beyond_human": null,
+    "limit_use": 0.37
+   },
+   "right_hip_yaw": {
+    "min": -31.8,
+    "max": 59.7,
+    "limit": [
+     -158.0,
+     158.0
+    ],
+    "beyond_human": true,
+    "limit_use": 0.38
+   },
+   "right_knee": {
+    "min": 34.9,
+    "max": 75.6,
+    "limit": [
+     -5.0,
+     165.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.46
+   },
+   "right_ankle_pitch": {
+    "min": -50.8,
+    "max": 17.7,
+    "limit": [
+     -50.0,
+     30.0
+    ],
+    "beyond_human": null,
+    "limit_use": 1.02
+   },
+   "right_ankle_roll": {
+    "min": -9.0,
+    "max": 9.8,
+    "limit": [
+     -15.0,
+     15.0
+    ],
+    "beyond_human": null,
+    "limit_use": 0.66
+   },
+   "waist_yaw": {
+    "min": -2.3,
+    "max": 9.9,
+    "limit": [
+     -150.0,
+     150.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.07
+   },
+   "waist_pitch": {
+    "min": -1.6,
+    "max": 22.1,
+    "limit": [
+     -29.8,
+     29.8
+    ],
+    "beyond_human": false,
+    "limit_use": 0.74
+   },
+   "right_shoulder_pitch": {
+    "min": 0.0,
+    "max": 19.4,
+    "limit": [
+     -177.0,
+     153.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.13
+   },
+   "right_shoulder_roll": {
+    "min": -15.2,
+    "max": -8.9,
+    "limit": [
+     -129.0,
+     91.0
+    ],
+    "beyond_human": null,
+    "limit_use": 0.12
+   },
+   "right_shoulder_yaw": {
+    "min": -1.6,
+    "max": 50.3,
+    "limit": [
+     -150.0,
+     150.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.34
+   },
+   "right_elbow": {
+    "min": 33.2,
+    "max": 72.2,
+    "limit": [
+     -60.0,
+     120.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.6
+   },
+   "right_wrist_pitch": {
+    "min": -8.8,
+    "max": 32.7,
+    "limit": [
+     -92.5,
+     92.5
+    ],
+    "beyond_human": null,
+    "limit_use": 0.35
+   },
+   "left_shoulder_pitch": {
+    "min": -2.9,
+    "max": 29.9,
+    "limit": [
+     -177.0,
+     153.0
+    ],
+    "beyond_human": false,
+    "limit_use": 0.2
+   },
+   "left_shoulder_roll": {
+    "min": 11.5,
+    "max": 26.0,
+    "limit": [
+     -91.0,
+     129.0
+    ],
+    "beyond_human": null,
+    "limit_use": 0.2
+   }
+  },
+  "beyond_human": [
+   "left_hip_pitch",
+   "right_hip_yaw"
+  ],
+  "W_pos": {
+   "legs": 133.14828420373303,
+   "trunk": 4.805390266858341,
+   "shoulder": 8.103895318615505,
+   "elbow": 5.758746605963534,
+   "wrist": 0.6936839548057642,
+   "counter_arm": 5.384194113188249
+  },
+  "lag": {
+   "prox_peak_t": 0.403,
+   "distal_power_during_prox_rise_W": 196.7755679735671,
+   "distal_power_after_W": 95.73753841451428
+  },
+  "W_total": 157.8941944631644
+ },
+ "flight_path": [
+  [
+   2.7683642606954337,
+   -0.09939999047303735,
+   0.6102571896754257
+  ],
+  [
+   2.998799268329737,
+   -0.09147554678820312,
+   0.5171822598328184
+  ],
+  [
+   3.2260673859289524,
+   -0.08355980301325362,
+   0.400757063124187
+  ],
+  [
+   3.450097892991038,
+   -0.07569108608813441,
+   0.26134806497691326
+  ],
+  [
+   3.669214384643046,
+   -0.06782374662235387,
+   0.10286795190050863
+  ],
+  [
+   3.8056902036632505,
+   -0.0571757231419324,
+   0.11287739560251371
+  ],
+  [
+   3.9374439688756566,
+   -0.046433041746040966,
+   0.10911007547884445
+  ],
+  [
+   4.0672751195052825,
+   -0.035572560810030136,
+   0.11020159989457659
+  ],
+  [
+   4.194965097637182,
+   -0.02466094576264301,
+   0.10999025079272251
+  ],
+  [
+   4.320568771429208,
+   -0.013701296000418058,
+   0.10998549507388046
+  ],
+  [
+   4.4441555211150865,
+   -0.0026965453664570182,
+   0.10998656983012342
+  ],
+  [
+   4.565767912221783,
+   0.00835051721845845,
+   0.10999560767030558
+  ],
+  [
+   4.685456341202059,
+   0.019437271178424746,
+   0.10998594156154294
+  ],
+  [
+   4.803243647641107,
+   0.0305611989681669,
+   0.10997465500409755
+  ],
+  [
+   4.919175216274358,
+   0.041719953272658525,
+   0.10999288679995535
+  ],
+  [
+   5.033279506642669,
+   0.05291128644003068,
+   0.10997910217618968
+  ],
+  [
+   5.1455904494124445,
+   0.06413308374464023,
+   0.11001073832246512
+  ],
+  [
+   5.256155520398196,
+   0.07538335649650267,
+   0.1099730368387382
+  ],
+  [
+   5.310783509996122,
+   0.08101856580605857,
+   0.11002882872179412
+  ]
+ ],
+ "z": [
+  -0.40005945112202335,
+  -0.3486710135630463,
+  0.9248399847208828,
+  0.14446394681245198,
+  0.15103123297387433,
+  0.12458505513574239,
+  -0.5863864169700188,
+  -0.17085248297866154,
+  0.7512340476499086,
+  -0.6729083092470179,
+  0.35507737763194336,
+  -0.2010630855680502,
+  0.3614855087249961,
+  0.36596901207043997,
+  -0.514385875794228,
+  -0.9658681826263155,
+  -0.2553659883577931,
+  -0.01819793531061569,
+  0.35616113146901357,
+  -0.2446109614753076,
+  -0.19877321140236545,
+  -0.09429970213370438,
+  -0.17040789917213792,
+  0.057317310072306366,
+  0.09892512239446917,
+  0.23664611376924596,
+  -0.0980725788156873,
+  -0.017784207506402527,
+  0.46007140142901976,
+  -0.28026236797378307,
+  -0.39596026564587755,
+  0.013839139427934823,
+  0.23507460736518918,
+  0.14230554118959626,
+  -0.24244514838643894,
+  -0.9002640216026245,
+  -0.7240932571865834,
+  0.0853153604540026,
+  -0.3386273429036697,
+  -0.9567341593442347,
+  -0.03737586100179468,
+  -0.37278492140454167,
+  -0.0041139861369180256,
+  0.3545229815831151,
+  -0.34265896739201984,
+  0.03921517516491475,
+  -0.4126146923193851,
+  -0.20311070092055103,
+  -0.4582743266240637,
+  -0.38404286067139437,
+  0.17869537109382638,
+  -0.027552155773076098,
+  -0.12558024517043456,
+  0.1834630536057834,
+  -0.031177871304200022,
+  -0.35923676902835977,
+  0.4059999563554457,
+  0.0172412911620132,
+  0.6233800924476769,
+  0.4236066206754397,
+  0.9085012727047752,
+  0.2911431687316005,
+  -0.9998032482830143,
+  -0.6434684563355798,
+  0.10062968695604427,
+  -0.08242414529708393,
+  0.5151295396055647,
+  -0.011198357756886358,
+  0.17354222556662088,
+  0.46189991505951006,
+  0.470848838424549,
+  -0.5758768284605462,
+  0.28910695445943185,
+  0.3406910301476984,
+  0.5617156414660254,
+  -0.22072120996008787,
+  0.4116285673941158,
+  -0.4767594667271874,
+  0.6577482701705659,
+  -0.10241106851430576,
+  -0.04133199428709311,
+  -0.443075453377569,
+  0.4548487680553824,
+  0.4600500287431302,
+  0.3447322219595836,
+  -0.2061490666411618,
+  -0.13559438806432092,
+  0.22951670624490034,
+  -0.2453761326780599,
+  0.4325180063448649,
+  -0.015670759943354817,
+  0.6918386511841033,
+  0.1956633872425505,
+  0.2898950925934009,
+  0.4365304838409898,
+  -0.12771388595844074,
+  0.48209469934346116,
+  -0.17581542934052966,
+  0.14873216147904514,
+  0.9454973218717074,
+  0.025461610220802525,
+  0.7985459892963145,
+  -0.13804626653606306,
+  -0.18692168033387385,
+  -0.31059204690630143,
+  0.13887996117655801,
+  0.5332834468122026,
+  -0.041325406795804175,
+  -0.2546427511572944,
+  0.12187820028978574,
+  0.0904879369025022,
+  0.0700088887798796,
+  -0.10480337625525404,
+  0.11374493581378463,
+  -0.05727194748129897,
+  -0.04214017682488896,
+  0.15120246563686057,
+  0.38760097353412076,
+  -0.530175409908969,
+  0.7384881502781464,
+  0.10299569368701814,
+  0.029519058454682973,
+  0.12318743028434634,
+  0.10936404440808173,
+  -0.19989091506253875,
+  0.45503955484956504,
+  0.05029613522622852,
+  -0.0012982282300449313,
+  0.5172293131336566,
+  -0.3688837531371998,
+  -0.5634023085128137,
+  0.04380278748669705,
+  0.5944799780909458,
+  -0.2869084642651154,
+  0.9199269363873513,
+  0.5224480494707637,
+  0.1824518581324712,
+  0.47585438753572035,
+  0.07922742511545929,
+  0.27013128444716994,
+  -0.08931972005044828,
+  0.18076799280954742,
+  -0.44434088965459373,
+  -0.7171918700825332,
+  -0.44209069106972354,
+  -0.03168495102635169,
+  -0.08090588900272509,
+  0.31572342257124447,
+  0.7703063360191734,
+  -0.9966328451468371,
+  0.09136979952538253,
+  0.23422944644176516,
+  0.4405055110948619,
+  -0.4033648082968136,
+  0.45408852840194164,
+  0.34064960426778146,
+  -0.5360069524381404,
+  0.17340784265345588,
+  -0.03243255926893439,
+  0.9180331697882286,
+  0.09628726321381309,
+  0.5262677376815175,
+  -0.016631478061116988,
+  -0.06260615003647466,
+  0.1819084049865949,
+  0.48230000561575803,
+  -0.14806292485913292,
+  0.39495855687541315,
+  0.07062715706666256,
+  -0.5296342390484561,
+  -0.05789791187132072,
+  0.27446297180955903,
+  -0.8118120734896326,
+  -0.10209869479487735,
+  -0.34362773145023257,
+  0.1556891974721939,
+  -0.049546224843069746,
+  -0.2707674137981484,
+  0.4307372948451656,
+  0.27951525583230513,
+  0.5033165727473755,
+  -0.20567923141978764,
+  0.07083518196569805,
+  0.06160753215312834,
+  0.04764982182195222,
+  -0.28445599115003817,
+  0.9981654571606737,
+  -0.2399763092932359,
+  0.013367333795417824,
+  -0.43525954730958477,
+  -0.41853325852804363,
+  0.7385015279337855,
+  0.5223509770662211,
+  -0.20082819825211956,
+  -0.7444553695045564,
+  -0.0871719851868901,
+  0.7490195746757065,
+  -0.7006261567402962,
+  -0.09898884391423045,
+  0.46939547618004523,
+  0.35069306257202204,
+  -0.29210909827849124,
+  0.0011855723312566603,
+  0.9999957304029857,
+  0.42167627300996735,
+  -0.2581655871459344,
+  -0.1776675198113799,
+  0.8004999802164456,
+  0.6698312288555133,
+  0.43630889100448755,
+  -0.21778059265099287,
+  -0.027974553744431998,
+  -0.046646140107726525
+ ]
+}
